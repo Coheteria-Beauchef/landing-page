@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.2.8",
-    "astro": "^6.0.1"
+    "astro": "^6.0.1",
+    "lucide-react": "^1.7.0"
   },
   "devDependencies": {
-    "@typescript/native-preview": "^7.0.0-dev.20260328.1",
     "@astrojs/check": "^0.9.8",
     "@tailwindcss/vite": "^4.1.18",
+    "@typescript/native-preview": "^7.0.0-dev.20260328.1",
     "oxfmt": "^0.26.0",
     "oxlint": "^1.41.0",
     "tailwindcss": "^4.1.18",
