@@ -1,0 +1,4639 @@
+{
+  "version": "2.9",
+  "children": [
+    {
+      "type": "frame",
+      "id": "3MlwN",
+      "x": 0,
+      "y": 0,
+      "name": "Landing Page",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "Tk4Qo",
+          "name": "Hero Section",
+          "clip": true,
+          "width": "fill_container",
+          "height": 900,
+          "fill": "#0A0A0A",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "G1e6F",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Background",
+              "opacity": 0.85,
+              "width": 1440,
+              "height": 900,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./public/main_image.JPG",
+                "mode": "fill"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "J4io7",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Overlay",
+              "width": 1440,
+              "height": 900,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "opacity": 0.45,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#0A0A0AE6",
+                    "position": 0
+                  },
+                  {
+                    "color": "#1025B9E6",
+                    "position": 1
+                  },
+                  {
+                    "color": "#1024b0e6",
+                    "position": 0.75
+                  }
+                ]
+              }
+            },
+            {
+              "type": "frame",
+              "id": "fPPqG",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 0,
+              "name": "Navbar",
+              "width": 1440,
+              "height": 80,
+              "padding": [
+                0,
+                64
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5VKGS",
+                  "name": "Logo Container",
+                  "height": 50,
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "xHJsv",
+                      "name": "Logo",
+                      "width": 44,
+                      "height": 44,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/logo_borderless_adjusted.png",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "Rlech",
+                      "name": "logoText",
+                      "fill": "#FFFFFF",
+                      "content": "COHETERÍA BEAUCHEF",
+                      "fontFamily": "Geist",
+                      "fontSize": 20,
+                      "fontWeight": "bold",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "DeYpy",
+                  "name": "Nav Links",
+                  "height": 25,
+                  "gap": 40,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "HiJYR",
+                      "name": "navAbout",
+                      "fill": "#FFFFFF",
+                      "content": "Nosotros",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AXMKZ",
+                      "name": "navProjects",
+                      "fill": "#FFFFFF",
+                      "content": "Proyectos",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5EbKN",
+                      "name": "navTeam",
+                      "fill": "#FFFFFF",
+                      "content": "Equipo",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "Hm1dG",
+                      "name": "navSponsors",
+                      "fill": "#FFFFFF",
+                      "content": "Sponsors",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "semibold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AnFvb",
+                      "name": "navContact",
+                      "fill": "#FFFFFF",
+                      "content": "Contacto",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "semibold"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "agSGW",
+              "x": -21,
+              "y": 114,
+              "name": "Hero Content",
+              "width": 1440,
+              "height": 900,
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                0,
+                64
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gMVIt",
+                  "name": "heroHeadline",
+                  "fill": "#FFFFFF",
+                  "content": "Cohetería Beauchef",
+                  "lineHeight": 1,
+                  "fontFamily": "Geist",
+                  "fontSize": 100,
+                  "fontWeight": "bold",
+                  "letterSpacing": -4
+                },
+                {
+                  "type": "text",
+                  "id": "OwhsW",
+                  "name": "heroSubline",
+                  "fill": "#FFFFFFEE",
+                  "content": "Desarrollamos e investigamos tecnología\npara cohetería e ingeniería aeroespacial",
+                  "lineHeight": 1.5,
+                  "fontFamily": "Geist",
+                  "fontSize": 24,
+                  "fontWeight": "normal",
+                  "letterSpacing": -0.5
+                },
+                {
+                  "type": "frame",
+                  "id": "pWJYZ",
+                  "name": "Hero CTAs",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "4zkXb",
+                      "name": "Primary CTA",
+                      "fill": "#FFFFFF",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#FFFFFF40",
+                        "offset": {
+                          "x": 0,
+                          "y": 8
+                        },
+                        "blur": 20
+                      },
+                      "gap": 10,
+                      "padding": [
+                        24,
+                        48
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "0nznT",
+                          "name": "heroPrimaryText",
+                          "fill": "#1025B9",
+                          "content": "Ver Nuestros Proyectos",
+                          "fontFamily": "Geist",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "dKW07",
+                          "name": "heroPrimaryIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1025B9"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Db4ZE",
+                      "name": "Secondary CTA",
+                      "fill": "#FFFFFF15",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#FFFFFF40"
+                      },
+                      "padding": [
+                        24,
+                        48
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "TT36f",
+                          "name": "heroSecondaryText",
+                          "fill": "#FFFFFF",
+                          "content": "Únete al Equipo",
+                          "fontFamily": "Geist",
+                          "fontSize": 18,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "v9NxY",
+          "name": "About Section",
+          "clip": true,
+          "width": "fill_container",
+          "height": 700,
+          "fill": "#FFFFFF",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "7ZWmp",
+              "layoutPosition": "absolute",
+              "x": 270,
+              "y": 100,
+              "name": "Section Header",
+              "width": 900,
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "lUE1j",
+                  "name": "aboutTitle",
+                  "fill": "#1C1C1E",
+                  "content": "Impulsando la ingeniería\naeroespacial desde Chile",
+                  "lineHeight": 1.15,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 64,
+                  "fontWeight": "bold",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "text",
+                  "id": "Wa9ez",
+                  "name": "aboutDesc",
+                  "fill": "#48484A",
+                  "textGrowth": "fixed-width",
+                  "width": 847,
+                  "content": "Formados por estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, desarrollamos e investigamos tecnología para cohetería e ingeniería aeroespacial. En 2025 logramos diseñar, fabricar y validar el primer motor cohete 100% desarrollado por estudiantes.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "a7ir7",
+              "layoutPosition": "absolute",
+              "x": 120,
+              "y": 450,
+              "name": "Stats Row",
+              "width": 1200,
+              "gap": 120,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "B0S83",
+                  "name": "Stat 1",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "yNjgu",
+                      "name": "stat1Num",
+                      "fill": "#2E34E0",
+                      "content": "2023",
+                      "fontFamily": "Geist",
+                      "fontSize": 64,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "1eu0i",
+                      "name": "stat1Label",
+                      "fill": "#8E8E93",
+                      "content": "Año de fundación",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "Aa55y",
+                  "name": "Stat 2",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "u33i1",
+                      "name": "stat2Num",
+                      "fill": "#2E34E0",
+                      "content": "1052N",
+                      "fontFamily": "Geist",
+                      "fontSize": 64,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "dVgLW",
+                      "name": "stat2Label",
+                      "fill": "#8E8E93",
+                      "content": "Empuje máximo alcanzado",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "z0e5n",
+                  "name": "Stat 3",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "20wJX",
+                      "name": "stat3Num",
+                      "fill": "#2E34E0",
+                      "content": "20+",
+                      "fontFamily": "Geist",
+                      "fontSize": 64,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "glibZ",
+                      "name": "stat3Label",
+                      "fill": "#8E8E93",
+                      "content": "Estudiantes activos",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "tlTEt",
+                  "name": "Stat 4",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "WdBaO",
+                      "name": "stat4Num",
+                      "fill": "#2E34E0",
+                      "content": "100%",
+                      "fontFamily": "Geist",
+                      "fontSize": 64,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "B67yI",
+                      "name": "stat4Label",
+                      "fill": "#8E8E93",
+                      "content": "Motor desarrollado por estudiantes",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "SSYWC",
+              "x": 0,
+              "y": 0,
+              "name": "Grid Pattern",
+              "opacity": 0.04,
+              "width": 1440,
+              "height": 800,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "line",
+                  "id": "RP3JV",
+                  "x": 200,
+                  "y": 0,
+                  "name": "line1",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "0OCQd",
+                  "x": 400,
+                  "y": 0,
+                  "name": "line2",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "VtqPR",
+                  "x": 600,
+                  "y": 0,
+                  "name": "line3",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "hC6dD",
+                  "x": 800,
+                  "y": 0,
+                  "name": "line4",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "IYQEp",
+                  "x": 1000,
+                  "y": 0,
+                  "name": "line5",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "7JPdW",
+                  "x": 1200,
+                  "y": 0,
+                  "name": "line6",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "g11Oi",
+                  "x": 0,
+                  "y": 150,
+                  "name": "hLine1",
+                  "width": 1440,
+                  "height": 1,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "LzhS3",
+                  "x": 0,
+                  "y": 350,
+                  "name": "hLine2",
+                  "width": 1440,
+                  "height": 1,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "Fzwjv",
+                  "x": 0,
+                  "y": 550,
+                  "name": "hLine3",
+                  "width": 1440,
+                  "height": 1,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "swUNE",
+          "name": "CTA Section",
+          "width": "fill_container",
+          "fill": "#1025B9",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            140,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "D8Pn0",
+              "name": "CTA Content",
+              "width": 800,
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "6y8sb",
+                  "name": "ctaTitle",
+                  "fill": "#FFFFFF",
+                  "content": "¿Quieres ser parte del equipo?",
+                  "lineHeight": 1.15,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 64,
+                  "fontWeight": "bold",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "text",
+                  "id": "vBSTJ",
+                  "name": "ctaDesc",
+                  "fill": "#FFFFFFCC",
+                  "textGrowth": "fixed-width",
+                  "width": 800,
+                  "content": "Buscamos estudiantes de la FCFM con ganas de aplicar sus conocimientos en proyectos reales de ciencia espacial. No importa tu carrera: mecánica, eléctrica, química, computación... \n¡te queremos en el equipo!",
+                  "lineHeight": 1.7,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "oZ2O7",
+                  "name": "CTA Buttons",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "g73Z5",
+                      "name": "Primary Button",
+                      "fill": "#FFFFFF",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#FFFFFF40",
+                        "offset": {
+                          "x": 0,
+                          "y": 8
+                        },
+                        "blur": 20
+                      },
+                      "gap": 10,
+                      "padding": [
+                        24,
+                        48
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Ofx0h",
+                          "name": "ctaPrimaryText",
+                          "fill": "#1025B9",
+                          "content": "Postula Ahora",
+                          "fontFamily": "Geist",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "jBcuE",
+                          "name": "ctaPrimaryIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1025B9"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "nt1If",
+                      "name": "Secondary Button",
+                      "fill": "#FFFFFF10",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#FFFFFF40"
+                      },
+                      "padding": [
+                        24,
+                        48
+                      ],
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "1QrNW",
+                          "name": "ctaSecondaryText",
+                          "fill": "#FFFFFF",
+                          "content": "Conoce al Equipo",
+                          "fontFamily": "Geist",
+                          "fontSize": 18,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "JySFx",
+          "name": "Instagram Section",
+          "width": "fill_container",
+          "fill": "#F8F9FA",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            100,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "ryXbM",
+              "name": "igHandle",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "JfOdV",
+                  "name": "igIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#E1306C"
+                },
+                {
+                  "type": "text",
+                  "id": "4ApvB",
+                  "name": "igLink",
+                  "fill": "#2E34E0",
+                  "content": "@coheteriabeauchef",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "semibold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YIQsv",
+              "name": "Grid",
+              "width": "fill_container",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "r1mwy",
+                  "name": "Insta Card 1",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "2zjzK",
+                      "name": "Card Text",
+                      "width": "fill_container",
+                      "height": 160,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "EpvAS",
+                          "name": "card1Desc",
+                          "fill": "#48484A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "🚀 ¡Nuevo aliado en el equipo!\nLe damos la bienvenida a @maquintelrobotics quienes se suman como auspiciadores oficiales para este 2026. 🌌 Con su apoyo, nuestro proyecto está cada vez más cerca de despegar.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "bjzQY",
+                          "name": "Stats",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "jxJxd",
+                              "name": "card1Likes",
+                              "fill": "#111118",
+                              "content": "♡ 22",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "3k19v",
+                              "name": "card1Comments",
+                              "fill": "#111118",
+                              "content": "💬 0",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "uGpji",
+                      "name": "Card Image",
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/post_instagram_1.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "pUoSK",
+                  "name": "Insta Card 2",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "L5Eta",
+                      "name": "Card Text",
+                      "width": "fill_container",
+                      "height": 160,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "VWJ3v",
+                          "name": "card2Desc",
+                          "fill": "#48484A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "🚀¡Arrancamos fuerte el año!\nHoy damos la bienvenida a @alutipo.chile que se une como auspiciador de Cohetería Beauchef 🌠",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "aJTYJ",
+                          "name": "Stats",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "00JqG",
+                              "name": "card2Likes",
+                              "fill": "#111118",
+                              "content": "♡ 31",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "HeUub",
+                              "name": "card2Comments",
+                              "fill": "#111118",
+                              "content": "💬 2",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "CtxPw",
+                      "name": "Card Image",
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/post_instagram_2.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "xMZin",
+                  "name": "Insta Card 3",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "liPou",
+                      "name": "Card Text",
+                      "width": "fill_container",
+                      "height": 160,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "en2Rl",
+                          "name": "card3Desc",
+                          "fill": "#48484A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "🚀 ¡Seguimos creciendo!\nHoy damos la bienvenida a @fablabudechile que se une como colaborador de Cohetería Beauchef ",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "t7irD",
+                          "name": "Stats",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "XzstF",
+                              "name": "card3Likes",
+                              "fill": "#111118",
+                              "content": "♡ 27",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "hYGH7",
+                              "name": "card3Comments",
+                              "fill": "#111118",
+                              "content": "💬 0",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "1yOHu",
+                      "name": "Card Image",
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/post_instagram_3.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "dhaX8",
+          "name": "Sponsors Section",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            120,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "pLYwp",
+              "name": "Sponsors Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                0,
+                120
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "aECTv",
+                  "name": "Title",
+                  "fill": "#111118",
+                  "content": "Auspiciadores",
+                  "lineHeight": 1.15,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 64,
+                  "fontWeight": "bold",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "text",
+                  "id": "RtiYQ",
+                  "name": "Description",
+                  "fill": "#48484A",
+                  "textGrowth": "fixed-width",
+                  "width": 600,
+                  "content": "En Cohetería Beauchef agradecemos el apoyo de nuestros auspiciadores.",
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 20,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "bhaVK",
+              "name": "Marquee Wrapper",
+              "clip": true,
+              "width": "fill_container",
+              "height": 120,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "EBwvP",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Marquee Track",
+                  "height": 120,
+                  "gap": 80,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "4NMar",
+                      "name": "fcfm",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/fcfm_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qmNZh",
+                      "name": "mecanica",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "w1mQu",
+                      "name": "electrica",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "di9ij",
+                      "name": "fablab",
+                      "width": 180,
+                      "height": 75,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/fablab_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "YBCLf",
+                      "name": "maquintel",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/maquintel_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "tQKOD",
+                      "name": "alutipo",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/alutipo_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "yUjDb",
+                      "name": "logo1_dup",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/fcfm_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BXuel",
+                      "name": "logo2_dup",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "cXw4a",
+                      "name": "logo3_dup",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "QIPYg",
+                      "name": "logo4_dup",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/fablab_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "No9v3",
+                      "name": "logo5_dup",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/maquintel_logo.png",
+                        "mode": "fit"
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ygj5a",
+                      "name": "logo6_dup",
+                      "width": 200,
+                      "height": 80,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/auspiciadores/alutipo_logo.png",
+                        "mode": "fit"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CnC8q",
+                  "x": 0,
+                  "y": 0,
+                  "name": "Left Fade",
+                  "width": 200,
+                  "height": 120,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 90,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#FFFFFFFF",
+                        "position": 0
+                      },
+                      {
+                        "color": "#FFFFFF00",
+                        "position": 1
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "frame",
+                  "id": "TFN4G",
+                  "x": 1240,
+                  "y": 0,
+                  "name": "Right Fade",
+                  "width": 200,
+                  "height": 120,
+                  "fill": {
+                    "type": "gradient",
+                    "gradientType": "linear",
+                    "enabled": true,
+                    "rotation": 270,
+                    "size": {
+                      "height": 1
+                    },
+                    "colors": [
+                      {
+                        "color": "#FFFFFFFF",
+                        "position": 0
+                      },
+                      {
+                        "color": "#FFFFFF00",
+                        "position": 1
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "DfKpv",
+          "name": "Socials Banner",
+          "width": "fill_container",
+          "height": 120,
+          "children": [
+            {
+              "type": "frame",
+              "id": "EQUSE",
+              "name": "Instagram Link",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#eb1bcdff",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "Owohg",
+                  "name": "igIcon",
+                  "width": 32,
+                  "height": 32,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "3SCeI",
+                  "name": "igText",
+                  "fill": "#FFFFFF",
+                  "content": "INSTAGRAM",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "1F9fd",
+              "name": "Youtube Link",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#E81A1A",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "PMrMl",
+                  "name": "ytIcon",
+                  "width": 32,
+                  "height": 32,
+                  "iconFontName": "youtube",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "vAARg",
+                  "name": "ytText",
+                  "fill": "#FFFFFF",
+                  "content": "YOUTUBE",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "7itf3",
+              "name": "Linkedin Link",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#1D79B3",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "1AdEk",
+                  "name": "liIcon",
+                  "width": 32,
+                  "height": 32,
+                  "iconFontName": "linkedin",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "JQuUW",
+                  "name": "liText",
+                  "fill": "#FFFFFF",
+                  "content": "LINKEDIN",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "D5nOz",
+              "name": "Tiktok Link",
+              "width": "fill_container",
+              "height": "fill_container",
+              "fill": "#000000",
+              "gap": 16,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "qr5c3",
+                  "width": 32,
+                  "height": 32,
+                  "iconFontName": "music",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                },
+                {
+                  "type": "text",
+                  "id": "tpler",
+                  "name": "tkText",
+                  "fill": "#FFFFFF",
+                  "content": "TIKTOK",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "bold",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "QCo2l",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#0A0A0A",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            100,
+            120
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "HVxII",
+              "name": "Footer Main",
+              "width": "fill_container",
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "6JPXB",
+                  "name": "Footer Brand",
+                  "width": 350,
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Vh3rB",
+                      "name": "Logo Group",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "uo5vB",
+                          "name": "Logo",
+                          "width": 40,
+                          "height": 40,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/logo_borderless_adjusted.png",
+                            "mode": "fill"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "1zAON",
+                          "name": "footerLogoText",
+                          "fill": "#FFFFFF",
+                          "content": "COHETERÍA BEAUCHEF",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "tkwRl",
+                      "name": "footerTagline",
+                      "fill": "#FFFFFF99",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Equipo de cohetería experimental de la FCFM, Universidad de Chile. Desarrollamos tecnología aeroespacial desde 2023.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k8FJg",
+                      "name": "Social Links",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "HO8t7",
+                          "name": "Instagram",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#FFFFFF10",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "AmLwd",
+                              "name": "socialIgIcon",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "instagram",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "n0769",
+                          "name": "LinkedIn",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#FFFFFF10",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "hSJHc",
+                              "name": "socialLiIcon",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "linkedin",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "m6fCt",
+                          "name": "YouTube",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#FFFFFF10",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "MdgM1",
+                              "name": "socialYtIcon",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "youtube",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "8fDxX",
+                  "name": "Footer Links",
+                  "gap": 80,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "auape",
+                      "name": "Links Column 1",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "KZHJM",
+                          "name": "linksCol1Title",
+                          "fill": "#FFFFFF",
+                          "content": "Navegación",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "semibold",
+                          "letterSpacing": 0.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "UTzsT",
+                          "name": "linksCol1Link1",
+                          "fill": "#FFFFFF99",
+                          "content": "Nosotros",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "nbThv",
+                          "name": "linksCol1Link2",
+                          "fill": "#FFFFFF99",
+                          "content": "Proyectos",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "caF38",
+                          "name": "linksCol1Link3",
+                          "fill": "#FFFFFF99",
+                          "content": "Equipo",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "syCFb",
+                          "name": "linksCol1Link4",
+                          "fill": "#FFFFFF99",
+                          "content": "Sponsors",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "k15R3",
+                      "name": "Links Column 2",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "vCyTC",
+                          "name": "linksCol2Title",
+                          "fill": "#FFFFFF",
+                          "content": "Recursos",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "semibold",
+                          "letterSpacing": 0.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "lLPey",
+                          "name": "linksCol2Link1",
+                          "fill": "#FFFFFF99",
+                          "content": "Blog",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "jltX8",
+                          "name": "linksCol2Link2",
+                          "fill": "#FFFFFF99",
+                          "content": "Galería",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "tRb85",
+                          "name": "linksCol2Link3",
+                          "fill": "#FFFFFF99",
+                          "content": "Documentación",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "E2cEm",
+                          "name": "linksCol2Link4",
+                          "fill": "#FFFFFF99",
+                          "content": "FAQ",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "BGzDw",
+                      "name": "Links Column 3",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "MJiTr",
+                          "name": "linksCol3Title",
+                          "fill": "#FFFFFF",
+                          "content": "Contacto",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "semibold",
+                          "letterSpacing": 0.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "dXjGj",
+                          "name": "linksCol3Link1",
+                          "fill": "#FFFFFF99",
+                          "content": "coheteriabeauchef@gmail.com",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "YSVcu",
+                          "name": "linksCol3Link2",
+                          "fill": "#FFFFFF99",
+                          "content": "Beauchef 851, Santiago, Chile",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "Oww1X",
+              "name": "Footer Bottom",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": 1,
+                "fill": "#FFFFFF15"
+              },
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "C05HL",
+                  "name": "footerCopy",
+                  "fill": "#FFFFFF66",
+                  "content": "© 2026 Cohetería Beauchef.",
+                  "fontFamily": "Geist",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "yEirG",
+      "x": -490,
+      "y": 0,
+      "name": "Landing Page Mobile",
+      "width": 390,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "L4kHD",
+          "name": "Hero Section",
+          "clip": true,
+          "width": "fill_container",
+          "height": 900,
+          "fill": "#0A0A0A",
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "0j354",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Background",
+              "opacity": 0.85,
+              "width": 390,
+              "height": 900,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./public/main_image.JPG",
+                "mode": "fill"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "wGwqk",
+              "x": 0,
+              "y": 0,
+              "name": "Hero Overlay",
+              "width": 390,
+              "height": 900,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "opacity": 0.45,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#0A0A0AE6",
+                    "position": 0
+                  },
+                  {
+                    "color": "#1025B9E6",
+                    "position": 1
+                  },
+                  {
+                    "color": "#1024b0e6",
+                    "position": 0.75
+                  }
+                ]
+              }
+            },
+            {
+              "type": "frame",
+              "id": "2jOWN",
+              "layoutPosition": "absolute",
+              "x": 0,
+              "y": 0,
+              "name": "Navbar",
+              "width": 390,
+              "height": 80,
+              "padding": [
+                0,
+                24
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "lystt",
+                  "name": "Logo Container",
+                  "height": 50,
+                  "gap": 12,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "JGt2E",
+                      "name": "Logo",
+                      "width": 44,
+                      "height": 44,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/logo_borderless_adjusted.png",
+                        "mode": "fill"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "id": "gOqeL",
+                      "name": "logoText",
+                      "fill": "#FFFFFF",
+                      "content": "COHETERÍA BEAUCHEF",
+                      "fontFamily": "Geist",
+                      "fontSize": 20,
+                      "fontWeight": "bold",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "icon_font",
+                  "id": "fnVcf",
+                  "name": "menuIcon",
+                  "width": 24,
+                  "height": 24,
+                  "iconFontName": "menu",
+                  "iconFontFamily": "lucide",
+                  "fill": "#FFFFFF"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "DqgL9",
+              "x": 0,
+              "y": 115,
+              "name": "Hero Content",
+              "width": 390,
+              "height": 900,
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                0,
+                24
+              ],
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "gJGHk",
+                  "name": "heroHeadline",
+                  "fill": "#FFFFFF",
+                  "content": "Cohetería Beauchef",
+                  "lineHeight": 1.1,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 40,
+                  "fontWeight": "bold",
+                  "letterSpacing": -4
+                },
+                {
+                  "type": "text",
+                  "id": "76k2i",
+                  "name": "heroSubline",
+                  "fill": "#FFFFFFEE",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Desarrollamos e investigamos tecnología\npara cohetería e ingeniería aeroespacial",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "normal",
+                  "letterSpacing": -0.5
+                },
+                {
+                  "type": "frame",
+                  "id": "cCSbf",
+                  "name": "Hero CTAs",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "9igI4",
+                      "name": "Primary CTA",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#FFFFFF40",
+                        "offset": {
+                          "x": 0,
+                          "y": 8
+                        },
+                        "blur": 20
+                      },
+                      "gap": 10,
+                      "padding": [
+                        16,
+                        24
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "7Kdc8",
+                          "name": "heroPrimaryText",
+                          "fill": "#1025B9",
+                          "content": "Ver Nuestros Proyectos",
+                          "fontFamily": "Geist",
+                          "fontSize": 18,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "GH4tM",
+                          "name": "heroPrimaryIcon",
+                          "width": 20,
+                          "height": 20,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1025B9"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "15r7O",
+                      "name": "Secondary CTA",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF15",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#FFFFFF40"
+                      },
+                      "padding": [
+                        16,
+                        24
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2tExx",
+                          "name": "heroSecondaryText",
+                          "fill": "#FFFFFF",
+                          "content": "Únete al Equipo",
+                          "fontFamily": "Geist",
+                          "fontSize": 18,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "uG0gV",
+          "name": "About Section",
+          "clip": true,
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            64,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "wkWM4",
+              "name": "Section Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "FFV9Y",
+                  "name": "aboutTitle",
+                  "fill": "#1C1C1E",
+                  "content": "Impulsando la ingeniería\naeroespacial desde Chile",
+                  "lineHeight": 1.15,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 28,
+                  "fontWeight": "bold",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "text",
+                  "id": "HYslE",
+                  "name": "aboutDesc",
+                  "fill": "#48484A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Formados por estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile, desarrollamos e investigamos tecnología para cohetería e ingeniería aeroespacial. En 2025 logramos diseñar, fabricar y validar el primer motor cohete 100% desarrollado por estudiantes.",
+                  "lineHeight": 1.6,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "13Yxk",
+              "name": "Stats Row",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "justifyContent": "center",
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "7SaEd",
+                  "name": "Stat 1",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "md45w",
+                      "name": "stat1Num",
+                      "fill": "#2E34E0",
+                      "content": "2023",
+                      "fontFamily": "Geist",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "cwRpx",
+                      "name": "stat1Label",
+                      "fill": "#8E8E93",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Año de fundación",
+                      "textAlign": "center",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "omgAA",
+                  "name": "Stat 2",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "PCzed",
+                      "name": "stat2Num",
+                      "fill": "#2E34E0",
+                      "content": "1052N",
+                      "fontFamily": "Geist",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "YwWgk",
+                      "name": "stat2Label",
+                      "fill": "#8E8E93",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Empuje máximo alcanzado",
+                      "textAlign": "center",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "frLs4",
+                  "name": "Stat 3",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "GdYNC",
+                      "name": "stat3Num",
+                      "fill": "#2E34E0",
+                      "content": "20+",
+                      "fontFamily": "Geist",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "AomK9",
+                      "name": "stat3Label",
+                      "fill": "#8E8E93",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Estudiantes activos",
+                      "textAlign": "center",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "IEE9o",
+                  "name": "Stat 4",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "qk7U7",
+                      "name": "stat4Num",
+                      "fill": "#2E34E0",
+                      "content": "100%",
+                      "fontFamily": "Geist",
+                      "fontSize": 48,
+                      "fontWeight": "bold"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tzuA3",
+                      "name": "stat4Label",
+                      "fill": "#8E8E93",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Motor desarrollado por estudiantes",
+                      "textAlign": "center",
+                      "fontFamily": "Geist",
+                      "fontSize": 16,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "zf9Xe",
+              "layoutPosition": "absolute",
+              "x": 24,
+              "y": 976,
+              "name": "Grid Pattern",
+              "opacity": 0.04,
+              "width": 390,
+              "height": 800,
+              "layout": "none",
+              "children": [
+                {
+                  "type": "line",
+                  "id": "OAbnf",
+                  "x": 200,
+                  "y": 0,
+                  "name": "line1",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "LsB5S",
+                  "x": 400,
+                  "y": 0,
+                  "name": "line2",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "aS6Rg",
+                  "x": 600,
+                  "y": 0,
+                  "name": "line3",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "loBHu",
+                  "x": 800,
+                  "y": 0,
+                  "name": "line4",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "EVTgQ",
+                  "x": 1000,
+                  "y": 0,
+                  "name": "line5",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "AWuUp",
+                  "x": 1200,
+                  "y": 0,
+                  "name": "line6",
+                  "width": 1,
+                  "height": 800,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "WQdne",
+                  "x": 0,
+                  "y": 150,
+                  "name": "hLine1",
+                  "width": 1440,
+                  "height": 1,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "DsW8N",
+                  "x": 0,
+                  "y": 350,
+                  "name": "hLine2",
+                  "width": 1440,
+                  "height": 1,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                },
+                {
+                  "type": "line",
+                  "id": "jDIwL",
+                  "x": 0,
+                  "y": 550,
+                  "name": "hLine3",
+                  "width": 1440,
+                  "height": 1,
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#2E34E0"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "vgPv9",
+          "name": "CTA Section",
+          "width": "fill_container",
+          "fill": "#1025B9",
+          "layout": "vertical",
+          "gap": 32,
+          "padding": [
+            64,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "MWISC",
+              "name": "CTA Content",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "0cAal",
+                  "name": "ctaTitle",
+                  "fill": "#FFFFFF",
+                  "content": "¿Quieres ser parte \ndel equipo?",
+                  "lineHeight": 1.15,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 32,
+                  "fontWeight": "bold",
+                  "letterSpacing": -1
+                },
+                {
+                  "type": "text",
+                  "id": "QIk8r",
+                  "name": "ctaDesc",
+                  "fill": "#FFFFFFCC",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "Buscamos estudiantes de la FCFM con ganas de aplicar sus conocimientos en proyectos reales de ciencia espacial. No importa tu carrera: mecánica, eléctrica, química, computación...\n¡te queremos en el equipo!",
+                  "lineHeight": 1.5,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "frame",
+                  "id": "WZBFX",
+                  "name": "CTA Buttons",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 16,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "3UBMn",
+                      "name": "Primary Button",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF",
+                      "effect": {
+                        "type": "shadow",
+                        "shadowType": "outer",
+                        "color": "#FFFFFF40",
+                        "offset": {
+                          "x": 0,
+                          "y": 4
+                        },
+                        "blur": 15
+                      },
+                      "gap": 10,
+                      "padding": [
+                        16,
+                        24
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "ViRk5",
+                          "name": "ctaPrimaryText",
+                          "fill": "#1025B9",
+                          "content": "Postula Ahora",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "icon_font",
+                          "id": "vhTSI",
+                          "name": "ctaPrimaryIcon",
+                          "width": 18,
+                          "height": 18,
+                          "iconFontName": "arrow-right",
+                          "iconFontFamily": "lucide",
+                          "fill": "#1025B9"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "MBF73",
+                      "name": "Secondary Button",
+                      "width": "fill_container",
+                      "fill": "#FFFFFF10",
+                      "stroke": {
+                        "thickness": 1,
+                        "fill": "#FFFFFF40"
+                      },
+                      "padding": [
+                        16,
+                        24
+                      ],
+                      "justifyContent": "center",
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "z0rpr",
+                          "name": "ctaSecondaryText",
+                          "fill": "#FFFFFF",
+                          "content": "Conoce al Equipo",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "semibold"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "FHn7e",
+          "name": "Instagram Section",
+          "width": "fill_container",
+          "fill": "#F8F9FA",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            64,
+            24
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "Zigym",
+              "name": "igHandle",
+              "gap": 8,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "icon_font",
+                  "id": "qjKJA",
+                  "name": "igIcon",
+                  "width": 20,
+                  "height": 20,
+                  "iconFontName": "instagram",
+                  "iconFontFamily": "lucide",
+                  "fill": "#E1306C"
+                },
+                {
+                  "type": "text",
+                  "id": "9eYlF",
+                  "name": "igLink",
+                  "fill": "#2E34E0",
+                  "content": "@coheteriabeauchef",
+                  "fontFamily": "Geist",
+                  "fontSize": 18,
+                  "fontWeight": "semibold"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "JEpAs",
+              "name": "Grid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "QvTlv",
+                  "name": "Insta Card 1",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "ypSwv",
+                      "name": "Card Text",
+                      "width": "fill_container",
+                      "height": 160,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "2S2bS",
+                          "name": "card1Desc",
+                          "fill": "#48484A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "🚀 ¡Nuevo aliado en el equipo!\nLe damos la bienvenida a @maquintelrobotics quienes se suman como auspiciadores oficiales para este 2026. 🌌 Con su apoyo, nuestro proyecto está cada vez más cerca de despegar.",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oKDUE",
+                          "name": "Stats",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "nI4SK",
+                              "name": "card1Likes",
+                              "fill": "#111118",
+                              "content": "♡ 22",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Rn8We",
+                              "name": "card1Comments",
+                              "fill": "#111118",
+                              "content": "💬 0",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "EaBG2",
+                      "name": "Card Image",
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/post_instagram_1.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "0cUjt",
+                  "name": "Insta Card 2",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "81bYV",
+                      "name": "Card Text",
+                      "width": "fill_container",
+                      "height": 160,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "30kQz",
+                          "name": "card2Desc",
+                          "fill": "#48484A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "🚀¡Arrancamos fuerte el año!\nHoy damos la bienvenida a @alutipo.chile que se une como auspiciador de Cohetería Beauchef 🌠",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "Uut8e",
+                          "name": "Stats",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rgzZx",
+                              "name": "card2Likes",
+                              "fill": "#111118",
+                              "content": "♡ 31",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "HPed6",
+                              "name": "card2Comments",
+                              "fill": "#111118",
+                              "content": "💬 2",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "OuXnR",
+                      "name": "Card Image",
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/post_instagram_2.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "m6Y0Y",
+                  "name": "Insta Card 3",
+                  "clip": true,
+                  "width": "fill_container",
+                  "fill": "#FFFFFF",
+                  "stroke": {
+                    "thickness": 1,
+                    "fill": "#E5E7EB"
+                  },
+                  "layout": "vertical",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "jZBxR",
+                      "name": "Card Text",
+                      "width": "fill_container",
+                      "height": 160,
+                      "layout": "vertical",
+                      "gap": 12,
+                      "padding": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "FZz84",
+                          "name": "card3Desc",
+                          "fill": "#48484A",
+                          "textGrowth": "fixed-width",
+                          "width": "fill_container",
+                          "content": "🚀 ¡Seguimos creciendo!\nHoy damos la bienvenida a @fablabudechile que se une como colaborador de Cohetería Beauchef ",
+                          "lineHeight": 1.6,
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "frame",
+                          "id": "8tLKe",
+                          "name": "Stats",
+                          "gap": 16,
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "rAfJW",
+                              "name": "card3Likes",
+                              "fill": "#111118",
+                              "content": "♡ 27",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "sVDiA",
+                              "name": "card3Comments",
+                              "fill": "#111118",
+                              "content": "💬 0",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "RUBL6",
+                      "name": "Card Image",
+                      "width": "fill_container",
+                      "height": 320,
+                      "fill": {
+                        "type": "image",
+                        "enabled": true,
+                        "url": "./public/post_instagram_3.jpg",
+                        "mode": "fill"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "UlPFL",
+          "name": "Sponsors Section",
+          "width": "fill_container",
+          "fill": "#FFFFFF",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            64,
+            0
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "FfRDm",
+              "name": "Sponsors Header",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 24,
+              "padding": [
+                0,
+                24
+              ],
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "wjSYz",
+                  "name": "Title",
+                  "fill": "#111118",
+                  "content": "Auspiciadores",
+                  "lineHeight": 1.15,
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 32,
+                  "fontWeight": "bold",
+                  "letterSpacing": -2
+                },
+                {
+                  "type": "text",
+                  "id": "40kp3",
+                  "name": "Description",
+                  "fill": "#48484A",
+                  "textGrowth": "fixed-width",
+                  "width": "fill_container",
+                  "content": "En Cohetería Beauchef agradecemos el apoyo de nuestros auspiciadores.",
+                  "textAlign": "center",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "dt9Gg",
+              "name": "Carousels",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 32,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "Cm0jz",
+                  "name": "Wrapper 1",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 60,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "Bko2V",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Track 1",
+                      "height": 60,
+                      "gap": 40,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nVuIU",
+                          "name": "fcfm",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/fcfm_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "SRScB",
+                          "name": "mecanica",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "61zAQ",
+                          "name": "fcfm_dup",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/fcfm_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "UxG6i",
+                          "name": "mecanica_dup",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "AT0dZ",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Left Fade",
+                      "width": 40,
+                      "height": 60,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 90,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFFFFFFF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#FFFFFF00",
+                            "position": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "hRD83",
+                      "x": 350,
+                      "y": 0,
+                      "name": "Right Fade",
+                      "width": 40,
+                      "height": 60,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 270,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFFFFFFF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#FFFFFF00",
+                            "position": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "6ysM6",
+                  "name": "Wrapper 2",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 60,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "vO9nw",
+                      "x": -50,
+                      "y": 0,
+                      "name": "Track 2",
+                      "height": 60,
+                      "gap": 40,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "nDXdb",
+                          "name": "electrica",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "ft6Mc",
+                          "name": "fablab",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/fablab_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "oYDb5",
+                          "name": "electrica_dup",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "pG1qP",
+                          "name": "fablab_dup",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/fablab_logo.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "0Iio6",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Left Fade",
+                      "width": 40,
+                      "height": 60,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 90,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFFFFFFF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#FFFFFF00",
+                            "position": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "pMPts",
+                      "x": 350,
+                      "y": 0,
+                      "name": "Right Fade",
+                      "width": 40,
+                      "height": 60,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 270,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFFFFFFF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#FFFFFF00",
+                            "position": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "qaTMC",
+                  "name": "Wrapper 3",
+                  "clip": true,
+                  "width": "fill_container",
+                  "height": 60,
+                  "layout": "none",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "lVUbf",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Track 3",
+                      "height": 60,
+                      "gap": 40,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "1UseR",
+                          "name": "maquintel",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/maquintel_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "QoJe8",
+                          "name": "alutipo",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/alutipo_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "3UN7Q",
+                          "name": "maquintel_dup",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/maquintel_logo.png",
+                            "mode": "fit"
+                          }
+                        },
+                        {
+                          "type": "frame",
+                          "id": "nFBtU",
+                          "name": "alutipo_dup",
+                          "width": 140,
+                          "height": 50,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/auspiciadores/alutipo_logo.png",
+                            "mode": "fit"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "66en2",
+                      "x": 0,
+                      "y": 0,
+                      "name": "Left Fade",
+                      "width": 40,
+                      "height": 60,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 90,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFFFFFFF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#FFFFFF00",
+                            "position": 1
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "type": "frame",
+                      "id": "7uuES",
+                      "x": 350,
+                      "y": 0,
+                      "name": "Right Fade",
+                      "width": 40,
+                      "height": 60,
+                      "fill": {
+                        "type": "gradient",
+                        "gradientType": "linear",
+                        "enabled": true,
+                        "rotation": 270,
+                        "size": {
+                          "height": 1
+                        },
+                        "colors": [
+                          {
+                            "color": "#FFFFFFFF",
+                            "position": 0
+                          },
+                          {
+                            "color": "#FFFFFF00",
+                            "position": 1
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "9RFB4",
+          "name": "Socials Banner",
+          "width": "fill_container",
+          "layout": "vertical",
+          "children": [
+            {
+              "type": "frame",
+              "id": "IQCO0",
+              "name": "row1",
+              "width": "fill_container",
+              "height": 80,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "KaW3o",
+                  "name": "Instagram Link",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#eb1bcdff",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "eMv0F",
+                      "name": "igIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "instagram",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "6txTJ",
+                      "name": "igText",
+                      "fill": "#FFFFFF",
+                      "content": "INSTAGRAM",
+                      "fontFamily": "Geist",
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "XZKns",
+                  "name": "Youtube Link",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#E81A1A",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "LvE2X",
+                      "name": "ytIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "youtube",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "928Ba",
+                      "name": "ytText",
+                      "fill": "#FFFFFF",
+                      "content": "YOUTUBE",
+                      "fontFamily": "Geist",
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "hnZoY",
+              "name": "row2",
+              "width": "fill_container",
+              "height": 80,
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "GXees",
+                  "name": "Linkedin Link",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#1D79B3",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "9r0t1",
+                      "name": "liIcon",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "linkedin",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "nggKU",
+                      "name": "liText",
+                      "fill": "#FFFFFF",
+                      "content": "LINKEDIN",
+                      "fontFamily": "Geist",
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "J4LMI",
+                  "name": "Tiktok Link",
+                  "width": "fill_container",
+                  "height": "fill_container",
+                  "fill": "#000000",
+                  "layout": "vertical",
+                  "gap": 8,
+                  "justifyContent": "center",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "icon_font",
+                      "id": "8ILix",
+                      "width": 24,
+                      "height": 24,
+                      "iconFontName": "music",
+                      "iconFontFamily": "lucide",
+                      "fill": "#FFFFFF"
+                    },
+                    {
+                      "type": "text",
+                      "id": "jeHI3",
+                      "name": "tkText",
+                      "fill": "#FFFFFF",
+                      "content": "TIKTOK",
+                      "fontFamily": "Geist",
+                      "fontSize": 14,
+                      "fontWeight": "bold",
+                      "letterSpacing": 2
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "jCOLB",
+          "name": "Footer",
+          "width": "fill_container",
+          "fill": "#0A0A0A",
+          "layout": "vertical",
+          "gap": 48,
+          "padding": [
+            64,
+            24
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "w8UWU",
+              "name": "Footer Main",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 48,
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "5GDPy",
+                  "name": "Footer Brand",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 20,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "YLn0R",
+                      "name": "Logo Group",
+                      "gap": 12,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "PWFDk",
+                          "name": "Logo",
+                          "width": 40,
+                          "height": 40,
+                          "fill": {
+                            "type": "image",
+                            "enabled": true,
+                            "url": "./public/logo_borderless_adjusted.png",
+                            "mode": "fill"
+                          }
+                        },
+                        {
+                          "type": "text",
+                          "id": "2YJRU",
+                          "name": "footerLogoText",
+                          "fill": "#FFFFFF",
+                          "content": "COHETERÍA BEAUCHEF",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "bold",
+                          "letterSpacing": 2
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "id": "W9Ghj",
+                      "name": "footerTagline",
+                      "fill": "#FFFFFF99",
+                      "textGrowth": "fixed-width",
+                      "width": "fill_container",
+                      "content": "Equipo de cohetería experimental de la FCFM, Universidad de Chile. Desarrollamos tecnología aeroespacial desde 2023.",
+                      "lineHeight": 1.6,
+                      "fontFamily": "Geist",
+                      "fontSize": 14,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "frame",
+                      "id": "irHMk",
+                      "name": "Social Links",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "p3nZZ",
+                          "name": "Instagram",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#FFFFFF10",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "gNDW8",
+                              "name": "socialIgIcon",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "instagram",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "A7QSp",
+                          "name": "LinkedIn",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#FFFFFF10",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "x6TQt",
+                              "name": "socialLiIcon",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "linkedin",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "qGqzY",
+                          "name": "YouTube",
+                          "width": 36,
+                          "height": 36,
+                          "fill": "#FFFFFF10",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "K285w",
+                              "name": "socialYtIcon",
+                              "width": 18,
+                              "height": 18,
+                              "iconFontName": "youtube",
+                              "iconFontFamily": "lucide",
+                              "fill": "#FFFFFF"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "kyY8X",
+                  "name": "Footer Links",
+                  "layout": "vertical",
+                  "gap": 40,
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "RMu65",
+                      "name": "linksRow1",
+                      "width": "fill_container",
+                      "gap": 32,
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "xaFTf",
+                          "name": "Links Column 1",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "TucxG",
+                              "name": "linksCol1Title",
+                              "fill": "#FFFFFF",
+                              "content": "Navegación",
+                              "fontFamily": "Geist",
+                              "fontSize": 16,
+                              "fontWeight": "semibold",
+                              "letterSpacing": 0.5
+                            },
+                            {
+                              "type": "text",
+                              "id": "PZJLV",
+                              "name": "linksCol1Link1",
+                              "fill": "#FFFFFF99",
+                              "content": "Nosotros",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "BQdKa",
+                              "name": "linksCol1Link2",
+                              "fill": "#FFFFFF99",
+                              "content": "Proyectos",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "phOzz",
+                              "name": "linksCol1Link3",
+                              "fill": "#FFFFFF99",
+                              "content": "Equipo",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "fq1iX",
+                              "name": "linksCol1Link4",
+                              "fill": "#FFFFFF99",
+                              "content": "Sponsors",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "frame",
+                          "id": "E2o7E",
+                          "name": "Links Column 2",
+                          "width": "fill_container",
+                          "layout": "vertical",
+                          "gap": 16,
+                          "children": [
+                            {
+                              "type": "text",
+                              "id": "EX4jP",
+                              "name": "linksCol2Title",
+                              "fill": "#FFFFFF",
+                              "content": "Recursos",
+                              "fontFamily": "Geist",
+                              "fontSize": 16,
+                              "fontWeight": "semibold",
+                              "letterSpacing": 0.5
+                            },
+                            {
+                              "type": "text",
+                              "id": "ZYT3A",
+                              "name": "linksCol2Link1",
+                              "fill": "#FFFFFF99",
+                              "content": "Blog",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "Isz64",
+                              "name": "linksCol2Link2",
+                              "fill": "#FFFFFF99",
+                              "content": "Galería",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "ejcvO",
+                              "name": "linksCol2Link3",
+                              "fill": "#FFFFFF99",
+                              "content": "Documentación",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            },
+                            {
+                              "type": "text",
+                              "id": "UPykj",
+                              "name": "linksCol2Link4",
+                              "fill": "#FFFFFF99",
+                              "content": "FAQ",
+                              "fontFamily": "Geist",
+                              "fontSize": 14,
+                              "fontWeight": "normal"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "qY8wC",
+                      "name": "Links Column 3",
+                      "layout": "vertical",
+                      "gap": 16,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "Qi6CH",
+                          "name": "linksCol3Title",
+                          "fill": "#FFFFFF",
+                          "content": "Contacto",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "semibold",
+                          "letterSpacing": 0.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "yAkSl",
+                          "name": "linksCol3Link1",
+                          "fill": "#FFFFFF99",
+                          "content": "coheteriabeauchef@gmail.com",
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "text",
+                          "id": "aRwTP",
+                          "name": "linksCol3Link2",
+                          "fill": "#FFFFFF99",
+                          "content": "Beauchef 851, Santiago, Chile",
+                          "fontFamily": "Geist",
+                          "fontSize": 14,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6JfSk",
+              "name": "topLine",
+              "width": "fill_container",
+              "height": 1,
+              "fill": "#FFFFFF15"
+            },
+            {
+              "type": "frame",
+              "id": "u6hMN",
+              "name": "Footer Bottom",
+              "width": "fill_container",
+              "stroke": {
+                "thickness": 0,
+                "fill": "#FFFFFF00"
+              },
+              "layout": "vertical",
+              "gap": 16,
+              "padding": [
+                24,
+                0,
+                0,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "qDC66",
+                  "name": "footerCopy",
+                  "fill": "#FFFFFF66",
+                  "content": "© 2026 Cohetería Beauchef.",
+                  "fontFamily": "Geist",
+                  "fontSize": 13,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "a3GXY",
+      "x": 1648,
+      "y": 0,
+      "name": "Equipo Page",
+      "width": 1440,
+      "fill": "#FFFFFF",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "9KUBi",
+          "name": "equipoNavbar",
+          "width": 1440,
+          "height": 80,
+          "fill": "#FFFFFF",
+          "stroke": {
+            "thickness": {
+              "bottom": 1
+            },
+            "fill": "#E5E7EB"
+          },
+          "padding": [
+            0,
+            64
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "frame",
+              "id": "WypLz",
+              "name": "Logo Container",
+              "height": 50,
+              "gap": 12,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "vsXkf",
+                  "name": "Logo",
+                  "width": 44,
+                  "height": 44,
+                  "fill": {
+                    "type": "image",
+                    "enabled": true,
+                    "url": "./public/logo_borderless_adjusted.png",
+                    "mode": "fill"
+                  }
+                },
+                {
+                  "type": "text",
+                  "id": "y4JhR",
+                  "name": "logoText",
+                  "fill": "#1025B9",
+                  "content": "COHETERÍA BEAUCHEF",
+                  "fontFamily": "Geist",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "6D3Qa",
+              "name": "Nav Links",
+              "height": 25,
+              "gap": 40,
+              "justifyContent": "center",
+              "children": [
+                {
+                  "type": "text",
+                  "id": "oyFqQ",
+                  "name": "navAbout",
+                  "fill": "#111118",
+                  "content": "Nosotros",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "id": "YvmFg",
+                  "name": "navProjects",
+                  "fill": "#111118",
+                  "content": "Proyectos",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "id": "Z1Hc8",
+                  "name": "navTeam",
+                  "fill": "#1025B9",
+                  "content": "Equipo",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "id": "JdQmt",
+                  "name": "navSponsors",
+                  "fill": "#111118",
+                  "content": "Sponsors",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "semibold"
+                },
+                {
+                  "type": "text",
+                  "id": "eoriX",
+                  "name": "navContact",
+                  "fill": "#111118",
+                  "content": "Contacto",
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "semibold"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "BCKVd",
+          "name": "Content",
+          "width": "fill_container",
+          "layout": "vertical",
+          "gap": 64,
+          "padding": [
+            64,
+            120
+          ],
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "g7Nq0",
+              "name": "Title",
+              "fill": "#1025B9",
+              "content": "Nuestro Equipo",
+              "fontFamily": "Geist",
+              "fontSize": 64,
+              "fontWeight": "bold",
+              "letterSpacing": -2
+            },
+            {
+              "type": "text",
+              "id": "FMlQW",
+              "name": "Description",
+              "fill": "#48484A",
+              "textGrowth": "fixed-width",
+              "width": 800,
+              "content": "Conoce a los estudiantes que hacen posible el sueño aeroespacial.",
+              "textAlign": "center",
+              "fontFamily": "Geist",
+              "fontSize": 20,
+              "fontWeight": "normal"
+            },
+            {
+              "type": "frame",
+              "id": "i1qHn",
+              "name": "Grid",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 48,
+              "alignItems": "center",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "J3xPB",
+                  "name": "Row 1",
+                  "gap": 32,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "SeeEI",
+                      "name": "Member 1",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "iuUgO",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "hungngng",
+                            "link": "https://unsplash.com/@hungngng",
+                            "author": "Hưng Nguyễn"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "rNeOU",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "INix0",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "John Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "kTRii",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "mTezX",
+                      "name": "Member 2",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "gOxV6",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "_kano_",
+                            "link": "https://unsplash.com/@_kano_",
+                            "author": "Anastasia Pivnenko"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "etnOv",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "It1TC",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "Jane Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "C1rgi",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "6Q5IU",
+                      "name": "Member 3",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "NzJUH",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "fethibenattallah",
+                            "link": "https://unsplash.com/@fethibenattallah",
+                            "author": "Fethi Benattallah"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "4TX8s",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "txElg",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "John Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "6aFP0",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "rM08V",
+                  "name": "Row 2",
+                  "gap": 32,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "zN6Gr",
+                      "name": "Member 4",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "JcY0G",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "kianmousazadeh",
+                            "link": "https://unsplash.com/@kianmousazadeh",
+                            "author": "Kian Mousazadeh"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "JYTRD",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "8hZO3",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "John Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "T75Fx",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "kVx3c",
+                      "name": "Member 5",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "aVyD9",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "ruhalo",
+                            "link": "https://unsplash.com/@ruhalo",
+                            "author": "Lida R"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "C18rN",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "w1EqO",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "Jane Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "RErgV",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "Ll0rl",
+                      "name": "Member 6",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "4nv3r",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "skyerickson",
+                            "link": "https://unsplash.com/@skyerickson",
+                            "author": "Sky Erickson"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "O6RTn",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "EZwQI",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "John Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "xDuVN",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "CwTOQ",
+                  "name": "Row 3",
+                  "gap": 32,
+                  "justifyContent": "center",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "q69pI",
+                      "name": "Member 7",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "DEEh2",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "7th_verse",
+                            "link": "https://unsplash.com/@7th_verse",
+                            "author": "Sayan Ghosh"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "21Dt1",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "vAyKC",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "John Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "l57oj",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "4FWsQ",
+                      "name": "Member 8",
+                      "width": 250,
+                      "layout": "vertical",
+                      "gap": 16,
+                      "alignItems": "center",
+                      "children": [
+                        {
+                          "type": "frame",
+                          "id": "XRvZw",
+                          "name": "Photo",
+                          "metadata": {
+                            "type": "unsplash",
+                            "username": "shadowseas",
+                            "link": "https://unsplash.com/@shadowseas",
+                            "author": "Xennie Moore"
+                          },
+                          "clip": true,
+                          "width": 200,
+                          "height": 200,
+                          "fill": "#E5E7EB",
+                          "cornerRadius": 100,
+                          "layout": "vertical",
+                          "justifyContent": "center",
+                          "alignItems": "center",
+                          "children": [
+                            {
+                              "type": "icon_font",
+                              "id": "fSMyn",
+                              "width": 80,
+                              "height": 80,
+                              "iconFontName": "user",
+                              "iconFontFamily": "lucide",
+                              "fill": "#9CA3AF"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "id": "mPJLQ",
+                          "name": "Name",
+                          "fill": "#1C1C1E",
+                          "content": "Jane Doe",
+                          "fontFamily": "Geist",
+                          "fontSize": 20,
+                          "fontWeight": "bold"
+                        },
+                        {
+                          "type": "text",
+                          "id": "qnmtR",
+                          "name": "Role",
+                          "fill": "#48484A",
+                          "content": "Rol / Posición",
+                          "fontFamily": "Geist",
+                          "fontSize": 16,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "black": {
+      "type": "color",
+      "value": "#000000"
+    },
+    "blue-dark": {
+      "type": "color",
+      "value": "#1025B9"
+    },
+    "blue-intense": {
+      "type": "color",
+      "value": "#2833E0"
+    },
+    "blue-medium": {
+      "type": "color",
+      "value": "#4939E0"
+    },
+    "blue-primary": {
+      "type": "color",
+      "value": "#2E34E0"
+    },
+    "blue-violet": {
+      "type": "color",
+      "value": "#6F42DF"
+    },
+    "gray-100": {
+      "type": "color",
+      "value": "#F5F5F7"
+    },
+    "gray-200": {
+      "type": "color",
+      "value": "#E5E5E7"
+    },
+    "gray-300": {
+      "type": "color",
+      "value": "#D1D1D6"
+    },
+    "gray-500": {
+      "type": "color",
+      "value": "#8E8E93"
+    },
+    "gray-700": {
+      "type": "color",
+      "value": "#48484A"
+    },
+    "gray-900": {
+      "type": "color",
+      "value": "#1C1C1E"
+    },
+    "white": {
+      "type": "color",
+      "value": "#FFFFFF"
+    }
+  }
+}

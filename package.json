@@ -1,0 +1,29 @@
+{
+  "name": "coheteria-beauchef-landing",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "tsgo": "tsgo",
+    "check-types": "astro check",
+    "check-types:native": "tsgo --noEmit",
+    "check": "oxlint && oxfmt --write ."
+  },
+  "dependencies": {
+    "@fontsource-variable/geist": "^5.2.8",
+    "astro": "^6.0.1"
+  },
+  "devDependencies": {
+    "@typescript/native-preview": "^7.0.0-dev.20260328.1",
+    "@astrojs/check": "^0.9.8",
+    "@tailwindcss/vite": "^4.1.18",
+    "oxfmt": "^0.26.0",
+    "oxlint": "^1.41.0",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.30.2"
+}
