@@ -3,7 +3,7 @@ import { socialLinks } from "../../data/home";
 import SocialLinkCard from "./SocialLinkCard.astro";
 ---
 
-<section class="w-full h-[120px] flex flex-col md:flex-row">
+<section class="w-full h-[120px] flex flex-col md:flex-row fade-in-up" style="transition-delay: 150ms;">
   {
     socialLinks.map((link) => (
       <SocialLinkCard

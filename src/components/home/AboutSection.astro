@@ -8,7 +8,7 @@ const horizontalLines = [150, 350, 550];
 
 <section
   id="nosotros"
-  class="relative w-full h-[700px] bg-white overflow-hidden flex flex-col items-center pt-[100px] scroll-mt-24"
+  class="relative w-full overflow-hidden bg-white scroll-mt-24"
 >
   <div class="absolute inset-0 opacity-[0.04] pointer-events-none" aria-hidden="true">
     {
@@ -23,19 +23,21 @@ const horizontalLines = [150, 350, 550];
     }
   </div>
 
-  <div class="w-full max-w-[900px] flex flex-col items-center gap-4 z-10 px-4">
-    <h2 class="text-[#1C1C1E] font-bold text-6xl leading-[1.15] tracking-[-2px] text-center">
-      Impulsando la ingeniería<br />aeroespacial desde Chile
-    </h2>
-    <p class="text-[#48484A] font-normal text-xl leading-relaxed text-center w-full max-w-[847px]">
-      Formados por estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la
-      Universidad de Chile, desarrollamos e investigamos tecnología para cohetería e
-      ingeniería aeroespacial. En 2025 logramos diseñar, fabricar y validar el primer motor
-      cohete 100% desarrollado por estudiantes.
-    </p>
-  </div>
+  <div class="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-center px-5 pt-20 pb-16 sm:px-6 sm:pt-24 sm:pb-20 lg:px-8 lg:pt-[100px] lg:pb-24">
+    <div class="flex w-full max-w-[900px] flex-col items-center gap-5 sm:gap-6">
+      <h2 class="fade-in-up text-center text-[3.35rem] leading-[0.98] font-bold tracking-[-0.08em] text-[#1C1C1E] text-balance sm:text-6xl sm:leading-[1.02] lg:leading-[1.15]">
+        Impulsando la ingeniería aeroespacial desde Chile
+      </h2>
+      <p class="fade-in-up w-full max-w-[847px] text-center text-lg leading-[1.75] font-normal text-[#48484A] sm:text-xl sm:leading-relaxed" style="transition-delay: 150ms;">
+        Formados por estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la
+        Universidad de Chile, desarrollamos e investigamos tecnología para cohetería e
+        ingeniería aeroespacial. En 2025 logramos diseñar, fabricar y validar el primer motor
+        cohete 100% desarrollado por estudiantes.
+      </p>
+    </div>
 
-  <div class="absolute top-[450px] w-full max-w-[1200px] flex justify-center items-center gap-10 lg:gap-[120px] z-10 px-4">
-    {homeStats.map((stat) => <StatItem value={stat.value} label={stat.label} />)}
+    <div class="fade-in-up mt-12 grid w-full max-w-[980px] grid-cols-2 gap-x-6 gap-y-8 sm:mt-14 sm:gap-x-8 lg:mt-20 lg:grid-cols-4 lg:gap-x-12 xl:gap-x-16" style="transition-delay: 150ms;">
+      {homeStats.map((stat) => <StatItem value={stat.value} label={stat.label} />)}
+    </div>
   </div>
 </section>
