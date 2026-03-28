@@ -20,5 +20,11 @@ const { excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
       <span class="text-[#111118] font-normal text-sm">💬 {comments}</span>
     </div>
   </div>
-  <img src={imageSrc} alt={imageAlt} class="w-full h-[320px] object-cover" />
+  <div class="relative aspect-square w-full overflow-hidden md:aspect-[4/5]">
+    <img
+      src={imageSrc}
+      alt={imageAlt}
+      class="absolute inset-0 h-full w-full scale-[1.08] object-cover object-center md:scale-100"
+    />
+  </div>
 </article>
