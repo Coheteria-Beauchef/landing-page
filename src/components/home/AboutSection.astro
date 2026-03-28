@@ -1,0 +1,41 @@
+---
+import { homeStats } from "../../data/home";
+import StatItem from "./StatItem.astro";
+
+const verticalLines = [200, 400, 600, 800, 1000, 1200];
+const horizontalLines = [150, 350, 550];
+---
+
+<section
+  id="nosotros"
+  class="relative w-full h-[700px] bg-white overflow-hidden flex flex-col items-center pt-[100px] scroll-mt-24"
+>
+  <div class="absolute inset-0 opacity-[0.04] pointer-events-none" aria-hidden="true">
+    {
+      verticalLines.map((left) => (
+        <div class="absolute top-0 w-px h-[800px] bg-[#2E34E0]" style={`left: ${left}px;`}></div>
+      ))
+    }
+    {
+      horizontalLines.map((top) => (
+        <div class="absolute left-0 w-full h-px bg-[#2E34E0]" style={`top: ${top}px;`}></div>
+      ))
+    }
+  </div>
+
+  <div class="w-full max-w-[900px] flex flex-col items-center gap-4 z-10 px-4">
+    <h2 class="text-[#1C1C1E] font-bold text-6xl leading-[1.15] tracking-[-2px] text-center">
+      Impulsando la ingeniería<br />aeroespacial desde Chile
+    </h2>
+    <p class="text-[#48484A] font-normal text-xl leading-relaxed text-center w-full max-w-[847px]">
+      Formados por estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la
+      Universidad de Chile, desarrollamos e investigamos tecnología para cohetería e
+      ingeniería aeroespacial. En 2025 logramos diseñar, fabricar y validar el primer motor
+      cohete 100% desarrollado por estudiantes.
+    </p>
+  </div>
+
+  <div class="absolute top-[450px] w-full max-w-[1200px] flex justify-center items-center gap-10 lg:gap-[120px] z-10 px-4">
+    {homeStats.map((stat) => <StatItem value={stat.value} label={stat.label} />)}
+  </div>
+</section>

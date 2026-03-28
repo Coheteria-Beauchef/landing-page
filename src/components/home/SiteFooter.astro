@@ -1,0 +1,51 @@
+---
+import { footerNavigationLinks } from "../../data/home";
+import Brand from "./Brand.astro";
+import NavLinks from "./NavLinks.astro";
+---
+
+<footer id="contacto" class="w-full bg-[#0A0A0A] py-[100px] px-8 lg:px-[120px] flex flex-col gap-12 scroll-mt-24">
+  <div class="w-full flex flex-col lg:flex-row justify-between gap-12">
+    <div class="w-full lg:w-[350px] flex flex-col gap-5">
+      <Brand logoClass="w-10 h-10 object-fill" textClass="text-white font-bold text-lg tracking-[2px]" />
+      <p class="text-white/60 font-normal text-base leading-relaxed">
+        Impulsando el desarrollo de la ingeniería aeroespacial en Chile a través del talento
+        estudiantil.
+      </p>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-12 sm:gap-[120px]">
+      <div class="flex flex-col gap-6">
+        <h3 class="text-white font-semibold text-lg">Navegación</h3>
+        <NavLinks
+          links={footerNavigationLinks}
+          className="flex flex-col gap-4"
+          linkClass="text-white/60 hover:text-white transition-colors font-normal text-base"
+        />
+      </div>
+
+      <div class="flex flex-col gap-6">
+        <h3 class="text-white font-semibold text-lg">Contacto</h3>
+        <div class="flex flex-col gap-4">
+          <a
+            href="mailto:contacto@coheteriabeauchef.cl"
+            class="text-white/60 hover:text-white transition-colors font-normal text-base"
+          >
+            contacto@coheteriabeauchef.cl
+          </a>
+          <p class="text-white/60 font-normal text-base">Beauchef 851, Santiago</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-full h-px bg-white/10"></div>
+
+  <div class="w-full flex flex-col sm:flex-row justify-between items-center gap-4">
+    <span class="text-white/40 font-normal text-sm text-center">
+      © 2026 Cohetería Beauchef.
+    </span>
+    <span class="text-white/40 font-normal text-sm text-center">
+    </span>
+  </div>
+</footer>

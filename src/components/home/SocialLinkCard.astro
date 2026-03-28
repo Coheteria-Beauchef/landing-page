@@ -1,0 +1,31 @@
+---
+import type { SocialPlatform } from "../../data/home";
+import SocialIcon from "./SocialIcon.astro";
+
+interface Props {
+  href: string;
+  label: string;
+  platform: SocialPlatform;
+  bgClass: string;
+  hoverBgClass: string;
+  hoverTextClass?: string;
+}
+
+const { href, label, platform, bgClass, hoverBgClass, hoverTextClass = "" } = Astro.props as Props;
+const isExternal = href.startsWith("http://") || href.startsWith("https://");
+---
+
+<a
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noreferrer" : undefined}
+  class:list={[
+    "flex-1 h-full flex justify-center items-center gap-4 py-4 md:py-0 text-white transition-[background-color,color,transform] duration-300 ease-out",
+    bgClass,
+    hoverBgClass,
+    hoverTextClass,
+  ]}
+>
+  <SocialIcon platform={platform} size={30} className="transition-colors duration-300" />
+  <span class="font-bold text-lg tracking-[2px] transition-colors duration-300">{label}</span>
+</a>

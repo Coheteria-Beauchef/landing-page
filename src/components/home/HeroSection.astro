@@ -1,0 +1,136 @@
+---
+import { headerNavigationLinks } from "../../data/home";
+import ActionButton from "./ActionButton.astro";
+import Brand from "./Brand.astro";
+import NavLinks from "./NavLinks.astro";
+---
+
+<section class="relative w-full h-svh min-h-[720px] bg-[#0A0A0A] overflow-hidden">
+  <picture>
+    <source srcset="/main_image.webp" type="image/webp" />
+    <img
+      src="/main_image.JPG"
+      alt="Equipo de Cohetería Beauchef"
+      width="2200"
+      height="1650"
+      loading="eager"
+      decoding="sync"
+      fetchpriority="high"
+      class="absolute inset-0 h-full w-full object-cover object-[center_18%] opacity-85"
+    />
+  </picture>
+
+  <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#1024b0e6] to-[#1025B9E6] opacity-45"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,rgb(10_10_10_/_0.18)_55%,rgb(10_10_10_/_0.56)_100%)]"></div>
+
+  <nav
+    data-home-nav
+    class="site-nav animate-nav-in fixed inset-x-0 top-0 z-30 flex h-20 items-center justify-between px-6 md:px-10 lg:px-16 transition-all duration-300 ease-out"
+  >
+    <Brand
+      className="relative z-10"
+      logoClass="w-11 h-11 object-contain shrink-0"
+      textClass="home-brand-text text-white font-bold text-base sm:text-lg lg:text-xl tracking-[2px] transition-colors duration-300"
+    />
+    <NavLinks
+      links={headerNavigationLinks}
+      className="hidden md:flex items-center gap-6 lg:gap-10"
+      linkClass="home-nav-link text-white font-semibold text-base transition-colors duration-300"
+    />
+  </nav>
+
+  <div class="absolute inset-0 z-10 flex flex-col items-center justify-end gap-6 px-6 pb-14 pt-24 text-center md:px-10 lg:items-start lg:px-16 lg:pb-20 lg:text-left">
+    <h1 class="animate-hero-in [animation-delay:140ms] max-w-5xl text-white font-bold text-5xl sm:text-7xl lg:text-[84px] leading-none tracking-[-2px] lg:tracking-[-3px] [animation-fill-mode:both]">
+      Cohetería Beauchef
+    </h1>
+    <p class="animate-hero-in [animation-delay:260ms] max-w-3xl text-[#FFFFFFEE] font-normal text-lg sm:text-xl lg:text-2xl leading-relaxed tracking-[-0.5px] [animation-fill-mode:both]">
+      Desarrollamos e investigamos tecnología<br />
+      para cohetería e ingeniería aeroespacial
+    </p>
+    <div class="animate-hero-in [animation-delay:380ms] mt-4 flex flex-col items-center gap-4 sm:flex-row lg:items-start [animation-fill-mode:both]">
+      <ActionButton href="#proyectos" label="Ver Nuestros Proyectos" />
+      <ActionButton href="/equipo" label="Únete al Equipo" variant="secondary" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .site-nav {
+    background: transparent;
+  }
+
+  .site-nav.is-scrolled {
+    height: 4.5rem;
+    background: linear-gradient(180deg, rgb(16 37 185 / 0.94), rgb(27 58 199 / 0.92));
+    border-bottom: 1px solid rgb(255 255 255 / 0.12);
+    box-shadow: 0 18px 48px rgb(16 37 185 / 0.28);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .site-nav .home-brand-text,
+  .site-nav .home-nav-link {
+    color: white;
+  }
+
+  .site-nav .home-nav-link:hover {
+    color: rgb(226 232 240);
+  }
+
+  .site-nav.is-scrolled .home-nav-link:hover {
+    color: rgb(191 219 254);
+  }
+
+  @keyframes nav-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-18px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes hero-in {
+    0% {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-nav-in {
+    animation: nav-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-hero-in {
+    animation: hero-in 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-nav-in,
+    .animate-hero-in {
+      animation: none;
+    }
+  }
+</style>
+
+<script is:inline>
+  const nav = document.querySelector("[data-home-nav]");
+
+  if (nav && nav instanceof HTMLElement && nav.dataset.scrollBound !== "true") {
+    const updateNavState = () => {
+      nav.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+
+    nav.dataset.scrollBound = "true";
+    updateNavState();
+    window.addEventListener("scroll", updateNavState, { passive: true });
+  }
+</script>

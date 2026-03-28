@@ -1,0 +1,43 @@
+---
+import ArrowIcon from "./ArrowIcon.astro";
+
+interface Props {
+  href: string;
+  label: string;
+  variant?: "primary" | "secondary";
+  className?: string;
+}
+
+const {
+  href,
+  label,
+  variant = "primary",
+  className = "",
+} = Astro.props as Props;
+
+const isPrimary = variant === "primary";
+const isExternal = href.startsWith("http://") || href.startsWith("https://");
+---
+
+<a
+  href={href}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noreferrer" : undefined}
+  class:list={[
+    "flex items-center px-12 py-6 rounded-sm transition-colors",
+    isPrimary
+      ? "gap-2.5 bg-white shadow-[0_8px_20px_#FFFFFF40] hover:bg-gray-50"
+      : "border border-white/40 bg-white/10 hover:bg-white/20",
+    className,
+  ]}
+>
+  <span
+    class:list={[
+      "text-lg",
+      isPrimary ? "font-bold text-[#1025B9]" : "font-semibold text-white",
+    ]}
+  >
+    {label}
+  </span>
+  {isPrimary && <ArrowIcon />}
+</a>

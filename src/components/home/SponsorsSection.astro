@@ -1,0 +1,52 @@
+---
+import { sponsorLogos } from "../../data/home";
+
+const marqueeLogos = [...sponsorLogos, ...sponsorLogos];
+---
+
+<section
+  id="sponsors"
+  class="w-full bg-white pt-[120px] pb-[120px] flex flex-col items-center gap-16 overflow-hidden scroll-mt-24"
+>
+  <div class="w-full flex flex-col items-center gap-6 px-8 lg:px-[120px]">
+    <h2 class="text-[#111118] font-bold text-4xl lg:text-6xl leading-[1.15] tracking-[-2px] text-center">
+      Auspiciadores
+    </h2>
+    <p class="text-[#48484A] font-normal text-xl text-center w-full max-w-[600px]">
+      En Cohetería Beauchef agradecemos el apoyo de nuestros auspiciadores.
+    </p>
+  </div>
+
+  <div class="relative w-full h-[120px] overflow-hidden max-w-[1440px] mx-auto">
+    <div class="flex items-center h-full gap-20 px-10 animate-marquee whitespace-nowrap w-max">
+      {
+        marqueeLogos.map((logo) => (
+          <img
+            src={logo.src}
+            alt={logo.alt}
+            class:list={[logo.heightClass ?? "h-20", "w-auto object-contain shrink-0"]}
+          />
+        ))
+      }
+    </div>
+
+    <div class="absolute left-0 top-0 w-[100px] lg:w-[200px] h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+    <div class="absolute right-0 top-0 w-[100px] lg:w-[200px] h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+</style>

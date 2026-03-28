@@ -1,0 +1,37 @@
+---
+import { instagramPosts } from "../../data/home";
+import { socialProfiles } from "../../data/home";
+import InstagramCard from "./InstagramCard.astro";
+import SocialIcon from "./SocialIcon.astro";
+---
+
+<section
+  id="proyectos"
+  class="w-full bg-[#F8F9FA] py-[100px] px-8 lg:px-[120px] flex flex-col items-center gap-12 scroll-mt-24"
+>
+  <div class="flex items-center gap-2">
+    <SocialIcon platform="instagram" size={20} className="text-[#E1306C]" />
+    <a
+      href={socialProfiles.instagram}
+      target="_blank"
+      rel="noreferrer"
+      class="text-[#2E34E0] font-semibold text-lg hover:underline"
+    >
+      @coheteriabeauchef
+    </a>
+  </div>
+
+  <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    {
+      instagramPosts.map((post) => (
+        <InstagramCard
+          excerpt={post.excerpt}
+          likes={post.likes}
+          comments={post.comments}
+          imageSrc={post.imageSrc}
+          imageAlt={post.imageAlt}
+        />
+      ))
+    }
+  </div>
+</section>
