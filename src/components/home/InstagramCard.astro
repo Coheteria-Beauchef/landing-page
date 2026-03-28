@@ -1,0 +1,24 @@
+---
+interface Props {
+  excerpt: string;
+  likes: number;
+  comments: number;
+  imageSrc: string;
+  imageAlt: string;
+}
+
+const { excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
+---
+
+<article class="w-full bg-white border border-[#E5E7EB] rounded-sm overflow-hidden flex flex-col">
+  <div class="p-5 flex flex-col gap-3 h-[160px]">
+    <p class="text-[#48484A] font-normal text-sm leading-relaxed line-clamp-4 whitespace-pre-line">
+      {excerpt}
+    </p>
+    <div class="flex items-center gap-4 mt-auto">
+      <span class="text-[#111118] font-normal text-sm">♡ {likes}</span>
+      <span class="text-[#111118] font-normal text-sm">💬 {comments}</span>
+    </div>
+  </div>
+  <img src={imageSrc} alt={imageAlt} class="w-full h-[320px] object-cover" />
+</article>

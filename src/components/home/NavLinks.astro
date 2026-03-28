@@ -1,0 +1,25 @@
+---
+import type { NavigationLink } from "../../data/home";
+
+interface Props {
+  links: NavigationLink[];
+  className?: string;
+  linkClass?: string;
+}
+
+const {
+  links,
+  className = "flex items-center gap-10",
+  linkClass = "text-white font-semibold text-base hover:text-gray-300 transition-colors",
+} = Astro.props as Props;
+---
+
+<div class={className}>
+  {
+    links.map((link) => (
+      <a href={link.href} class={linkClass}>
+        {link.label}
+      </a>
+    ))
+  }
+</div>

@@ -1,0 +1,21 @@
+---
+import { joinTeamFormUrl } from "../../data/home";
+import ActionButton from "./ActionButton.astro";
+---
+
+<section class="w-full bg-[#1025B9] py-[140px] px-8 lg:px-[120px] flex flex-col items-center gap-8">
+  <div class="w-full max-w-[800px] flex flex-col items-center gap-6">
+    <h2 class="text-white font-bold text-4xl lg:text-6xl leading-[1.15] tracking-[-2px] text-center">
+      ¿Quieres ser parte del equipo?
+    </h2>
+    <p class="text-white/80 font-normal text-lg leading-relaxed text-center w-full">
+      Buscamos estudiantes de la FCFM con ganas de aplicar sus conocimientos en proyectos
+      reales de ciencia espacial. No importa tu carrera: mecánica, eléctrica, química,
+      computación... <br />¡te queremos en el equipo!
+    </p>
+    <div class="flex flex-col sm:flex-row items-center gap-4 mt-2">
+      <ActionButton href={joinTeamFormUrl} label="Postula Ahora" />
+      <ActionButton href="/equipo" label="Conoce al Equipo" variant="secondary" />
+    </div>
+  </div>
+</section>

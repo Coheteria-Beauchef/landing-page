@@ -1,0 +1,18 @@
+---
+interface Props {
+  className?: string;
+  logoClass?: string;
+  textClass?: string;
+}
+
+const {
+  className = "",
+  logoClass = "w-11 h-11 object-fill",
+  textClass = "text-white font-bold text-xl tracking-[2px]",
+} = Astro.props as Props;
+---
+
+<div class:list={["flex items-center gap-3", className]}>
+  <img src="/coheteriabeauchef_borderless_logo.png" alt="Logo Cohetería Beauchef" class={logoClass} />
+  <span class={textClass}>COHETERÍA BEAUCHEF</span>
+</div>
