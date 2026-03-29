@@ -1,28 +1,12 @@
 ---
 import { homeStats } from "../../data/home";
 import StatItem from "./StatItem.astro";
-
-const verticalLines = [200, 400, 600, 800, 1000, 1200];
-const horizontalLines = [150, 350, 550];
 ---
 
 <section
   id="nosotros"
   class="relative w-full overflow-hidden bg-white scroll-mt-24"
 >
-  <div class="absolute inset-0 opacity-[0.04] pointer-events-none" aria-hidden="true">
-    {
-      verticalLines.map((left) => (
-        <div class="absolute top-0 w-px h-[800px] bg-[#2E34E0]" style={`left: ${left}px;`}></div>
-      ))
-    }
-    {
-      horizontalLines.map((top) => (
-        <div class="absolute left-0 w-full h-px bg-[#2E34E0]" style={`top: ${top}px;`}></div>
-      ))
-    }
-  </div>
-
   <div class="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-center px-5 pt-20 pb-16 sm:px-6 sm:pt-24 sm:pb-20 lg:px-8 lg:pt-[100px] lg:pb-24">
     <div class="flex w-full max-w-[900px] flex-col items-center gap-5 sm:gap-6">
       <h2 class="fade-in-up text-center text-[3.35rem] leading-[0.98] font-bold tracking-[-0.08em] text-[#1C1C1E] text-balance sm:text-6xl sm:leading-[1.02] lg:leading-[1.15]">

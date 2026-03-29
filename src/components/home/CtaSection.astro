@@ -3,11 +3,84 @@ import { joinTeamFormUrl } from "../../data/home";
 import ActionButton from "./ActionButton.astro";
 ---
 
-<section class="fade-in-up relative w-full overflow-hidden bg-[#1025B9] px-8 py-[140px] lg:px-[120px]">
+<section
+  class="fade-in-up cta-section relative w-full overflow-hidden bg-[#1025B9] px-8 py-[140px] lg:px-[120px]"
+  data-cta-section
+>
+  <svg
+    class="cta-flight pointer-events-none absolute inset-0 z-0 h-full w-full overflow-visible"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    data-cta-flight
+  >
+    <defs>
+      <linearGradient id="cta-trail-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+        <stop offset="38%" stop-color="#ffffff" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4" />
+      </linearGradient>
+      <filter id="cta-glow-filter" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="4" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <path
+      class="cta-flight__guide"
+      fill="none"
+      stroke="url(#cta-trail-gradient)"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-dasharray="10 14"
+      opacity="0.35"
+      data-cta-path
+    />
+
+    <g class="cta-flight__impact" opacity="0" data-cta-impact>
+      <circle
+        r="18"
+        fill="none"
+        stroke="rgba(255,255,255,0.55)"
+        stroke-width="1.5"
+        data-cta-impact-ring
+      />
+      <circle r="10" fill="rgba(255,255,255,0.22)" filter="url(#cta-glow-filter)" />
+      <g data-cta-sparks>
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-12, -24) scale(1.2) rotate(-15)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(0, -16) scale(0.8) rotate(15)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(12, 0) scale(1) rotate(45)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-8, 16) scale(0.6) rotate(20)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-16, 24) scale(0.9) rotate(-10)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-32, 12) scale(0.7) rotate(30)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-36, -4) scale(1.1) rotate(60)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-28, -16) scale(0.8) rotate(10)" />
+      </g>
+    </g>
+
+    <g class="cta-flight__rocket" opacity="0" data-cta-rocket>
+      <g filter="url(#cta-glow-filter)">
+        <path
+          d="M0 -28 C10 -26 18 -14 18 0 C18 13 10 25 0 34 C-10 25 -18 13 -18 0 C-18 -14 -10 -26 0 -28Z"
+          fill="#ffffff"
+        />
+        <circle cx="0" cy="1" r="6" fill="#1b47ff" opacity="1" />
+        <path d="M-14 10 L-25 22 L-7 17Z" fill="#ffffff" />
+        <path d="M14 10 L25 22 L7 17Z" fill="#ffffff" />
+        <path d="M0 34 C7 30 10 24 10 18 C14 24 14 34 0 44 C-14 34 -14 24 -10 18 C-10 24 -7 30 0 34Z" fill="#ff7e00" opacity="1" />
+      </g>
+    </g>
+  </svg>
+
   <div class="relative z-10 mx-auto flex w-full max-w-[800px] flex-col items-center gap-6">
-    <h2 class="fade-in-up text-center text-4xl leading-[1.15] tracking-[-2px] text-white lg:text-6xl">
-      ¿Quieres ser parte del equipo?
-    </h2>
+    <div class="relative w-full">
+      <h2 class="fade-in-up relative z-10 text-center text-4xl leading-[1.15] tracking-[-2px] text-white lg:text-6xl">
+        ¿Quieres ser parte del equipo?
+      </h2>
+    </div>
     <p
       class="fade-in-up w-full text-center text-lg leading-relaxed text-white/80"
       style="transition-delay: 150ms;"
@@ -20,8 +93,335 @@ import ActionButton from "./ActionButton.astro";
       class="fade-in-up mt-4 flex flex-col items-center gap-4 sm:flex-row"
       style="transition-delay: 300ms;"
     >
-      <ActionButton href={joinTeamFormUrl} label="Postula Ahora" />
+      <div class="cta-primary-wrap relative" data-cta-button-wrap>
+        <ActionButton
+          href={joinTeamFormUrl}
+          label="Postula Ahora"
+          className="cta-primary-button relative z-10"
+        />
+      </div>
       <ActionButton href="/equipo" label="Conoce al Equipo" variant="secondary" />
     </div>
   </div>
 </section>
+
+<style>
+  .cta-flight {
+    overflow: visible;
+  }
+
+  .cta-flight__guide {
+    vector-effect: non-scaling-stroke;
+  }
+
+  .cta-primary-wrap::after {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border-radius: 10px;
+    background:
+      radial-gradient(circle at 18% 50%, rgb(255 255 255 / 0.6), transparent 34%),
+      radial-gradient(circle at center, rgb(255 255 255 / 0.2), transparent 70%);
+    opacity: calc(var(--cta-hit-glow, 0) * 0.9);
+    transform: scale(calc(0.88 + (var(--cta-hit-glow, 0) * 0.18)));
+    filter: blur(10px);
+    pointer-events: none;
+  }
+
+  :global(.cta-primary-button) {
+    background: #1b47ff;
+    box-shadow: 0 10px 28px rgb(6 22 114 / 0.35);
+  }
+
+  :global(.cta-primary-button:hover) {
+    background: #2953ff;
+  }
+
+  :global(.cta-primary-button span) {
+    color: #ffffff;
+  }
+
+  :global(.cta-primary-button svg) {
+    color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-flight {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+  gsap.registerPlugin(MotionPathPlugin);
+
+  const SECTION_SELECTOR = "[data-cta-section]";
+
+  const buildFlightPath = (
+    width: number,
+    height: number,
+    impactX: number,
+    impactY: number
+  ) => {
+    const startX = width + 40;
+    const startY = height * 0.15; // Un poco más abajo para que no se corte
+    
+    // Curva superior más proporcional al tamaño
+    const topCtrl1X = width * 0.6;
+    const topCtrl1Y = height * 0.05; 
+    const topCtrl2X = width * 0.2;
+    const topCtrl2Y = height * 0.05;
+    
+    // El punto medio del giro por la izquierda, centrado entre el inicio y el final
+    const leftMidX = width * 0.05;
+    const leftMidY = (startY + impactY) / 2;
+
+    // Curva de entrada al botón mucho más ajustada, sin bajar en exceso
+    const uTurnCtrl1X = -width * 0.08; 
+    const uTurnCtrl1Y = impactY + (height * 0.05); // Baja solo un poquitito para la sensación de gancho
+    const uTurnCtrl2X = impactX - width * 0.15;
+    const uTurnCtrl2Y = impactY;
+
+    return [
+      `M ${startX} ${startY}`,
+      `C ${topCtrl1X} ${topCtrl1Y}, ${topCtrl2X} ${topCtrl2Y}, ${leftMidX} ${leftMidY}`,
+      `C ${uTurnCtrl1X} ${uTurnCtrl1Y}, ${uTurnCtrl2X} ${uTurnCtrl2Y}, ${impactX} ${impactY}`,
+    ].join(" ");
+  };
+
+  const initCtaAnimation = (section: HTMLElement) => {
+    if (section.dataset.ctaAnimated === "true") return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduceMotion.matches) {
+      section.dataset.ctaAnimated = "true";
+      return;
+    }
+
+    const svg = section.querySelector("[data-cta-flight]");
+    const path = section.querySelector("[data-cta-path]");
+    const rocket = section.querySelector("[data-cta-rocket]");
+    const impact = section.querySelector("[data-cta-impact]");
+    const impactRing = section.querySelector("[data-cta-impact-ring]");
+    const sparks = section.querySelectorAll("[data-cta-sparks] path");
+    const buttonWrap = section.querySelector("[data-cta-button-wrap]");
+    const button = buttonWrap?.querySelector("a");
+
+    if (!(svg instanceof SVGSVGElement) || !(path instanceof SVGPathElement) || !(rocket instanceof SVGGElement) || !(impact instanceof SVGGElement) || !(impactRing instanceof SVGCircleElement) || !(buttonWrap instanceof HTMLElement) || !(button instanceof HTMLElement)) {
+      return;
+    }
+
+    const buttonSpan = button.querySelector("span");
+    const buttonSvg = button.querySelector("svg");
+
+    const sectionRect = section.getBoundingClientRect();
+    const buttonRect = button.getBoundingClientRect();
+
+    const width = Math.max(sectionRect.width, 320);
+    const height = Math.max(sectionRect.height, 320);
+    
+    const rocketScale = width < 640 ? 0.58 : 0.72;
+    const rocketTipOffset = 28 * rocketScale;
+    
+    const impactX = buttonRect.left - sectionRect.left - rocketTipOffset + 20;
+    const impactY = buttonRect.top - sectionRect.top + buttonRect.height * 0.25;
+    
+    const pathData = buildFlightPath(width, height, impactX, impactY);
+
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    path.setAttribute("d", pathData);
+    impact.setAttribute("transform", `translate(${impactX + rocketTipOffset} ${impactY})`);
+
+    const trailLength = path.getTotalLength();
+    const ringCircumference = 2 * Math.PI * Number(impactRing.getAttribute("r") ?? "18");
+
+    gsap.set(path, {
+      strokeDasharray: `${trailLength * 0.26} ${trailLength * 0.74}`,
+      strokeDashoffset: trailLength * 0.88,
+      opacity: 0,
+    });
+    gsap.set(rocket, {
+      xPercent: -50,
+      yPercent: -50,
+      scale: width < 640 ? 0.58 : 0.72,
+      transformOrigin: "50% 50%",
+      opacity: 1,
+    });
+    gsap.set(impact, { opacity: 0, scale: 0.6, transformOrigin: "50% 50%" });
+    gsap.set(impactRing, {
+      strokeDasharray: ringCircumference,
+      strokeDashoffset: ringCircumference,
+      opacity: 0.8,
+      transformOrigin: "50% 50%",
+    });
+    gsap.set(sparks, {
+      opacity: 0,
+      scale: 0.35,
+      transformOrigin: "50% 50%",
+    });
+    gsap.set(buttonWrap, { "--cta-hit-glow": 0 });
+
+    const timeline = gsap.timeline({
+      defaults: { ease: "power2.out" },
+      onComplete: () => {
+        section.dataset.ctaAnimated = "true";
+      },
+    });
+
+    timeline
+      .to(path, {
+        opacity: 0.42,
+        duration: 0.22,
+      })
+      .to(
+        path,
+        {
+          strokeDashoffset: 0,
+          duration: 4.5, // 2s más rápido
+          ease: "power1.inOut",
+        },
+        0
+      )
+      .to(
+        rocket,
+        {
+          duration: 4.5, // 2s más rápido
+          ease: "power1.inOut",
+          motionPath: {
+            path,
+            align: path,
+            alignOrigin: [0.5, 0.5],
+            autoRotate: 90,
+          },
+        },
+        0
+      )
+      .to(
+        button,
+        {
+          scale: 1.035,
+          backgroundColor: "#ffffff",
+          boxShadow: "0 0 0 1px rgba(255,255,255,0.2), 0 0 28px rgba(255,255,255,0.42), 0 16px 42px rgba(255,255,255,0.22)",
+          duration: 0.28,
+          ease: "power2.out",
+        },
+        4.45
+      )
+      .to(
+        [buttonSpan, buttonSvg],
+        {
+          color: "#1025B9",
+          duration: 0.28,
+          ease: "power2.out",
+        },
+        4.45
+      )
+      .fromTo(
+        buttonWrap,
+        {
+          "--cta-hit-glow": 0,
+        },
+        {
+          "--cta-hit-glow": 1,
+          duration: 0.28,
+          ease: "power2.out",
+        },
+        4.45
+      )
+      .to(
+        impact,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.08,
+          ease: "power3.out",
+        },
+        4.45
+      )
+      .to(
+        impactRing,
+        {
+          strokeDashoffset: 0,
+          scale: 1.9,
+          opacity: 0,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        4.45
+      )
+      .to(
+        sparks,
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.12,
+          stagger: 0.015,
+        },
+        4.45
+      )
+      .to(
+        sparks,
+        {
+          opacity: 0,
+          scale: 1.5,
+          duration: 0.36,
+          stagger: 0.018,
+          ease: "power2.in",
+        },
+        4.57
+      )
+      .to(
+        rocket,
+        {
+          opacity: 0,
+          scale: "+=0.06",
+          duration: 0.1,
+          ease: "power1.out",
+        },
+        4.48
+      )
+      .to(
+        path,
+        {
+          opacity: 0.16,
+          duration: 0.45,
+          ease: "power1.out",
+        },
+        4.5
+      );
+  };
+
+  const setupCtaObserver = () => {
+    const sections = document.querySelectorAll(SECTION_SELECTOR);
+
+    sections.forEach((section) => {
+      if (!(section instanceof HTMLElement) || section.dataset.ctaObserverAttached === "true") return;
+
+      section.dataset.ctaObserverAttached = "true";
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            initCtaAnimation(section);
+            observer.unobserve(entry.target);
+          });
+        },
+        {
+          threshold: 0.35,
+        }
+      );
+
+      observer.observe(section);
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupCtaObserver, { once: true });
+  } else {
+    setupCtaObserver();
+  }
+</script>

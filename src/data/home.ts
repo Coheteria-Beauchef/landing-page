@@ -68,7 +68,7 @@ export const homeStats: StatItem[] = [
 export const instagramPosts: InstagramPost[] = [
   {
     excerpt:
-      "🚀 ¡Nuevo aliado en el equipo!\nLe damos la bienvenida a @maquintelrobotics quienes se suman como auspiciadores oficiales para este 2026. 🌌 Con su apoyo, nuestro proyecto está cada vez más cerca de despegar.",
+      "🚀 ¡Nuevo aliado en el equipo!\nLe damos la bienvenida a @maquintelrobotics quienes se suman como auspiciadores oficiales para este 2026. 🌌 Con su apoyo, nuestro proyecto está cada vez más cerca de despegar...",
     likes: 22,
     comments: 0,
     imageSrc: "/post_instagram_1.jpg",
@@ -76,7 +76,7 @@ export const instagramPosts: InstagramPost[] = [
   },
   {
     excerpt:
-      "🚀¡Arrancamos fuerte el año!\nHoy damos la bienvenida a @alutipo.chile que se une como auspiciador de Cohetería Beauchef 🌠",
+      "🚀¡Arrancamos fuerte el año!\nHoy damos la bienvenida a @alutipo.chile que se une como auspiciador de Cohetería Beauchef...",
     likes: 31,
     comments: 2,
     imageSrc: "/post_instagram_2.jpg",
@@ -84,7 +84,7 @@ export const instagramPosts: InstagramPost[] = [
   },
   {
     excerpt:
-      "🚀 ¡Seguimos creciendo!\nHoy damos la bienvenida a @fablabudechile que se une como colaborador de Cohetería Beauchef",
+      "🚀 ¡Seguimos creciendo!\nHoy damos la bienvenida a @fablabudechile que se une como colaborador de Cohetería Beauchef...",
     likes: 27,
     comments: 0,
     imageSrc: "/post_instagram_3.jpg",

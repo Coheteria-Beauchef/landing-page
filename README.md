@@ -1,6 +1,6 @@
 # coheteria-beauchef-landing
 
-Landing estatica simple con Astro y Tailwind CSS.
+Landing estatica simple con Astro, Tailwind CSS y animaciones GSAP.
 
 ## Scripts
 
@@ -23,15 +23,13 @@ Landing estatica simple con Astro y Tailwind CSS.
 `- tsconfig.json
 ```
 
+## Cambios Rápidos
+
+En `src/components/data/home.ts`, donde aparece instagramPosts, puedes agregar, editar o eliminar posts. Solo asegúrate de mantener el formato correcto, dejar una imagen en public/ y actualizar. 
+
 ## Uso
 
 ```bash
 pnpm install
 pnpm dev
 ```
-
-## TypeScript Native Preview
-
-- El proyecto incluye `@typescript/native-preview` para probar TS7 mediante `tsgo`.
-- En VS Code, instala la extension `TypeScriptTeam.native-preview`.
-- La configuracion del workspace ya deja activado `typescript.experimental.useTsgo`.
