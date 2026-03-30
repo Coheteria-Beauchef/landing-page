@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: "https://coheteria-beauchef.github.io",
-  base: "/landing-page",
+  base: "/landing-page/",
   output: "static",
   vite: {
     plugins: [tailwindcss()],
