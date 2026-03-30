@@ -10,9 +10,11 @@ const {
   logoClass = "w-11 h-11 object-fill",
   textClass = "text-white font-bold text-xl tracking-[2px]",
 } = Astro.props as Props;
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <div class:list={["flex min-w-0 items-center gap-3", className]}>
-  <img src="/coheteriabeauchef_borderless_logo.png" alt="Logo Cohetería Beauchef" class={logoClass} />
+  <img src={`${baseUrl}coheteriabeauchef_borderless_logo.png`} alt="Logo Cohetería Beauchef" class={logoClass} />
   <span class:list={["min-w-0 text-balance", textClass]}>COHETERÍA BEAUCHEF</span>
 </div>

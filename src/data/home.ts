@@ -1,3 +1,5 @@
+const baseUrl = import.meta.env.BASE_URL;
+
 export type NavigationLink = {
   href: string;
   label: string;
@@ -71,7 +73,7 @@ export const instagramPosts: InstagramPost[] = [
       "🚀 ¡Nuevo aliado en el equipo!\nLe damos la bienvenida a @maquintelrobotics quienes se suman como auspiciadores oficiales para este 2026. 🌌 Con su apoyo, nuestro proyecto está cada vez más cerca de despegar...",
     likes: 22,
     comments: 0,
-    imageSrc: "/post_instagram_1.jpg",
+    imageSrc: `${baseUrl}post_instagram_1.jpg`,
     imageAlt: "Instagram Post 1",
   },
   {
@@ -79,7 +81,7 @@ export const instagramPosts: InstagramPost[] = [
       "🚀¡Arrancamos fuerte el año!\nHoy damos la bienvenida a @alutipo.chile que se une como auspiciador de Cohetería Beauchef...",
     likes: 31,
     comments: 2,
-    imageSrc: "/post_instagram_2.jpg",
+    imageSrc: `${baseUrl}post_instagram_2.jpg`,
     imageAlt: "Instagram Post 2",
   },
   {
@@ -87,22 +89,22 @@ export const instagramPosts: InstagramPost[] = [
       "🚀 ¡Seguimos creciendo!\nHoy damos la bienvenida a @fablabudechile que se une como colaborador de Cohetería Beauchef...",
     likes: 27,
     comments: 0,
-    imageSrc: "/post_instagram_3.jpg",
+    imageSrc: `${baseUrl}post_instagram_3.jpg`,
     imageAlt: "Instagram Post 3",
   },
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: "/auspiciadores/fcfm_logo.png", alt: "FCFM" },
-  { src: "/auspiciadores/departamento_mecanica_logo.webp", alt: "Mecánica" },
-  { src: "/auspiciadores/departamento_electrica_logo.png", alt: "Eléctrica" },
+  { src: `${baseUrl}auspiciadores/fcfm_logo.png`, alt: "FCFM" },
+  { src: `${baseUrl}auspiciadores/departamento_mecanica_logo.webp`, alt: "Mecánica" },
+  { src: `${baseUrl}auspiciadores/departamento_electrica_logo.png`, alt: "Eléctrica" },
   {
-    src: "/auspiciadores/fablab_logo.png",
+    src: `${baseUrl}auspiciadores/fablab_logo.png`,
     alt: "FabLab",
     heightClass: "h-[75px]",
   },
-  { src: "/auspiciadores/maquintel_logo.png", alt: "Maquintel" },
-  { src: "/auspiciadores/alutipo_logo.png", alt: "Alutipo" },
+  { src: `${baseUrl}auspiciadores/maquintel_logo.png`, alt: "Maquintel" },
+  { src: `${baseUrl}auspiciadores/alutipo_logo.png`, alt: "Alutipo" },
 ];
 
 export const socialLinks: SocialLink[] = [

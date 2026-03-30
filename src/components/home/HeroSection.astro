@@ -3,13 +3,15 @@ import { headerNavigationLinks } from "../../data/home";
 import ActionButton from "./ActionButton.astro";
 import Brand from "./Brand.astro";
 import NavLinks from "./NavLinks.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <section class="relative w-full h-svh min-h-[720px] bg-[#0A0A0A] overflow-hidden">
   <picture>
-    <source srcset="/main_image.webp" type="image/webp" />
+    <source srcset={`${baseUrl}main_image.webp`} type="image/webp" />
     <img
-      src="/main_image.JPG"
+      src={`${baseUrl}main_image.JPG`}
       alt="Equipo de Cohetería Beauchef"
       width="2200"
       height="1650"
@@ -39,7 +41,7 @@ import NavLinks from "./NavLinks.astro";
     />
   </nav>
 
-  <div class="absolute inset-0 z-10 flex flex-col items-center justify-end gap-6 px-6 pb-14 pt-24 text-center md:px-10 lg:items-start lg:px-16 lg:pb-20 lg:text-left">
+  <div class="absolute inset-0 z-10 flex flex-col items-center justify-end gap-6 px-6 pb-14 pt-24 text-center md:px-10 lg:px-16 lg:pb-20">
     <h1 class="animate-hero-in [animation-delay:140ms] max-w-5xl text-white font-bold text-5xl sm:text-7xl lg:text-[84px] leading-none tracking-[-2px] lg:tracking-[-3px] [animation-fill-mode:both]">
       Cohetería Beauchef
     </h1>
@@ -47,7 +49,7 @@ import NavLinks from "./NavLinks.astro";
       Desarrollamos e investigamos tecnología<br />
       para cohetería e ingeniería aeroespacial
     </p>
-    <div class="animate-hero-in [animation-delay:380ms] mt-4 flex flex-col items-center gap-4 sm:flex-row lg:items-start [animation-fill-mode:both]">
+    <div class="animate-hero-in [animation-delay:380ms] mt-4 flex flex-col items-center gap-4 sm:flex-row [animation-fill-mode:both]">
       <ActionButton href="#proyectos" label="Ver Nuestros Proyectos" />
       <ActionButton href="/equipo" label="Únete al Equipo" variant="secondary" />
     </div>
