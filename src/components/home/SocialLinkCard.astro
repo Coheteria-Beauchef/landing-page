@@ -20,7 +20,7 @@ const isExternal = href.startsWith("http://") || href.startsWith("https://");
   target={isExternal ? "_blank" : undefined}
   rel={isExternal ? "noreferrer" : undefined}
   class:list={[
-    "flex-1 h-full flex justify-center items-center gap-4 py-4 md:py-0 text-white transition-[background-color,color,transform] duration-300 ease-out",
+    "w-full md:w-auto md:flex-1 md:h-full flex justify-center items-center gap-4 py-4 md:py-0 text-white transition-[background-color,color,transform] duration-300 ease-out",
     bgClass,
     hoverBgClass,
     hoverTextClass,
