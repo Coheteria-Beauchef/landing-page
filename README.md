@@ -25,7 +25,7 @@ Landing estatica simple con Astro, Tailwind CSS y animaciones GSAP.
 
 ## Cambios Rápidos
 
-En `src/components/data/home.ts`, donde aparece instagramPosts, puedes agregar, editar o eliminar posts. Solo asegúrate de mantener el formato correcto, dejar una imagen en public/ y actualizar. 
+En `src/components/data/home.ts`, donde aparece instagramPosts, puedes agregar, editar o eliminar posts. Solo asegúrate de mantener el formato correcto, dejar una imagen en public/ y actualizar.
 
 ## Uso
 

@@ -7,37 +7,178 @@ import SocialIcon from "./SocialIcon.astro";
 
 <section
   id="proyectos"
-  class="w-full bg-white py-[100px] px-8 lg:px-[120px] flex flex-col items-center gap-12 scroll-mt-24"
-  >
-  <h2 class="text-[#1C1C1E] font-bold text-6xl leading-[1.15] tracking-[-2px] text-center fade-in-up">
-      Nuestros Últimos Posts<br />en Instagram
-    </h2>
-  <div class="flex items-center gap-2 fade-in-up">
-    <a
-      href={socialProfiles.instagram}
-      target="_blank"
-      rel="noreferrer"
-      class="flex items-center gap-2 group"
-    >
-      <SocialIcon platform="instagram" size={32} className="text-[#E1306C]" />
-      <span class="text-[#2E34E0] font-semibold text-4xl relative inline-block">
-      @coheteriabeauchef
-      <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2E34E0] group-hover:w-full transition-all duration-300"></span>
-      </span>
-    </a>
+  class="relative w-full overflow-hidden bg-white py-24 px-6 sm:py-32 sm:px-8 lg:px-16 lg:py-40 flex flex-col items-center gap-16 scroll-mt-24"
+>
+  <div class="ig-bg-elements pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="ig-bg-el ig-bg-el--corner-block"></div>
   </div>
 
-  <div class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto fade-in-up" style="transition-delay: 150ms;">
-    {
-      instagramPosts.map((post) => (
-        <InstagramCard
-          excerpt={post.excerpt}
-          likes={post.likes}
-          comments={post.comments}
-          imageSrc={post.imageSrc}
-          imageAlt={post.imageAlt}
-        />
-      ))
-    }
+  <div class="relative z-10 w-full max-w-[1400px] flex flex-col items-center">
+    <div class="flex flex-col items-center gap-6">
+      <div class="ig-header-wrap">
+        <h2 class="ig-header text-center text-5xl font-black leading-[0.95] tracking-[-0.05em] text-[#1C1C1E] sm:text-7xl lg:text-8xl">
+          Nuestros Posts
+        </h2>
+      </div>
+
+      <a
+        href={socialProfiles.instagram}
+        target="_blank"
+        rel="noreferrer"
+        class="ig-handle-wrap group flex items-center gap-3"
+      >
+        <SocialIcon platform="instagram" size={32} className="text-[#E1306C]" />
+        <span class="ig-handle text-4xl font-bold tracking-[-0.02em] text-[#1025B9]">
+          @coheteriabeauchef
+        </span>
+      </a>
+    </div>
+
+    <div class="ig-cards-grid mt-16 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3 lg:gap-10">
+      {
+        instagramPosts.map((post, i) => (
+          <div class="ig-card-wrap" style={`--card-index: ${i}`}>
+            <InstagramCard
+              excerpt={post.excerpt}
+              likes={post.likes}
+              comments={post.comments}
+              imageSrc={post.imageSrc}
+              imageAlt={post.imageAlt}
+            />
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
+
+<style>
+  .ig-bg-el {
+    position: absolute;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .ig-bg-el--corner-block {
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(16, 37, 185, 0.06);
+    bottom: 5%;
+    right: 3%;
+    transform: rotate(8deg);
+  }
+
+  .ig-handle-wrap {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ig-handle-wrap:hover {
+    transform: translateX(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ig-bg-el {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  (function initInstagramAnimations() {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const section = document.querySelector("#proyectos");
+    if (!section) return;
+
+    const header = section.querySelector(".ig-header");
+    const handleWrap = section.querySelector(".ig-handle-wrap");
+    const cards = section.querySelectorAll(".ig-card-wrap");
+    const cornerBlock = section.querySelector(".ig-bg-el--corner-block");
+
+    gsap.set([header, handleWrap], { opacity: 0, y: 80 });
+    gsap.set(cards, { opacity: 0 });
+    gsap.set([cornerBlock], { opacity: 0 });
+
+    const masterTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        end: "top 20%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    masterTl
+      .to(header, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power4.out",
+      })
+      .to(handleWrap, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      }, "-=0.4")
+      .to(cards, {
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out",
+      }, "-=0.3")
+      .to([cornerBlock], {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      }, "-=0.6");
+
+    if (!reduceMotion) {
+      gsap.to(cornerBlock, {
+        rotation: "+=30",
+        scale: 1.05,
+        duration: 6,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
+
+      gsap.to(cards, {
+        y: (i) => -20 + i * 8,
+        scrollTrigger: {
+          trigger: section,
+          start: "top bottom",
+          end: "bottom top",
+          scrub: 1,
+        },
+        ease: "none",
+      });
+
+      cards.forEach((card) => {
+        const inner = card.querySelector("a") || card.firstElementChild;
+        if (!inner) return;
+
+        card.addEventListener("mouseenter", () => {
+          gsap.to(inner, {
+            y: -8,
+            duration: 0.35,
+            ease: "power2.out",
+            overwrite: true,
+          });
+        });
+        card.addEventListener("mouseleave", () => {
+          gsap.to(inner, {
+            y: 0,
+            duration: 0.35,
+            ease: "power2.out",
+            overwrite: true,
+          });
+        });
+      });
+    }
+  })();
+</script>
