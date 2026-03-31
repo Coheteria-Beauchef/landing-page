@@ -7,21 +7,110 @@ import StatItem from "./StatItem.astro";
   id="nosotros"
   class="relative w-full overflow-hidden bg-white scroll-mt-24"
 >
-  <div class="relative z-10 mx-auto flex w-full max-w-[1200px] flex-col items-center px-5 pt-20 pb-16 sm:px-6 sm:pt-24 sm:pb-20 lg:px-8 lg:pt-[100px] lg:pb-24">
-    <div class="flex w-full max-w-[900px] flex-col items-center gap-5 sm:gap-6">
-      <h2 class="fade-in-up text-center text-[3.35rem] leading-[0.98] font-bold tracking-[-0.08em] text-[#1C1C1E] text-balance sm:text-6xl sm:leading-[1.02] lg:leading-[1.15]">
-        Impulsando la ingeniería aeroespacial desde Chile
-      </h2>
-      <p class="fade-in-up w-full max-w-[847px] text-center text-lg leading-[1.75] font-normal text-[#48484A] sm:text-xl sm:leading-relaxed" style="transition-delay: 150ms;">
-        Formados por estudiantes de la Facultad de Ciencias Físicas y Matemáticas de la
-        Universidad de Chile, desarrollamos e investigamos tecnología para cohetería e
-        ingeniería aeroespacial. En 2025 logramos diseñar, fabricar y validar el primer motor
-        cohete 100% desarrollado por estudiantes.
-      </p>
-    </div>
+  <div class="relative z-10 mx-auto w-full max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32 lg:px-16 lg:py-40">
+    <div class="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-7 lg:col-start-2">
+        <div class="about-title-wrap overflow-hidden">
+          <h2 class="about-title text-[3.5rem] font-black leading-[0.92] tracking-[-0.06em] text-[#1C1C1E] sm:text-7xl lg:text-8xl">
+            Impulsando la<br />
+            <span class="text-[#1025B9]">ingenier&iacute;a</span><br />
+            aeroespacial
+          </h2>
+        </div>
 
-    <div class="fade-in-up mt-12 grid w-full max-w-[980px] grid-cols-2 gap-x-6 gap-y-8 sm:mt-14 sm:gap-x-8 lg:mt-20 lg:grid-cols-4 lg:gap-x-12 xl:gap-x-16" style="transition-delay: 150ms;">
-      {homeStats.map((stat) => <StatItem value={stat.value} label={stat.label} />)}
+        <div class="about-subtitle-wrap mt-8 overflow-hidden sm:mt-10">
+          <p class="about-subtitle max-w-[560px] text-lg font-normal leading-[1.7] text-[#48484A] sm:text-xl">
+            Estudiantes de la Facultad de Ciencias F&iacute;sicas y Matem&aacute;ticas de la
+            Universidad de Chile. En 2025 dise&ntilde;amos, fabricamos y validamos el primer motor
+            cohete 100% desarrollado por estudiantes.
+          </p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-12">
+        <div class="about-stats-grid mt-16 grid grid-cols-2 gap-x-8 gap-y-10 sm:gap-x-12 sm:gap-y-14 lg:mt-20 lg:grid-cols-4 lg:gap-x-8 xl:gap-x-16">
+          {homeStats.map((stat, i) => (
+            <div class="about-stat-item" style={`--stat-index: ${i}`}>
+              <div class="stat-value text-4xl font-black tracking-[-0.04em] text-[#1025B9] sm:text-5xl lg:text-6xl">
+                {stat.value}
+              </div>
+              <div class="stat-label mt-2 text-sm font-medium uppercase tracking-[0.12em] text-[#8E8E93]">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  (function initAboutAnimations() {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const section = document.querySelector("#nosotros");
+    if (!section) return;
+
+    const title = section.querySelector(".about-title");
+    const subtitle = section.querySelector(".about-subtitle");
+    const statItems = section.querySelectorAll(".about-stat-item");
+
+    gsap.set([title, subtitle], { opacity: 0 });
+    gsap.set(title, { y: 120 });
+    gsap.set(subtitle, { y: 60 });
+    gsap.set(statItems, { opacity: 0, y: 50, scale: 0.9 });
+
+    const masterTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        end: "top 15%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    masterTl
+      .to(title, {
+        opacity: 1,
+        y: 0,
+        duration: 0.9,
+        ease: "power4.out",
+      })
+      .to(subtitle, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: "power3.out",
+      }, "-=0.5")
+      .to(statItems, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: "back.out(1.7)",
+      }, "-=0.3");
+
+    if (!reduceMotion) {
+      statItems.forEach((item) => {
+        const value = item.querySelector(".stat-value");
+        const label = item.querySelector(".stat-label");
+
+        item.addEventListener("mouseenter", () => {
+          gsap.to(value, { scale: 1.08, duration: 0.3, ease: "power2.out" });
+          gsap.to(label, { x: 4, duration: 0.3, ease: "power2.out" });
+        });
+
+        item.addEventListener("mouseleave", () => {
+          gsap.to(value, { scale: 1, duration: 0.3, ease: "power2.out" });
+          gsap.to(label, { x: 0, duration: 0.3, ease: "power2.out" });
+        });
+      });
+    }
+  })();
+</script>

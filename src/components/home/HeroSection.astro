@@ -61,15 +61,6 @@ const baseUrl = import.meta.env.BASE_URL;
     background: transparent;
   }
 
-  .site-nav.is-scrolled {
-    height: 4.5rem;
-    background: linear-gradient(180deg, rgb(16 37 185 / 0.94), rgb(27 58 199 / 0.92));
-    border-bottom: 1px solid rgb(255 255 255 / 0.12);
-    box-shadow: 0 18px 48px rgb(16 37 185 / 0.28);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-  }
-
   .site-nav .home-brand-text,
   .site-nav .home-nav-link {
     color: white;
@@ -123,16 +114,50 @@ const baseUrl = import.meta.env.BASE_URL;
   }
 </style>
 
-<script is:inline>
-  const nav = document.querySelector("[data-home-nav]");
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  if (nav && nav instanceof HTMLElement && nav.dataset.scrollBound !== "true") {
-    const updateNavState = () => {
-      nav.classList.toggle("is-scrolled", window.scrollY > 24);
-    };
+  gsap.registerPlugin(ScrollTrigger);
 
-    nav.dataset.scrollBound = "true";
-    updateNavState();
-    window.addEventListener("scroll", updateNavState, { passive: true });
-  }
+  (function initNavScroll() {
+    const nav = document.querySelector("[data-home-nav]");
+    const hero = document.querySelector("[data-home-nav]")?.closest("section");
+    if (!nav || !hero) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduceMotion) {
+      nav.classList.add("is-scrolled");
+      return;
+    }
+
+    const heroHeight = hero.offsetHeight;
+
+    gsap.set(nav, {
+      background: "transparent",
+      boxShadow: "none",
+    });
+
+    ScrollTrigger.create({
+      trigger: hero,
+      start: "bottom 100",
+      end: `bottom -60`,
+      onUpdate: (self) => {
+        const progress = self.progress;
+        const eased = progress < 0.5
+          ? 2 * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        const bgAlpha = eased * 0.94;
+        const shadowAlpha = eased * 0.28;
+        const blur = eased * 18;
+
+        nav.style.background = `linear-gradient(180deg, rgba(16,37,185,${bgAlpha}), rgba(27,58,199,${bgAlpha * 0.98}))`;
+        nav.style.boxShadow = `0 18px 48px rgba(16,37,185,${shadowAlpha})`;
+        nav.style.backdropFilter = `blur(${blur}px)`;
+        nav.style.webkitBackdropFilter = `blur(${blur}px)`;
+      },
+    });
+  })();
 </script>

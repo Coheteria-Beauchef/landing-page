@@ -6,47 +6,151 @@ const marqueeLogos = [...sponsorLogos, ...sponsorLogos];
 
 <section
   id="sponsors"
-  class="w-full bg-white pt-[120px] pb-[120px] flex flex-col items-center gap-16 overflow-hidden scroll-mt-24"
+  class="relative w-full overflow-hidden bg-white pt-24 pb-24 sm:pt-32 sm:pb-32 lg:pt-40 lg:pb-40 flex flex-col items-center gap-16 scroll-mt-24"
 >
-  <div class="w-full flex flex-col items-center gap-6 px-8 lg:px-[120px]">
-    <h2 class="text-[#111118] font-bold text-4xl lg:text-6xl leading-[1.15] tracking-[-2px] text-center fade-in-up">
-      Auspiciadores
-    </h2>
-    <p class="text-[#48484A] font-normal text-xl text-center w-full max-w-[600px] fade-in-up" style="transition-delay: 150ms;">
-      En Cohetería Beauchef agradecemos el apoyo de nuestros auspiciadores.
-    </p>
+  <div class="sponsor-bg pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="sponsor-bg-el sponsor-bg-el--big-ring"></div>
   </div>
 
-  <div class="relative w-full h-[120px] overflow-hidden max-w-[1440px] mx-auto mt-8 fade-in-up" style="transition-delay: 150ms;">
-    <div class="flex items-center h-full gap-20 px-10 animate-marquee whitespace-nowrap w-max">
+  <div class="relative z-10 w-full flex flex-col items-center gap-6 px-6 sm:px-8 lg:px-16">
+    <div class="sponsor-header-wrap">
+      <h2 class="sponsor-header text-6xl font-black leading-[0.95] tracking-[-0.05em] text-[#1C1C1E] sm:text-7xl lg:text-8xl">
+        Auspiciadores
+      </h2>
+    </div>
+    <div class="sponsor-sub-wrap">
+      <p class="sponsor-sub text-lg sm:text-xl text-[#48484A] text-center max-w-[500px]">
+        Agradecemos el apoyo de quienes impulsan nuestros proyectos.
+      </p>
+    </div>
+  </div>
+
+  <div class="sponsor-marquee-wrap relative z-10 w-full h-[100px] overflow-hidden max-w-[1440px] mx-auto">
+    <div class="flex items-center h-full gap-20 px-10 whitespace-nowrap w-max">
       {
         marqueeLogos.map((logo) => (
           <img
             src={logo.src}
             alt={logo.alt}
-            class:list={[logo.heightClass ?? "h-20", "w-auto object-contain shrink-0"]}
+            class:list={[logo.heightClass ?? "h-16", "w-auto object-contain shrink-0 sponsor-logo"]}
           />
         ))
       }
     </div>
 
-    <div class="absolute left-0 top-0 w-[100px] lg:w-[200px] h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
-    <div class="absolute right-0 top-0 w-[100px] lg:w-[200px] h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
+    <div class="absolute left-0 top-0 w-[120px] lg:w-[240px] h-full bg-gradient-to-r from-white to-transparent pointer-events-none"></div>
+    <div class="absolute right-0 top-0 w-[120px] lg:w-[240px] h-full bg-gradient-to-l from-white to-transparent pointer-events-none"></div>
   </div>
 </section>
 
 <style>
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-50%);
-    }
+  .sponsor-bg-el {
+    position: absolute;
+    opacity: 0;
+    will-change: transform, opacity;
   }
 
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
+  .sponsor-bg-el--big-ring {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 1px solid rgba(16, 37, 185, 0.05);
+    top: -20%;
+    left: -10%;
+  }
+
+  .sponsor-logo {
+    filter: grayscale(100%) opacity(0.6);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  .sponsor-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.08);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sponsor-bg-el {
+      display: none;
+    }
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  (function initSponsorsAnimations() {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const section = document.querySelector("#sponsors");
+    if (!section) return;
+
+    const header = section.querySelector(".sponsor-header");
+    const sub = section.querySelector(".sponsor-sub");
+    const marqueeWrap = section.querySelector(".sponsor-marquee-wrap");
+    const bigRing = section.querySelector(".sponsor-bg-el--big-ring");
+
+    gsap.set([header, sub], { opacity: 0, y: 70 });
+    gsap.set(marqueeWrap, { opacity: 0, y: 40 });
+    gsap.set([bigRing], { opacity: 0 });
+
+    const masterTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 75%",
+        end: "top 30%",
+        toggleActions: "play none none none",
+      },
+    });
+
+    masterTl
+      .to(header, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power4.out",
+      })
+      .to(sub, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      }, "-=0.4")
+      .to(marqueeWrap, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      }, "-=0.3")
+      .to([bigRing], {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      }, "-=0.5");
+
+    if (!reduceMotion) {
+      gsap.to(bigRing, {
+        rotation: 360,
+        duration: 35,
+        repeat: -1,
+        ease: "none",
+      });
+
+      const marqueeInner = marqueeWrap.querySelector(".flex");
+      if (marqueeInner) {
+        const totalWidth = marqueeInner.scrollWidth / 2;
+        gsap.to(marqueeInner, {
+          x: -totalWidth,
+          duration: 25,
+          repeat: -1,
+          ease: "none",
+          modifiers: {
+            x: gsap.utils.unitize((x: number) => parseFloat(x) % totalWidth),
+          },
+        });
+      }
+    }
+  })();
+</script>
