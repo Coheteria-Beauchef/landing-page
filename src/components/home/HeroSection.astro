@@ -8,19 +8,16 @@ const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <section class="relative w-full h-svh min-h-[720px] bg-[#0A0A0A] overflow-hidden">
-  <picture>
-    <source srcset={`${baseUrl}main_image.webp`} type="image/webp" />
-    <img
-      src={`${baseUrl}main_image.JPG`}
-      alt="Equipo de Cohetería Beauchef"
-      width="2200"
-      height="1650"
-      loading="eager"
-      decoding="sync"
-      fetchpriority="high"
-      class="absolute inset-0 h-full w-full object-cover object-[center_18%] opacity-85"
-    />
-  </picture>
+  <img
+    src={`${baseUrl}main_image.webp`}
+    alt="Equipo de Cohetería Beauchef"
+    width="2200"
+    height="1650"
+    loading="eager"
+    decoding="sync"
+    fetchpriority="high"
+    class="absolute inset-0 h-full w-full object-cover object-[center_18%] opacity-85"
+  />
 
   <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#1024b0e6] to-[#1025B9E6] opacity-45"></div>
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,rgb(10_10_10_/_0.18)_55%,rgb(10_10_10_/_0.56)_100%)]"></div>
