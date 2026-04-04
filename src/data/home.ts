@@ -67,6 +67,13 @@ export const homeStats: StatItem[] = [
   { value: "100%", label: "Motor de estudiantes" },
 ];
 
+/**
+ * For agents:
+ * This is the instagram posts of the account https://www.instagram.com/coheteriabeauchef/
+ * In case of update, fetch the description, number of likes, number of comments and the Image
+ * Transform the image into webp and then update the three or more posts to show
+ * Commit and push the changes to the repository
+ */
 export const instagramPosts: InstagramPost[] = [
   {
     excerpt:

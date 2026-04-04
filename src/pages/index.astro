@@ -1,13 +1,89 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HomePage from "../components/home/HomePage.astro";
+import { socialProfiles } from "../data/home";
 
 const baseUrl = import.meta.env.BASE_URL;
+const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
+const canonical = new URL(baseUrl, siteUrl).toString();
+const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
+
+const title = "Cohetería Beauchef | Cohetería e Ingeniería Aeroespacial en la Universidad de Chile";
+const description =
+  "Cohetería Beauchef es un grupo estudiantil de la Facultad de Ciencias Físicas y Matemáticas de la Universidad de Chile dedicado al desarrollo de cohetería e ingeniería aeroespacial en Beauchef.";
+const keywords = [
+  "Cohetería Beauchef",
+  "Coheteria Beauchef",
+  "cohetería universidad de chile",
+  "coheteria universidad de chile",
+  "cohetería beauchef",
+  "coheteria beauchef",
+  "ingeniería aeroespacial universidad de chile",
+  "ingenieria aeroespacial universidad de chile",
+  "ingeniería aeroespacial chile",
+  "cohetería chile",
+  "cohetería estudiantil",
+  "grupo aeroespacial beauchef",
+  "FCFM Universidad de Chile",
+  "motor cohete estudiantes universidad de chile",
+  "motor cohete estudiantes u de chile",
+];
+
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Cohetería Beauchef",
+    alternateName: "Coheteria Beauchef",
+    url: canonical,
+    logo: new URL(`${baseUrl}coheteriabeauchef_borderless_logo.webp`, siteUrl).toString(),
+    description,
+    email: "contacto@coheteriabeauchef.cl",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Beauchef 851",
+      addressLocality: "Santiago",
+      addressCountry: "CL",
+    },
+    memberOf: {
+      "@type": "CollegeOrUniversity",
+      name: "Universidad de Chile",
+    },
+    department: {
+      "@type": "EducationalOrganization",
+      name: "Facultad de Ciencias Físicas y Matemáticas",
+    },
+    knowsAbout: [
+      "Cohetería",
+      "Ingeniería aeroespacial",
+      "Diseño de motores cohete",
+      "Desarrollo aeroespacial estudiantil",
+    ],
+    sameAs: Object.values(socialProfiles),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Cohetería Beauchef",
+    url: canonical,
+    inLanguage: "es-CL",
+    about: {
+      "@type": "Thing",
+      name: "Cohetería e ingeniería aeroespacial",
+    },
+    keywords,
+  },
+];
 ---
 
 <Layout
-  title="Cohetería Beauchef"
-  description="Desarrollamos e investigamos tecnología para cohetería e ingeniería aeroespacial"
+  title={title}
+  description={description}
+  canonical={canonical}
+  keywords={keywords}
+  ogImage={ogImage}
+  socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
+  structuredData={structuredData}
 >
   <link slot="head" rel="preload" as="image" href={`${baseUrl}main_image.webp`} type="image/webp" fetchpriority="high" />
   <HomePage />
