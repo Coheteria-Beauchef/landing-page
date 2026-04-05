@@ -1,0 +1,101 @@
+---
+import { instagramPosts } from "../../../data/home";
+import { socialProfiles } from "../../../data/home";
+import InstagramCard from "./InstagramCard.astro";
+import SocialIcon from "../shared/SocialIcon.astro";
+---
+
+<section
+  id="proyectos"
+  data-instagram-section
+  class="relative w-full overflow-hidden bg-white py-24 px-6 sm:py-32 sm:px-8 lg:px-16 lg:py-40 flex flex-col items-center gap-16 scroll-mt-24"
+>
+  <div class="ig-bg-elements pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="ig-bg-el ig-bg-el--corner-block"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-[1400px] flex flex-col items-center">
+    <div class="flex flex-col items-center gap-6">
+      <div class="ig-header-wrap">
+        <h2 class="ig-header text-center text-5xl font-black leading-[0.95] tracking-[-0.05em] text-[#1C1C1E] sm:text-7xl lg:text-8xl">
+          Nuestros Posts
+        </h2>
+      </div>
+
+      <a
+        href={socialProfiles.instagram}
+        target="_blank"
+        rel="noreferrer"
+        class="ig-handle-wrap group flex items-center gap-3"
+      >
+        <SocialIcon platform="instagram" size={32} className="text-[#E1306C]" />
+        <span class="ig-handle text-4xl font-bold tracking-[-0.02em] text-[#1025B9]">
+          @coheteriabeauchef
+        </span>
+      </a>
+    </div>
+
+    <div class="ig-cards-grid mt-16 grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3 lg:gap-10">
+      {
+        instagramPosts.map((post, i) => (
+          <div class="ig-card-wrap" style={`--card-index: ${i}`}>
+            <InstagramCard
+              excerpt={post.excerpt}
+              likes={post.likes}
+              comments={post.comments}
+              imageSrc={post.imageSrc}
+              imageAlt={post.imageAlt}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .ig-bg-el {
+    position: absolute;
+    opacity: 0;
+    will-change: transform, opacity;
+  }
+
+  .ig-bg-el--corner-block {
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(16, 37, 185, 0.06);
+    bottom: 5%;
+    right: 3%;
+    transform: rotate(8deg);
+  }
+
+  .ig-handle-wrap {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ig-handle-wrap:hover {
+    transform: translateX(6px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ig-handle-wrap {
+      transition: none;
+    }
+
+    .ig-handle-wrap:hover {
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ig-bg-el {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { initInstagramSection } from "./initInstagramSection";
+
+  initInstagramSection();
+</script>

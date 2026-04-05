@@ -1,0 +1,31 @@
+---
+import { homeAnnouncement } from "./announcement";
+
+const { enabled, text, href } = homeAnnouncement;
+---
+
+{enabled && (
+  <>
+    <aside class="fixed inset-x-0 top-0 z-40 w-full overflow-x-auto border-b border-blue-500/70 bg-black text-blue-400 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div class="mx-auto flex h-10 w-full max-w-7xl items-center justify-center gap-3 px-4 text-center text-sm font-medium tracking-wide sm:px-6">
+        <span class="shrink-0 rounded-none bg-blue-500 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-black">
+          Anuncios
+        </span>
+        <a
+          href={href}
+          class="min-w-0 text-blue-400 underline decoration-blue-400/70 underline-offset-4 transition-colors hover:text-blue-200"
+        >
+          {text}
+        </a>
+        <span class="shrink-0 rounded-none bg-blue-500 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-black">
+          Anuncios
+        </span>
+      </div>
+    </aside>
+    <style is:global>
+      :root {
+        --home-announcement-height: 2.5rem;
+      }
+    </style>
+  </>
+)}

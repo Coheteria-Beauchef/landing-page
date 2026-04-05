@@ -7,5 +7,8 @@ export default defineConfig({
   output: "static",
   vite: {
     plugins: [tailwindcss()],
+    optimizeDeps: {
+      exclude: ["gsap", "gsap/ScrollTrigger", "gsap/MotionPathPlugin"],
+    },
   },
 });

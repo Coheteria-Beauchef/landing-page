@@ -1,14 +1,16 @@
 ---
-import AboutSection from "./AboutSection.astro";
-import CtaSection from "./CtaSection.astro";
-import HeroSection from "./HeroSection.astro";
-import InstagramSection from "./InstagramSection.astro";
-import SiteFooter from "./SiteFooter.astro";
-import SocialBanner from "./SocialBanner.astro";
-import SponsorsSection from "./SponsorsSection.astro";
+import AboutSection from "./about/AboutSection.astro";
+import CtaSection from "./cta/CtaSection.astro";
+import AnnouncementBar from "./announcement/AnnouncementBar.astro";
+import HeroSection from "./hero/HeroSection.astro";
+import InstagramSection from "./instagram/InstagramSection.astro";
+import SiteFooter from "./footer/SiteFooter.astro";
+import SocialBanner from "./socials/SocialBanner.astro";
+import SponsorsSection from "./sponsors/SponsorsSection.astro";
 ---
 
 <main class="flex flex-col bg-white">
+  <AnnouncementBar />
   <HeroSection />
   <AboutSection />
   <InstagramSection />

@@ -1,0 +1,159 @@
+---
+import { joinTeamFormUrl } from "../../../data/home";
+import ActionButton from "../shared/ActionButton.astro";
+---
+
+<section
+  class="fade-in-up cta-section relative w-full overflow-hidden bg-[#1025B9] px-8 py-[140px] lg:px-[120px]"
+  data-cta-section
+>
+  <svg
+    class="cta-flight pointer-events-none absolute inset-0 z-0 h-full w-full overflow-visible"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+    data-cta-flight
+  >
+    <defs>
+      <linearGradient id="cta-trail-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+        <stop offset="38%" stop-color="#ffffff" stop-opacity="0.12" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.4" />
+      </linearGradient>
+      <filter id="cta-glow-filter" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="4" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+
+    <path
+      class="cta-flight__guide"
+      fill="none"
+      stroke="url(#cta-trail-gradient)"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-dasharray="10 14"
+      opacity="0.35"
+      data-cta-path
+    />
+
+    <g class="cta-flight__impact" opacity="0" data-cta-impact>
+      <circle
+        r="18"
+        fill="none"
+        stroke="rgba(255,255,255,0.55)"
+        stroke-width="1.5"
+        data-cta-impact-ring
+      />
+      <circle r="10" fill="rgba(255,255,255,0.22)" filter="url(#cta-glow-filter)" />
+      <g data-cta-sparks>
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-12, -24) scale(1.2) rotate(-15)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(0, -16) scale(0.8) rotate(15)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(12, 0) scale(1) rotate(45)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-8, 16) scale(0.6) rotate(20)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-16, 24) scale(0.9) rotate(-10)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-32, 12) scale(0.7) rotate(30)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-36, -4) scale(1.1) rotate(60)" />
+        <path d="M0 -8 Q0 0 8 0 Q0 0 0 8 Q0 0 -8 0 Q0 0 0 -8 Z" fill="white" transform="translate(-28, -16) scale(0.8) rotate(10)" />
+      </g>
+    </g>
+
+    <g class="cta-flight__rocket" opacity="0" data-cta-rocket>
+      <g filter="url(#cta-glow-filter)">
+        <path
+          d="M0 -28 C10 -26 18 -14 18 0 C18 13 10 25 0 34 C-10 25 -18 13 -18 0 C-18 -14 -10 -26 0 -28Z"
+          fill="#ffffff"
+        />
+        <circle cx="0" cy="1" r="6" fill="#1b47ff" opacity="1" />
+        <path d="M-14 10 L-25 22 L-7 17Z" fill="#ffffff" />
+        <path d="M14 10 L25 22 L7 17Z" fill="#ffffff" />
+        <path d="M0 34 C7 30 10 24 10 18 C14 24 14 34 0 44 C-14 34 -14 24 -10 18 C-10 24 -7 30 0 34Z" fill="#ff7e00" opacity="1" />
+      </g>
+    </g>
+  </svg>
+
+  <div class="relative z-10 mx-auto flex w-full max-w-[800px] flex-col items-center gap-6">
+    <div class="relative w-full">
+      <h2 class="fade-in-up relative z-10 text-center text-4xl leading-[1.15] tracking-[-2px] text-white lg:text-6xl">
+        ¿Quieres ser parte del equipo?
+      </h2>
+    </div>
+    <p
+      class="fade-in-up w-full text-center text-lg leading-relaxed text-white/80"
+      style="transition-delay: 150ms;"
+    >
+      Buscamos estudiantes de la FCFM con ganas de aplicar sus conocimientos en proyectos
+      reales de ciencia espacial. No importa tu carrera: mecánica, eléctrica, química,
+      computación... <br />¡te queremos en el equipo!
+    </p>
+    <div
+      class="fade-in-up mt-4 flex flex-col items-center gap-4 sm:flex-row"
+      style="transition-delay: 300ms;"
+    >
+      <div class="cta-primary-wrap relative" data-cta-button-wrap>
+        <ActionButton
+          href={joinTeamFormUrl}
+          label="Postula Ahora"
+          className="cta-primary-button relative z-10"
+        />
+      </div>
+      <ActionButton href="/equipo" label="Conoce al Equipo" variant="secondary" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-flight {
+    overflow: visible;
+  }
+
+  .cta-flight__guide {
+    vector-effect: non-scaling-stroke;
+  }
+
+  .cta-primary-wrap::after {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border-radius: 10px;
+    background:
+      radial-gradient(circle at 18% 50%, rgb(255 255 255 / 0.6), transparent 34%),
+      radial-gradient(circle at center, rgb(255 255 255 / 0.2), transparent 70%);
+    opacity: calc(var(--cta-hit-glow, 0) * 0.9);
+    transform: scale(calc(0.88 + (var(--cta-hit-glow, 0) * 0.18)));
+    filter: blur(10px);
+    pointer-events: none;
+  }
+
+  :global(.cta-primary-button) {
+    background: #1b47ff;
+    box-shadow: 0 10px 28px rgb(6 22 114 / 0.35);
+  }
+
+  :global(.cta-primary-button:hover) {
+    background: #2953ff;
+  }
+
+  :global(.cta-primary-button span) {
+    color: #ffffff;
+  }
+
+  :global(.cta-primary-button svg) {
+    color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cta-flight {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  import { initCtaSection } from "./initCtaSection";
+
+  initCtaSection();
+</script>

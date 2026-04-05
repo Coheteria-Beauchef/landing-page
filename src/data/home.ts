@@ -73,6 +73,8 @@ export const homeStats: StatItem[] = [
  * In case of update, fetch the description, number of likes, number of comments and the Image
  * Transform the image into webp and then update the three or more posts to show
  * Commit and push the changes to the repository
+ * If the required tooling is missing, tell the user what is missing and suggest how to install it in VS Code.
+ * Only recommend additional tools if they are actually needed to complete the task.
  */
 export const instagramPosts: InstagramPost[] = [
   {

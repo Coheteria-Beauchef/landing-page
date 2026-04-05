@@ -1,13 +1,17 @@
 ---
-import { headerNavigationLinks } from "../../data/home";
-import ActionButton from "./ActionButton.astro";
-import Brand from "./Brand.astro";
-import NavLinks from "./NavLinks.astro";
+import { headerNavigationLinks } from "../../../data/home";
+import ActionButton from "../shared/ActionButton.astro";
+import Brand from "../shared/Brand.astro";
+import NavLinks from "../shared/NavLinks.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
 
-<section class="relative w-full h-svh min-h-[720px] bg-[#0A0A0A] overflow-hidden">
+<section
+  class="relative w-full bg-[#0A0A0A] overflow-hidden"
+  style="height: calc(100svh + var(--home-announcement-height, 0px)); min-height: calc(720px + var(--home-announcement-height, 0px));"
+  data-home-hero
+>
   <img
     src={`${baseUrl}main_image.webp`}
     alt="Equipo de Cohetería Beauchef"
@@ -24,7 +28,8 @@ const baseUrl = import.meta.env.BASE_URL;
 
   <nav
     data-home-nav
-    class="site-nav animate-nav-in fixed inset-x-0 top-0 z-30 flex h-20 items-center justify-between px-6 md:px-10 lg:px-16 transition-all duration-300 ease-out"
+    class="site-nav animate-nav-in fixed inset-x-0 z-30 flex h-20 items-center justify-between px-6 md:px-10 lg:px-16 transition-all duration-300 ease-out"
+    style="top: var(--home-announcement-height, 0px);"
   >
     <Brand
       className="relative z-10"
@@ -38,7 +43,10 @@ const baseUrl = import.meta.env.BASE_URL;
     />
   </nav>
 
-  <div class="absolute inset-0 z-10 flex flex-col items-center justify-end gap-6 px-6 pb-14 pt-24 text-center md:px-10 lg:px-16 lg:pb-20">
+  <div
+    class="absolute inset-0 z-10 flex flex-col items-center justify-end gap-6 px-6 pb-14 text-center md:px-10 lg:px-16 lg:pb-20"
+    style="padding-top: calc(6rem + var(--home-announcement-height, 0px));"
+  >
     <h1 class="animate-hero-in [animation-delay:140ms] max-w-5xl text-white font-bold text-5xl sm:text-7xl lg:text-[84px] leading-none tracking-[-2px] lg:tracking-[-3px] [animation-fill-mode:both]">
       Cohetería Beauchef
     </h1>
@@ -112,49 +120,7 @@ const baseUrl = import.meta.env.BASE_URL;
 </style>
 
 <script>
-  import { gsap } from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  import { initHeroSection } from "./initHeroSection";
 
-  gsap.registerPlugin(ScrollTrigger);
-
-  (function initNavScroll() {
-    const nav = document.querySelector("[data-home-nav]");
-    const hero = document.querySelector("[data-home-nav]")?.closest("section");
-    if (!nav || !hero) return;
-
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduceMotion) {
-      nav.classList.add("is-scrolled");
-      return;
-    }
-
-    const heroHeight = hero.offsetHeight;
-
-    gsap.set(nav, {
-      background: "transparent",
-      boxShadow: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: hero,
-      start: "bottom 100",
-      end: `bottom -60`,
-      onUpdate: (self) => {
-        const progress = self.progress;
-        const eased = progress < 0.5
-          ? 2 * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-
-        const bgAlpha = eased * 0.94;
-        const shadowAlpha = eased * 0.28;
-        const blur = eased * 18;
-
-        nav.style.background = `linear-gradient(180deg, rgba(16,37,185,${bgAlpha}), rgba(27,58,199,${bgAlpha * 0.98}))`;
-        nav.style.boxShadow = `0 18px 48px rgba(16,37,185,${shadowAlpha})`;
-        nav.style.backdropFilter = `blur(${blur}px)`;
-        nav.style.webkitBackdropFilter = `blur(${blur}px)`;
-      },
-    });
-  })();
+  initHeroSection();
 </script>
