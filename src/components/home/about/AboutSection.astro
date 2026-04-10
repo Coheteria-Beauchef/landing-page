@@ -7,12 +7,11 @@ import { homeStats } from "../../../data/home";
   data-about-section
   class="relative w-full overflow-hidden bg-white scroll-mt-24"
 >
-  <div class="relative z-10 mx-auto w-full max-w-[1400px] px-6 py-24 sm:px-8 sm:py-32 lg:px-16 lg:py-40">
-    <div class="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-8">
-      <div class="lg:col-span-7 lg:col-start-2">
+  <div class="relative z-10 mx-auto w-full max-w-[1400px] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24">
+      <div class="flex flex-col text-center items-center">
         <div class="about-title-wrap overflow-hidden">
           <h2 class="about-title text-[3.5rem] font-black leading-[0.92] tracking-[-0.06em] text-[#1C1C1E] sm:text-7xl lg:text-8xl">
-            Impulsando la<br />
+            Impulsando la
             <span class="text-[#1025B9]">ingenier&iacute;a</span><br />
             aeroespacial
           </h2>
@@ -27,7 +26,7 @@ import { homeStats } from "../../../data/home";
         </div>
       </div>
 
-      <div class="lg:col-span-12">
+      <div class="lg:col-span-12 flex flex-col items-center text-center">
         <div class="about-stats-grid mt-16 grid grid-cols-2 gap-x-8 gap-y-10 sm:gap-x-12 sm:gap-y-14 lg:mt-20 lg:grid-cols-4 lg:gap-x-8 xl:gap-x-16">
           {homeStats.map((stat, i) => (
             <div class="about-stat-item" style={`--stat-index: ${i}`}>
@@ -41,7 +40,6 @@ import { homeStats } from "../../../data/home";
           ))}
         </div>
       </div>
-    </div>
   </div>
 </section>
 
