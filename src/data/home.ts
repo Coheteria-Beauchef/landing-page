@@ -34,6 +34,79 @@ export type SponsorLogo = {
   heightClass?: string;
 };
 
+export type TeamMember = {
+  name: string;
+  role: string;
+  imageSrc: string;
+  imageAlt: string;
+};
+
+export const teamMembers: TeamMember[] = [
+  {
+    name: "Matías Videla",
+    role: "Capitán",
+    imageSrc: `${baseUrl}team/matias-videla.webp`,
+    imageAlt: "Foto de Matías Videla",
+  },
+  {
+    name: "Vicente Jerez",
+    role: "Capitán",
+    imageSrc: `${baseUrl}team/vicente-jerez.webp`,
+    imageAlt: "Foto de Vicente Jerez",
+  },
+  {
+    name: "Nicolás Herrera",
+    role: "Fuselaje",
+    imageSrc: `${baseUrl}team/nicolas-herrera.webp`,
+    imageAlt: "Foto de Nicolás Herrera",
+  },
+  {
+    name: "María Jesús Escudero",
+    role: "Gestión",
+    imageSrc: `${baseUrl}team/maria-jesus-escudero.webp`,
+    imageAlt: "Foto de María Jesús Escudero",
+  },
+];
+
+export type PressArticle = {
+  source: string;
+  url: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  imageSrc: string;
+};
+
+export const pressArticles: PressArticle[] = [
+  {
+    source: "uchile.cl",
+    url: "https://uchile.cl/noticias/230075/u-de-chile-prueba-con-exito-su-primer-motor-de-cohete-estudiantil",
+    title: "Estudiantes de la U. de Chile prueban con éxito su primer motor de cohete",
+    date: "9 de julio de 2025",
+    excerpt:
+      "El equipo realizó una prueba estática exitosa de su primer motor de propergol sólido, diseñado y construido íntegramente por sus integrantes.",
+    imageSrc: `${baseUrl}press/noticia-1.webp`,
+  },
+  {
+    source: "ingenieria.uchile.cl",
+    url: "https://ingenieria.uchile.cl/noticias/230030/coheteria-beauchef-avanza-con-exitosa-prueba-de-motor",
+    title: "Cohetería Beauchef da un gran paso con exitosa prueba de motor estudiantil",
+    date: "8 de julio de 2025",
+    excerpt:
+      "La Facultad de Ingeniería destacó el logro del equipo, que los posiciona para participar en competencias internacionales de cohetería experimental.",
+    imageSrc: `${baseUrl}press/noticia-2.webp`,
+  },
+  {
+    source: "dimec.uchile.cl",
+    url: "https://dimec.uchile.cl/coheteria-beauchef-estudiantes-del-dimec-innovan-para-conectar-la-universidad-con-la-industria-aeroespacial/",
+    title: "Cohetería Beauchef: estudiantes del DIMEC innovan para conectar la universidad con la industria aeroespacial",
+    date: "3 de julio de 2025",
+    excerpt:
+      "El Departamento de Ingeniería Mecánica destacó cómo el equipo busca establecer la cohetería experimental como disciplina académica en Chile.",
+    imageSrc: `${baseUrl}press/noticia-3.webp`,
+  },
+];
+
 export type SocialPlatform = "instagram" | "youtube" | "linkedin" | "tiktok";
 
 export type SocialLink = {
@@ -48,15 +121,16 @@ export type SocialLink = {
 export const headerNavigationLinks: NavigationLink[] = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "/equipo", label: "Equipo" },
+  { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: "#sponsors", label: "Sponsors" },
+  { href: "#prensa", label: "Prensa" },
   { href: "#contacto", label: "Contacto" },
 ];
 
 export const footerNavigationLinks: NavigationLink[] = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#proyectos", label: "Proyectos" },
-  { href: "/equipo", label: "Equipo" },
+  { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: "#sponsors", label: "Sponsors" },
 ];
 

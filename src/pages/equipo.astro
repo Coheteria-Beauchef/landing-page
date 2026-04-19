@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Brand from "../components/home/shared/Brand.astro";
+import NavLinks from "../components/home/shared/NavLinks.astro";
+import SiteFooter from "../components/home/footer/SiteFooter.astro";
+import { teamMembers, socialProfiles } from "../data/home";
+import CtaSection from "../components/home/cta/CtaSection.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const navLinks = [
+  { href: `${baseUrl}#nosotros`, label: "Nosotros" },
+  { href: `${baseUrl}#proyectos`, label: "Proyectos" },
+  { href: `${baseUrl}equipo`, label: "Equipo" },
+  { href: `${baseUrl}#sponsors`, label: "Sponsors" },
+  { href: `${baseUrl}#prensa`, label: "Prensa" },
+  { href: `${baseUrl}#contacto`, label: "Contacto" },
+];
+const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
+const canonical = new URL(`${baseUrl}equipo`, siteUrl).toString();
+const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
+---
+
+<Layout
+  title="Equipo | Cohetería Beauchef"
+  description="Conoce al equipo de Cohetería Beauchef, estudiantes de la Universidad de Chile apasionados por la cohetería e ingeniería aeroespacial."
+  canonical={canonical}
+  ogImage={ogImage}
+  socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
+>
+  <div class="flex min-h-screen flex-col bg-white">
+    <nav class="sticky top-0 z-30" style="background: linear-gradient(180deg, rgba(16,37,185,0.94), rgba(16,37,185,0.9208)); box-shadow: 0 18px 48px rgba(16,37,185,0.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);" data-equipo-nav>
+      <div class="flex h-20 items-center justify-between px-6 md:px-10 lg:px-16">
+        <a href={baseUrl} aria-label="Volver al inicio">
+          <Brand
+            logoClass="w-10 h-10 object-contain shrink-0"
+            textClass="text-white font-bold text-base sm:text-lg tracking-[2px]"
+          />
+        </a>
+        <NavLinks
+          links={navLinks}
+          className="hidden md:flex items-center gap-6 lg:gap-10"
+          linkClass="text-white/80 hover:text-white font-semibold text-base transition-colors duration-200"
+        />
+        <button
+          class="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[5px]"
+          data-hamburger
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center" data-bar-1></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300" data-bar-2></span>
+          <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center" data-bar-3></span>
+        </button>
+      </div>
+
+      <div
+        class="md:hidden overflow-hidden"
+        style="max-height: 0; transition: max-height 0.3s ease;"
+        data-mobile-menu
+      >
+        <div class="flex flex-col px-6 pb-4">
+          {navLinks.map((link) => (
+            <a href={link.href} class="py-3 text-white/90 hover:text-white font-semibold text-base border-b border-white/10 last:border-0 transition-colors">
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const nav = document.querySelector("[data-equipo-nav]");
+      const btn = nav?.querySelector("[data-hamburger]");
+      const menu = nav?.querySelector("[data-mobile-menu]") as HTMLElement | null;
+      const bar1 = btn?.querySelector("[data-bar-1]") as HTMLElement | null;
+      const bar2 = btn?.querySelector("[data-bar-2]") as HTMLElement | null;
+      const bar3 = btn?.querySelector("[data-bar-3]") as HTMLElement | null;
+
+      let open = false;
+
+      btn?.addEventListener("click", () => {
+        open = !open;
+        btn.setAttribute("aria-expanded", String(open));
+        if (menu) menu.style.maxHeight = open ? `${menu.scrollHeight}px` : "0";
+        if (bar1) bar1.style.transform = open ? "translateY(6.5px) rotate(45deg)" : "";
+        if (bar2) bar2.style.opacity = open ? "0" : "1";
+        if (bar3) bar3.style.transform = open ? "translateY(-6.5px) rotate(-45deg)" : "";
+      });
+
+      menu?.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => {
+          open = false;
+          btn?.setAttribute("aria-expanded", "false");
+          if (menu) menu.style.maxHeight = "0";
+          if (bar1) bar1.style.transform = "";
+          if (bar2) bar2.style.opacity = "1";
+          if (bar3) bar3.style.transform = "";
+        });
+      });
+    </script>
+
+    <main class="flex-1 px-6 pt-20 pb-24 sm:px-8 lg:px-16">
+      <div class="mx-auto max-w-[1200px]">
+        <div class="mb-16 mt-12">
+          <h1 class="text-4xl font-black leading-none tracking-[-0.04em] text-[#1C1C1E] sm:text-5xl">
+            Conoce al equipo
+          </h1>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-12">
+          {
+            teamMembers.map((member) => (
+              <div class="flex w-40 flex-col items-center text-center sm:w-44">
+                <div class="relative mb-5 h-36 w-36 shrink-0 sm:h-40 sm:w-40">
+                  <div class="absolute inset-0 rounded-full bg-[#1025B9]/10 blur-xl" />
+                  <div class="relative h-full w-full overflow-hidden rounded-full ring-2 ring-[#1025B9] ring-offset-4 ring-offset-white">
+                    <img
+                      src={member.imageSrc}
+                      alt={member.imageAlt}
+                      class="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+                <p class="text-base font-bold leading-tight text-[#1C1C1E]">{member.name}</p>
+                <p class="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-[#1025B9]">
+                  {member.role}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </main>
+
+    <CtaSection showTeamLink={false} />
+
+    <SiteFooter />
+  </div>
+</Layout>

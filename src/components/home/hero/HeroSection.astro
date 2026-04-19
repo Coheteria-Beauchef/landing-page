@@ -28,19 +28,45 @@ const baseUrl = import.meta.env.BASE_URL;
 
   <nav
     data-home-nav
-    class="site-nav animate-nav-in fixed inset-x-0 z-30 flex h-20 items-center justify-between px-6 md:px-10 lg:px-16 transition-all duration-300 ease-out"
+    class="site-nav animate-nav-in fixed inset-x-0 z-30 transition-all duration-300 ease-out"
     style="top: var(--home-announcement-height, 0px);"
   >
-    <Brand
-      className="relative z-10"
-      logoClass="w-11 h-11 object-contain shrink-0"
-      textClass="home-brand-text text-white font-bold text-base sm:text-lg lg:text-xl tracking-[2px] transition-colors duration-300"
-    />
-    <NavLinks
-      links={headerNavigationLinks}
-      className="hidden md:flex items-center gap-6 lg:gap-10"
-      linkClass="home-nav-link text-white font-semibold text-base transition-colors duration-300"
-    />
+    <div class="flex h-20 items-center justify-between px-6 md:px-10 lg:px-16">
+      <Brand
+        className="relative z-10"
+        logoClass="w-11 h-11 object-contain shrink-0"
+        textClass="home-brand-text text-white font-bold text-base sm:text-lg lg:text-xl tracking-[2px] transition-colors duration-300"
+      />
+      <NavLinks
+        links={headerNavigationLinks}
+        className="hidden md:flex items-center gap-6 lg:gap-10"
+        linkClass="home-nav-link text-white font-semibold text-base transition-colors duration-300"
+      />
+      <button
+        class="relative z-10 flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[5px]"
+        data-hamburger
+        aria-label="Abrir menú"
+        aria-expanded="false"
+      >
+        <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center" data-bar-1></span>
+        <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300" data-bar-2></span>
+        <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center" data-bar-3></span>
+      </button>
+    </div>
+
+    <div
+      class="mobile-menu md:hidden overflow-hidden"
+      style="max-height: 0; transition: max-height 0.3s ease;"
+      data-mobile-menu
+    >
+      <div class="flex flex-col px-6 pb-4">
+        {headerNavigationLinks.map((link) => (
+          <a href={link.href} class="py-3 text-white font-semibold text-base border-b border-white/10 last:border-0">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </div>
   </nav>
 
   <div
@@ -56,7 +82,7 @@ const baseUrl = import.meta.env.BASE_URL;
     </p>
     <div class="animate-hero-in [animation-delay:380ms] mt-4 flex flex-col items-center gap-4 sm:flex-row [animation-fill-mode:both]">
       <ActionButton href="#proyectos" label="Ver Nuestros Proyectos" />
-      <ActionButton href="/equipo" label="Únete al Equipo" variant="secondary" />
+      <ActionButton href={`${baseUrl}equipo`} label="Únete al Equipo" variant="secondary" />
     </div>
   </div>
 </section>

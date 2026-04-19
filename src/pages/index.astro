@@ -1,6 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HomePage from "../components/home/HomePage.astro";
+import AboutSection from "../components/home/about/AboutSection.astro";
+import CtaSection from "../components/home/cta/CtaSection.astro";
+import AnnouncementBar from "../components/home/announcement/AnnouncementBar.astro";
+import HeroSection from "../components/home/hero/HeroSection.astro";
+import InstagramSection from "../components/home/instagram/InstagramSection.astro";
+import SiteFooter from "../components/home/footer/SiteFooter.astro";
+import SocialBanner from "../components/home/socials/SocialBanner.astro";
+import SponsorsSection from "../components/home/sponsors/SponsorsSection.astro";
+import PressSection from "../components/home/press/PressSection.astro";
 import { socialProfiles } from "../data/home";
 
 const baseUrl = import.meta.env.BASE_URL;
@@ -86,5 +94,15 @@ const structuredData = [
   structuredData={structuredData}
 >
   <link slot="head" rel="preload" as="image" href={`${baseUrl}main_image.webp`} type="image/webp" fetchpriority="high" />
-  <HomePage />
+  <main class="flex flex-col bg-white">
+    <AnnouncementBar />
+    <HeroSection />
+    <AboutSection />
+    <InstagramSection />
+    <SponsorsSection />
+    <PressSection />
+    <CtaSection />
+    <SocialBanner />
+    <SiteFooter />
+  </main>
 </Layout>

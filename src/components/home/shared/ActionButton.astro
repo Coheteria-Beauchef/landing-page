@@ -24,10 +24,10 @@ const isExternal = href.startsWith("http://") || href.startsWith("https://");
   target={isExternal ? "_blank" : undefined}
   rel={isExternal ? "noreferrer" : undefined}
   class:list={[
-    "flex items-center px-12 py-6 rounded-sm transition-colors",
+    "flex items-center px-12 py-6 rounded-sm transition-colors duration-200",
     isPrimary
-      ? "gap-2.5 bg-white shadow-[0_8px_20px_#FFFFFF40] hover:bg-gray-50"
-      : "border border-white/40 bg-white/10 hover:bg-white/20",
+      ? "gap-2.5 bg-white shadow-[0_8px_20px_#FFFFFF40] hover:bg-[#EEF2FF] hover:shadow-[0_8px_28px_#FFFFFF55]"
+      : "border border-white/40 bg-white/10 hover:border-white/70 hover:bg-white/20",
     className,
   ]}
 >

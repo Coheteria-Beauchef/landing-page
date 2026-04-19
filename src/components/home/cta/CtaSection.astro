@@ -1,6 +1,12 @@
 ---
 import { joinTeamFormUrl } from "../../../data/home";
 import ActionButton from "../shared/ActionButton.astro";
+
+interface Props {
+  showTeamLink?: boolean;
+}
+
+const { showTeamLink = true } = Astro.props;
 ---
 
 <section
@@ -100,7 +106,7 @@ import ActionButton from "../shared/ActionButton.astro";
           className="cta-primary-button relative z-10"
         />
       </div>
-      <ActionButton href="/equipo" label="Conoce al Equipo" variant="secondary" />
+      {showTeamLink && <ActionButton href={`${import.meta.env.BASE_URL}equipo`} label="Conoce al Equipo" variant="secondary" />}
     </div>
   </div>
 </section>

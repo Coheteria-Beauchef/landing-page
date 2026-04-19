@@ -1,0 +1,110 @@
+---
+import { pressArticles } from "../../../data/home";
+import ArrowIcon from "../shared/ArrowIcon.astro";
+---
+
+<section
+  id="prensa"
+  class="relative w-full overflow-hidden bg-white px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24 scroll-mt-24"
+>
+  <div class="mx-auto w-full max-w-[1400px]">
+    <div class="press-header-wrap mb-12">
+      <h2 class="press-header text-5xl font-black leading-[0.95] tracking-[-0.05em] text-[#1C1C1E] sm:text-6xl lg:text-7xl">
+        Prensa
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      {
+        pressArticles.map((article, i) => (
+          <a
+            href={article.url}
+            target="_blank"
+            rel="noreferrer"
+            class="press-card group flex flex-col rounded-2xl bg-white overflow-hidden transition-shadow duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1025B9] focus-visible:ring-offset-2"
+            style={`--card-index: ${i}`}
+          >
+            <div class="h-48 w-full overflow-hidden">
+              <img
+                src={article.imageSrc}
+                alt={article.title}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="flex flex-col justify-between gap-6 p-8 flex-1">
+              <div class="flex flex-col gap-3">
+                <span class="text-xs font-semibold uppercase tracking-[0.12em] text-[#1025B9]">
+                  {article.source}
+                </span>
+                <h3 class="text-lg font-bold leading-snug tracking-[-0.02em] text-[#1C1C1E] group-hover:text-[#1025B9] transition-colors duration-200">
+                  {article.title}
+                </h3>
+                <p class="text-sm leading-relaxed text-[#48484A]">{article.excerpt}</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-xs text-[#8E8E93]">{article.date}</span>
+                <span class="flex items-center gap-1 text-sm font-semibold text-[#1025B9] opacity-100 transition-opacity duration-200 sm:opacity-0 sm:group-hover:opacity-100 group-focus-visible:opacity-100">
+                  Leer nota <ArrowIcon />
+                </span>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .press-card {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.3s ease;
+    transition-delay: calc(var(--card-index) * 100ms);
+  }
+
+  .press-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .press-card {
+      transition: box-shadow 0.3s ease;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  function initPressSection() {
+    const cards = document.querySelectorAll(".press-card");
+    if (!cards.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPressSection, { once: true });
+  } else {
+    initPressSection();
+  }
+</script>
