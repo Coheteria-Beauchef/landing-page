@@ -37,34 +37,103 @@ export type SponsorLogo = {
 export type TeamMember = {
   name: string;
   role: string;
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
-export const teamMembers: TeamMember[] = [
+export type TeamArea = {
+  lead: TeamMember;
+  members: string[];
+};
+
+export const teamAreas: TeamArea[] = [
   {
-    name: "Matías Videla",
-    role: "Capitán",
-    imageSrc: `${baseUrl}team/matias-videla.webp`,
-    imageAlt: "Foto de Matías Videla",
+    lead: {
+      name: "Matías Videla",
+      role: "Capitán",
+      imageSrc: `${baseUrl}team/matias-videla.webp`,
+      imageAlt: "Foto de Matías Videla",
+    },
+    members: [],
   },
   {
-    name: "Vicente Jerez",
-    role: "Capitán",
-    imageSrc: `${baseUrl}team/vicente-jerez.webp`,
-    imageAlt: "Foto de Vicente Jerez",
+    lead: {
+      name: "Vicente Jerez",
+      role: "Telemetría",
+      imageSrc: `${baseUrl}team/vicente-jerez.webp`,
+      imageAlt: "Foto de Vicente Jerez",
+    },
+    members: [
+      "Rosangel Arispe",
+      "Eduardo Ibacache",
+      "Vicente Aguilar",
+      "Benjamín Salinas",
+      "Oscar Aravena",
+      "Felipe Colli Olea",
+    ],
   },
   {
-    name: "Nicolás Herrera",
-    role: "Fuselaje",
-    imageSrc: `${baseUrl}team/nicolas-herrera.webp`,
-    imageAlt: "Foto de Nicolás Herrera",
+    lead: {
+      name: "Nicolás Herrera",
+      role: "Fuselaje",
+      imageSrc: `${baseUrl}team/nicolas-herrera.webp`,
+      imageAlt: "Foto de Nicolás Herrera",
+    },
+    members: [
+      "Javier Garretón",
+      "Fernanda Bizama",
+      "Maika Vera",
+      "Camilo Guzmán",
+      "Rolando Cuéllar",
+      "Benjamín Miller",
+    ],
   },
   {
-    name: "María Jesús Escudero",
-    role: "Gestión",
-    imageSrc: `${baseUrl}team/maria-jesus-escudero.webp`,
-    imageAlt: "Foto de María Jesús Escudero",
+    lead: {
+      name: "María Jesús Escudero",
+      role: "Gestión",
+      imageSrc: `${baseUrl}team/maria-jesus-escudero.webp`,
+      imageAlt: "Foto de María Jesús Escudero",
+    },
+    members: [
+      "Vicente Castillo",
+      "Benjamín Miller",
+      "Magdalena Araya",
+      "Antonia Flández",
+      "Damián Miranda",
+      "Sofía Vargas Trujillo",
+    ],
+  },
+  {
+    lead: {
+      name: "Felipe Valdebenito",
+      role: "Motor",
+      imageSrc: `${baseUrl}placeholder_pfp.svg`,
+      imageAlt: "Foto de Felipe Valdebenito",
+    },
+    members: [
+      "Valentina Sáez",
+      "Adriano Villarroel",
+      "Lorenzo Leñam",
+      "Fernanda Arias",
+      "Constanza Fredes",
+      "Vicente Silva",
+    ],
+  },
+  {
+    lead: {
+      name: "Piero Tardón",
+      role: "Combustible",
+      imageSrc: `${baseUrl}placeholder_pfp.svg`,
+      imageAlt: "Foto de Piero Tardón",
+    },
+    members: [
+      "Agustín Martínez",
+      "Felipe García Castillo",
+      "Benjamín Ríos",
+      "Allison Valdivia",
+      "Rafael Rocha",
+    ],
   },
 ];
 

@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  members?: string[];
+}
+
+const { name, role, imageSrc, imageAlt, members = [] } = Astro.props;
+---
+
+<div class="flex w-64 flex-col items-center rounded-xl border border-[#E5E5EA] bg-white px-7 py-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#1025B9]/20 hover:shadow-[0_8px_32px_rgba(16,37,185,0.10)]">
+  <div class="relative mb-5 h-32 w-32 shrink-0">
+    <div class="absolute inset-0 rounded-full bg-[#1025B9]/10 blur-xl" />
+    <div class="relative h-full w-full overflow-hidden rounded-full ring-2 ring-[#1025B9] ring-offset-4 ring-offset-white">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        class="h-full w-full object-cover"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+  <p class="text-lg font-bold leading-tight text-[#1C1C1E]">{name}</p>
+  <p class="mt-1.5 text-sm font-semibold uppercase tracking-[0.1em] text-[#1025B9]">{role}</p>
+  {members.length > 0 && (
+    <>
+      <div class="my-4 h-px w-full bg-[#E5E5EA]" />
+      <ul class="w-full space-y-1.5">
+        {members.map((member) => (
+          <li class="text-sm text-[#6B6B6B]">- {member}</li>
+        ))}
+      </ul>
+    </>
+  )}
+</div>
