@@ -256,6 +256,8 @@ export const sponsorLogos: SponsorLogo[] = [
   { src: `${baseUrl}auspiciadores/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
   { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
   { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
+  { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys" },
+  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS" },
 ];
 
 export const socialLinks: SocialLink[] = [
