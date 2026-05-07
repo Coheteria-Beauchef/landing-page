@@ -206,7 +206,7 @@ export const footerNavigationLinks: NavigationLink[] = [
 export const homeStats: StatItem[] = [
   { value: "2023", label: "Año de fundación" },
   { value: "1052N", label: "Empuje máximo alcanzado" },
-  { value: "20+", label: "Estudiantes activos" },
+  { value: "30+", label: "Estudiantes activos" },
   { value: "100%", label: "Desarrollado por estudiantes" },
 ];
 
