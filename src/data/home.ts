@@ -70,6 +70,7 @@ export const teamAreas: TeamArea[] = [
       "Benjamín Salinas",
       "Oscar Aravena",
       "Felipe Colli Olea",
+      "Matías Videla",
     ],
   },
   {
@@ -84,7 +85,7 @@ export const teamAreas: TeamArea[] = [
       "Fernanda Bizama",
       "Maika Vera",
       "Camilo Guzmán",
-      "Rolando Cuéllar",
+      "Rolando Cuellar",
       "Benjamín Miller",
     ],
   },
@@ -97,6 +98,7 @@ export const teamAreas: TeamArea[] = [
     },
     members: [
       "Vicente Castillo",
+      "Matías Videla",
       "Benjamín Miller",
       "Magdalena Araya",
       "Antonia Flández",
@@ -112,12 +114,13 @@ export const teamAreas: TeamArea[] = [
       imageAlt: "Foto de Felipe Valdebenito",
     },
     members: [
+      "Vicente Silva",
       "Valentina Sáez",
       "Adriano Villarroel",
       "Lorenzo Leñam",
       "Fernanda Arias",
       "Constanza Fredes",
-      "Vicente Silva",
+      "Magdalena Araya",
     ],
   },
   {
@@ -257,7 +260,7 @@ export const sponsorLogos: SponsorLogo[] = [
   { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
   { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
   { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[50px]" },
-  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[50px]" },
+  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[80px]" },
 ];
 
 export const socialLinks: SocialLink[] = [
