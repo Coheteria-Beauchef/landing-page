@@ -148,6 +148,15 @@ export type PressArticle = {
 
 export const pressArticles: PressArticle[] = [
   {
+    source: "ingenieria.uchile.cl",
+    url: "https://ingenieria.uchile.cl/noticias/239680/fcfm-representara-a-chile-en-importante-desafio-internacional-de-coheteria",
+    title: "FCFM representará a Chile en importante desafío internacional de cohetería",
+    date: "30 de abril de 2026",
+    excerpt:
+      "Las y los estudiantes de la FCFM serán parte del Latin American Space Challenge (LASC), una de las competencias de cohetes y satélites más grande del mundo.",
+    imageSrc: `${baseUrl}press/noticia-3.webp`,
+  },
+  {
     source: "uchile.cl",
     url: "https://uchile.cl/noticias/230075/u-de-chile-prueba-con-exito-su-primer-motor-de-cohete-estudiantil",
     title: "Estudiantes de la U. de Chile prueban con éxito su primer motor de cohete",
@@ -164,15 +173,6 @@ export const pressArticles: PressArticle[] = [
     excerpt:
       "La Facultad de Ingeniería destacó el logro del equipo, que los posiciona para participar en competencias internacionales de cohetería experimental.",
     imageSrc: `${baseUrl}press/noticia-2.webp`,
-  },
-  {
-    source: "dimec.uchile.cl",
-    url: "https://dimec.uchile.cl/coheteria-beauchef-estudiantes-del-dimec-innovan-para-conectar-la-universidad-con-la-industria-aeroespacial/",
-    title: "Cohetería Beauchef: estudiantes del DIMEC innovan para conectar la universidad con la industria aeroespacial",
-    date: "3 de julio de 2025",
-    excerpt:
-      "El Departamento de Ingeniería Mecánica destacó cómo el equipo busca establecer la cohetería experimental como disciplina académica en Chile.",
-    imageSrc: `${baseUrl}press/noticia-3.webp`,
   },
 ];
 
@@ -207,7 +207,7 @@ export const homeStats: StatItem[] = [
   { value: "2023", label: "Año de fundación" },
   { value: "1052N", label: "Empuje máximo alcanzado" },
   { value: "20+", label: "Estudiantes activos" },
-  { value: "100%", label: "Motor de estudiantes" },
+  { value: "100%", label: "Desarrollado por estudiantes" },
 ];
 
 /**
@@ -222,24 +222,24 @@ export const homeStats: StatItem[] = [
 export const instagramPosts: InstagramPost[] = [
   {
     excerpt:
-      "🚀 ¡Nuevo aliado en el equipo!\nLe damos la bienvenida a @maquintelrobotics quienes se suman como auspiciadores oficiales para este 2026. 🌌 Con su apoyo, nuestro proyecto está cada vez más cerca de despegar...",
-    likes: 22,
-    comments: 0,
+      "🌌 ¡PREPÁRATE LASC 2026!\nOficialmente fuimos aceptados para participar en el Latin American Space Challenge 2026 – 7ma Edición 🚀",
+    likes: 329,
+    comments: 31,
     imageSrc: `${baseUrl}post_instagram_1.webp`,
     imageAlt: "Instagram Post 1",
   },
   {
     excerpt:
-      "🚀¡Arrancamos fuerte el año!\nHoy damos la bienvenida a @alutipo.chile que se une como auspiciador de Cohetería Beauchef...",
-    likes: 31,
-    comments: 2,
+      "🚀¿Por qué Minerva I?\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
+    likes: 582,
+    comments: 15,
     imageSrc: `${baseUrl}post_instagram_2.webp`,
     imageAlt: "Instagram Post 2",
   },
   {
     excerpt:
-      "🚀 ¡Seguimos creciendo!\nHoy damos la bienvenida a @fablabudechile que se une como colaborador de Cohetería Beauchef...",
-    likes: 27,
+      "🚀 🚀 ¡Bienvenidos @microautomacion.cl!\nEsta gran empresa se suma como auspiciador oficial para este 2026. 🌌",
+    likes: 55,
     comments: 0,
     imageSrc: `${baseUrl}post_instagram_3.webp`,
     imageAlt: "Instagram Post 3",
