@@ -251,9 +251,9 @@ export const sponsorLogos: SponsorLogo[] = [
   { src: `${baseUrl}auspiciadores/departamento_mecanica_logo.webp`, alt: "Mecánica" },
   { src: `${baseUrl}auspiciadores/departamento_electrica_logo.webp`, alt: "Eléctrica" },
   {
-    src: `${baseUrl}auspiciadores/fablab_logo.svg`, alt: "FabLab",
+    src: `${baseUrl}auspiciadores/fablab_logo.svg`, alt: "FabLab", heightClass: "h-[100px]",
   },
-  { src: `${baseUrl}auspiciadores/maquintel_logo.webp`, alt: "Maquintel" },
+  { src: `${baseUrl}auspiciadores/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
   { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
   { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
 ];
