@@ -260,7 +260,7 @@ export const sponsorLogos: SponsorLogo[] = [
   { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
   { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
   { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[50px]" },
-  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[80px]" },
+  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
 ];
 
 export const socialLinks: SocialLink[] = [
