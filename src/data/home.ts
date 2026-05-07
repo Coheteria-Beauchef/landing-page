@@ -154,7 +154,7 @@ export const pressArticles: PressArticle[] = [
     date: "30 de abril de 2026",
     excerpt:
       "Las y los estudiantes de la FCFM serán parte del Latin American Space Challenge (LASC), una de las competencias de cohetes y satélites más grande del mundo.",
-    imageSrc: `${baseUrl}press/noticia-3.webp`,
+    imageSrc: `${baseUrl}press/noticia-4.webp`,
   },
   {
     source: "uchile.cl",
@@ -225,24 +225,24 @@ export const instagramPosts: InstagramPost[] = [
       "🌌 ¡PREPÁRATE LASC 2026!\nOficialmente fuimos aceptados para participar en el Latin American Space Challenge 2026 – 7ma Edición 🚀",
     likes: 329,
     comments: 31,
-    imageSrc: `${baseUrl}post_instagram_1.webp`,
-    imageAlt: "Instagram Post 1",
+    imageSrc: `${baseUrl}post_ig_5.webp`,
+    imageAlt: "Instagram Post 5",
   },
   {
     excerpt:
       "🚀¿Por qué Minerva I?\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
     likes: 582,
     comments: 15,
-    imageSrc: `${baseUrl}post_instagram_2.webp`,
-    imageAlt: "Instagram Post 2",
+    imageSrc: `${baseUrl}post_ig_6.webp`,
+    imageAlt: "Instagram Post 6",
   },
   {
     excerpt:
       "🚀 🚀 ¡Bienvenidos @microautomacion.cl!\nEsta gran empresa se suma como auspiciador oficial para este 2026. 🌌",
     likes: 55,
     comments: 0,
-    imageSrc: `${baseUrl}post_instagram_3.webp`,
-    imageAlt: "Instagram Post 3",
+    imageSrc: `${baseUrl}post_ig_4.webp`,
+    imageAlt: "Instagram Post 4",
   },
 ];
 
