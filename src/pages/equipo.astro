@@ -110,10 +110,15 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
         </div>
 
         {(() => {
-          const [captain, ...leads] = teamAreas;
+          const [captain1, captain2, ...leads] = teamAreas;
           return (
             <div class="flex flex-col items-center gap-8">
-              <TeamCard {...captain.lead} members={captain.members} />
+              <div class="flex flex-wrap justify-center gap-6">
+                  {[captain1, captain2].map((captain) => (
+                    <TeamCard {...captain.lead} members={captain.members} />
+                  ))}
+              </div>
+
               <div class="flex flex-wrap justify-center gap-6">
                 {leads.map(({ lead, members }) => (
                   <TeamCard {...lead} members={members} />
