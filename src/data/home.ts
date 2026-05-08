@@ -67,23 +67,6 @@ export const teamAreas: TeamArea[] = [
   },
   {
     lead: {
-      name: "Vicente Jerez",
-      role: "Telemetría",
-      imageSrc: `${baseUrl}team/vicente-jerez.webp`,
-      imageAlt: "Foto de Vicente Jerez",
-    },
-    members: [
-      "Rosangel Arispe",
-      "Eduardo Ibacache",
-      "Vicente Aguilar",
-      "Benjamín Salinas",
-      "Oscar Aravena",
-      "Felipe Colli Olea",
-      "Matías Videla",
-    ],
-  },
-  {
-    lead: {
       name: "Nicolás Herrera",
       role: "Fuselaje",
       imageSrc: `${baseUrl}team/nicolas-herrera.webp`,
@@ -141,10 +124,27 @@ export const teamAreas: TeamArea[] = [
     },
     members: [
       "Agustín Martínez",
-      "Felipe García Castillo",
+      "Felipe García",
       "Benjamín Ríos",
       "Allison Valdivia",
       "Rafael Rocha",
+    ],
+  },
+  {
+    lead: {
+      name: "Vicente Jerez",
+      role: "Telemetría",
+      imageSrc: `${baseUrl}team/vicente-jerez.webp`,
+      imageAlt: "Foto de Vicente Jerez",
+    },
+    members: [
+      "Rosangel Arispe",
+      "Eduardo Ibacache",
+      "Matías Videla",
+      "Vicente Aguilar",
+      "Benjamín Salinas",
+      "Oscar Aravena",
+      "Felipe Colli Olea",
     ],
   },
 ];
