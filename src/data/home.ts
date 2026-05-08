@@ -59,6 +59,15 @@ export const teamAreas: TeamArea[] = [
   {
     lead: {
       name: "Vicente Jerez",
+      role: "Capitán",
+      imageSrc: `${baseUrl}team/vicente-jerez.webp`,
+      imageAlt: "Foto de Vicente Jerez",
+    },
+    members: [],
+  },
+  {
+    lead: {
+      name: "Vicente Jerez",
       role: "Telemetría",
       imageSrc: `${baseUrl}team/vicente-jerez.webp`,
       imageAlt: "Foto de Vicente Jerez",
