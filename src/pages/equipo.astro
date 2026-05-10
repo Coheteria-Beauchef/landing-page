@@ -119,9 +119,11 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
                   ))}
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 place-items-center w-full max-w-6xl">
+              <div class="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
                 {leads.map(({ lead, members }) => (
-                  <TeamCard {...lead} members={members} />
+                  <div class="w-[320px] flex justify-center">
+                    <TeamCard {...lead} members={members} />
+                  </div>
                 ))}
               </div>
             </div>
