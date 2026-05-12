@@ -119,7 +119,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Piero Tardón",
       role: "Combustible",
-      imageSrc: `${baseUrl}placeholder_pfp.svg`,
+      imageSrc: `${baseUrl}team/piero-tardon.webp`,
       imageAlt: "Foto de Piero Tardón",
     },
     members: [
