@@ -84,7 +84,7 @@ export const teamAreas: TeamArea[] = [
   {
     lead: {
       name: "María Jesús Escudero",
-      role: "Gestión",
+      role: "Vinculación y RRSS",
       imageSrc: `${baseUrl}team/maria-jesus-escudero.webp`,
       imageAlt: "Foto de María Jesús Escudero",
     },
@@ -102,7 +102,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Felipe Valdebenito",
       role: "Motor",
-      imageSrc: `${baseUrl}placeholder_pfp.svg`,
+      imageSrc: `${baseUrl}team/felipe-valdebenito.webp`,
       imageAlt: "Foto de Felipe Valdebenito",
     },
     members: [
@@ -113,6 +113,21 @@ export const teamAreas: TeamArea[] = [
       "Fernanda Arias",
       "Constanza Fredes",
       "Magdalena Araya",
+    ],
+  },
+  {
+    lead: {
+      name: "Matías Videla",
+      role: "Operaciones y Logística",
+      imageSrc: `${baseUrl}team/matias-videla.webp`,
+      imageAlt: "Foto de Matías Videla",
+    },
+    members: [
+      'Fernanda Arias',
+      'María Jesús Escudero',
+      'Magdalena Araya',
+      'Damián Miranda',
+      'Benjamín Miller',
     ],
   },
   {
