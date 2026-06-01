@@ -113,6 +113,8 @@ export const teamAreas: TeamArea[] = [
       "Fernanda Arias",
       "Constanza Fredes",
       "Magdalena Araya",
+      'Cristóbal Moreno',
+      'Agustín Martínez',
     ],
   },
   {
@@ -133,7 +135,7 @@ export const teamAreas: TeamArea[] = [
   {
     lead: {
       name: "Piero Tardón",
-      role: "Combustible",
+      role: "Combustible y Procesos",
       imageSrc: `${baseUrl}team/piero-tardon.webp`,
       imageAlt: "Foto de Piero Tardón",
     },
