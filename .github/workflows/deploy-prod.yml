@@ -44,4 +44,12 @@ jobs:
           source: "dist/*"
           target: "~/landing-page/"
           strip_components: 1
-          rm: true
+          rm: false
+
+      - name: Fix permissions
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: cipres.cec.uchile.cl
+          username: coheteriabeauchef
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: chmod -R go+rX ~/landing-page/
