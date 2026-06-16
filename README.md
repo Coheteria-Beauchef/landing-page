@@ -38,3 +38,18 @@ Para cambiar los posts de instagram, edita el array `instagramPosts` en `src/com
 pnpm install
 pnpm dev
 ```
+
+## Branches y Deploy
+
+- **`main`** — rama de desarrollo. Cada push a `main` despliega automaticamente en **GitHub Pages** (dev/staging):
+  https://coheteriabeauchef.github.io/landing-page/
+- **`prod`** — rama de produccion. Cada push a `prod` construye y despliega en el servidor del CEC Uchile **cipres** via GitHub Actions.
+  URL final (pendiente): `coheteriabeauchef.ing.uchile.cl`
+
+### Flujo de trabajo
+
+1. Desarrollar y probar en `main` → se ve en GitHub Pages
+2. Cuando este listo, crear PR desde main hacia prod y mergear.
+3. El pipeline de GitHub Actions (`deploy-prod.yml`) construye el sitio, lo sube a `~/landing-page/` en cipres, y fija los permisos.
+
+> **Nota:** `astro.config.mjs` tiene configuraciones distintas en cada rama (`main` usa `base: /landing-page/`, `prod` usa `base: /`). El archivo `.gitattributes` en `prod` tiene `merge=ours` para que los merges automaticos preserven la config de produccion.
