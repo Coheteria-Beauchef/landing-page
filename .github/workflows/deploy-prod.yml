@@ -44,7 +44,7 @@ jobs:
           source: "dist/*"
           target: "~/landing-page/"
           strip_components: 1
-          rm: false
+          rm: true
 
       - name: Fix permissions
         uses: appleboy/ssh-action@v1.2.2
