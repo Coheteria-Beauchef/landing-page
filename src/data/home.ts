@@ -218,7 +218,7 @@ export type SocialLink = {
 
 export const headerNavigationLinks: NavigationLink[] = [
   { href: "#nosotros", label: "Nosotros" },
-  { href: "#proyectos", label: "Proyectos" },
+  { href: "#proyectos", label: "Posts" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: "#sponsors", label: "Sponsors" },
   { href: "#prensa", label: "Prensa" },
