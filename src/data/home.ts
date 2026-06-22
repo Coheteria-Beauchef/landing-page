@@ -266,11 +266,11 @@ export const instagramPosts: InstagramPost[] = [
   },
   {
     excerpt:
-      "🚀 🚀 ¡Bienvenidos @microautomacion.cl!\nEsta gran empresa se suma como auspiciador oficial para este 2026. 🌌",
-    likes: 55,
-    comments: 0,
-    imageSrc: `${baseUrl}post_ig_4.webp`,
-    imageAlt: "Instagram Post 4",
+      "¡Prueba exitosa! 🚀\nHoy les mostramos un detrás de escenas del trabajo que hacen las chicas en el área de diseño de motor. 🔩",
+    likes: 519,
+    comments: 55,
+    imageSrc: `${baseUrl}post_ig_7.webp`,
+    imageAlt: "Instagram Post 7",
   },
 ];
 
