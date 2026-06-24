@@ -43,11 +43,7 @@ content:
     label: Instagram
     type: collection
     path: src/content/instagram
-    filename:
-      field: slug
-      slugify: true
-      readonly: true
-      label: Nombre interno
+    filename: "{fields.order}.md"
     view:
       fields: [imageSrc, imageAlt, postUrl]
       primary: imageAlt
