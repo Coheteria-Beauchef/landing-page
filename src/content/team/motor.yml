@@ -2,7 +2,7 @@ order: 5
 lead:
   name: Felipe Valdebenito
   role: Motor
-  imageSrc: /team/felipe-valdebenito.webp
+  imageSrc: /media/team/felipe-valdebenito.webp
   imageAlt: Foto de Felipe Valdebenito
 members:
   - Vicente Silva

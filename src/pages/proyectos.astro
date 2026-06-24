@@ -10,7 +10,7 @@ const baseUrl = import.meta.env.BASE_URL;
 const projects = await getProjects(baseUrl);
 const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
 const canonical = new URL(`${baseUrl}proyectos`, siteUrl).toString();
-const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
+const ogImage = new URL(`${baseUrl}media/main_image.webp`, siteUrl).toString();
 
 const navLinks = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },

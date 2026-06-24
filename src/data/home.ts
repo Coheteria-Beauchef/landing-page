@@ -52,7 +52,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Matías Videla",
       role: "Capitán",
-      imageSrc: `${baseUrl}team/matias-videla.webp`,
+      imageSrc: `${baseUrl}media/team/matias-videla.webp`,
       imageAlt: "Foto de Matías Videla",
     },
     members: [],
@@ -61,7 +61,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Vicente Jerez",
       role: "Capitán",
-      imageSrc: `${baseUrl}team/vicente-jerez.webp`,
+      imageSrc: `${baseUrl}media/team/vicente-jerez.webp`,
       imageAlt: "Foto de Vicente Jerez",
     },
     members: [],
@@ -70,7 +70,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Nicolás Herrera",
       role: "Fuselaje",
-      imageSrc: `${baseUrl}team/nicolas-herrera.webp`,
+      imageSrc: `${baseUrl}media/team/nicolas-herrera.webp`,
       imageAlt: "Foto de Nicolás Herrera",
     },
     members: [
@@ -86,7 +86,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "María Jesús Escudero",
       role: "Vinculación y RRSS",
-      imageSrc: `${baseUrl}team/maria-jesus-escudero.webp`,
+      imageSrc: `${baseUrl}media/team/maria-jesus-escudero.webp`,
       imageAlt: "Foto de María Jesús Escudero",
     },
     members: [
@@ -103,7 +103,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Felipe Valdebenito",
       role: "Motor",
-      imageSrc: `${baseUrl}team/felipe-valdebenito.webp`,
+      imageSrc: `${baseUrl}media/team/felipe-valdebenito.webp`,
       imageAlt: "Foto de Felipe Valdebenito",
     },
     members: [
@@ -122,7 +122,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Matías Videla",
       role: "Operaciones y Logística",
-      imageSrc: `${baseUrl}team/matias-videla.webp`,
+      imageSrc: `${baseUrl}media/team/matias-videla.webp`,
       imageAlt: "Foto de Matías Videla",
     },
     members: [
@@ -137,7 +137,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Piero Tardón",
       role: "Combustible y Procesos",
-      imageSrc: `${baseUrl}team/piero-tardon.webp`,
+      imageSrc: `${baseUrl}media/team/piero-tardon.webp`,
       imageAlt: "Foto de Piero Tardón",
     },
     members: [
@@ -152,7 +152,7 @@ export const teamAreas: TeamArea[] = [
     lead: {
       name: "Vicente Jerez",
       role: "Telemetría",
-      imageSrc: `${baseUrl}team/vicente-jerez.webp`,
+      imageSrc: `${baseUrl}media/team/vicente-jerez.webp`,
       imageAlt: "Foto de Vicente Jerez",
     },
     members: [
@@ -184,7 +184,7 @@ export const pressArticles: PressArticle[] = [
     date: "30 de abril de 2026",
     excerpt:
       "Las y los estudiantes de la FCFM serán parte del Latin American Space Challenge (LASC), una de las competencias de cohetes y satélites más grande del mundo.",
-    imageSrc: `${baseUrl}press/noticia-4.webp`,
+    imageSrc: `${baseUrl}media/press/noticia-4.webp`,
   },
   {
     source: "uchile.cl",
@@ -193,7 +193,7 @@ export const pressArticles: PressArticle[] = [
     date: "9 de julio de 2025",
     excerpt:
       "El equipo realizó una prueba estática exitosa de su primer motor de propergol sólido, diseñado y construido íntegramente por sus integrantes.",
-    imageSrc: `${baseUrl}press/noticia-1.webp`,
+    imageSrc: `${baseUrl}media/press/noticia-1.webp`,
   },
   {
     source: "ingenieria.uchile.cl",
@@ -202,7 +202,7 @@ export const pressArticles: PressArticle[] = [
     date: "8 de julio de 2025",
     excerpt:
       "La Facultad de Ingeniería destacó el logro del equipo, que los posiciona para participar en competencias internacionales de cohetería experimental.",
-    imageSrc: `${baseUrl}press/noticia-2.webp`,
+    imageSrc: `${baseUrl}media/press/noticia-2.webp`,
   },
 ];
 
@@ -254,7 +254,7 @@ export const instagramPosts: InstagramPost[] = [
       "🌌 ¡PREPÁRATE LASC 2026!\nOficialmente fuimos aceptados para participar en el Latin American Space Challenge 2026 – 7ma Edición 🚀",
     likes: 329,
     comments: 31,
-    imageSrc: `${baseUrl}post_ig_5.webp`,
+    imageSrc: `${baseUrl}media/post_ig_5.webp`,
     imageAlt: "Instagram Post 5",
   },
   {
@@ -262,7 +262,7 @@ export const instagramPosts: InstagramPost[] = [
       "🚀¿Por qué Minerva I?\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
     likes: 582,
     comments: 15,
-    imageSrc: `${baseUrl}post_ig_6.webp`,
+    imageSrc: `${baseUrl}media/post_ig_6.webp`,
     imageAlt: "Instagram Post 6",
   },
   {
@@ -270,22 +270,22 @@ export const instagramPosts: InstagramPost[] = [
       "¡Prueba exitosa! 🚀\nHoy les mostramos un detrás de escenas del trabajo que hacen las chicas en el área de diseño de motor. 🔩",
     likes: 519,
     comments: 55,
-    imageSrc: `${baseUrl}post_ig_7.webp`,
+    imageSrc: `${baseUrl}media/post_ig_7.webp`,
     imageAlt: "Instagram Post 7",
   },
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: `${baseUrl}auspiciadores/fcfm_logo.webp`, alt: "FCFM" },
-  { src: `${baseUrl}auspiciadores/departamento_mecanica_logo.webp`, alt: "Mecánica" },
-  { src: `${baseUrl}auspiciadores/die_fcfm.webp`, alt: "Eléctrica" },
-  { src: `${baseUrl}auspiciadores/fablab_logo.webp`, alt: "FabLab" },
-  { src: `${baseUrl}auspiciadores/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
-  { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
-  { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
-  { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
-  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
-  { src: `${baseUrl}auspiciadores/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
+  { src: `${baseUrl}media/auspiciadores/fcfm_logo.webp`, alt: "FCFM" },
+  { src: `${baseUrl}media/auspiciadores/departamento_mecanica_logo.webp`, alt: "Mecánica" },
+  { src: `${baseUrl}media/auspiciadores/die_fcfm.webp`, alt: "Eléctrica" },
+  { src: `${baseUrl}media/auspiciadores/fablab_logo.webp`, alt: "FabLab" },
+  { src: `${baseUrl}media/auspiciadores/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
+  { src: `${baseUrl}media/auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
+  { src: `${baseUrl}media/auspiciadores/micro.webp`, alt: "Micro Automación" },
+  { src: `${baseUrl}media/auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
+  { src: `${baseUrl}media/auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
+  { src: `${baseUrl}media/auspiciadores/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
 ];
 
 export const socialLinks: SocialLink[] = [

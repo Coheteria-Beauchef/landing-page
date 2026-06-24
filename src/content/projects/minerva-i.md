@@ -1,7 +1,7 @@
 ---
 title: Minerva I
 summary: Primera misión de lanzamiento del equipo para competir en LASC.
-logoSrc: /coheteriabeauchef_borderless_logo.webp
+logoSrc: /media/coheteriabeauchef_borderless_logo.webp
 videoUrl: ""
 gallery: []
 model3dSrc: ""

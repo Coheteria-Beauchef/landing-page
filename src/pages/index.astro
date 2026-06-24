@@ -14,7 +14,7 @@ import { socialProfiles } from "../data/home";
 const baseUrl = import.meta.env.BASE_URL;
 const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
 const canonical = new URL(baseUrl, siteUrl).toString();
-const ogImage = new URL(`${baseUrl}main-image2.webp`, siteUrl).toString();
+const ogImage = new URL(`${baseUrl}media/main-image2.webp`, siteUrl).toString();
 
 const title = "Cohetería Beauchef | Cohetería e Ingeniería Aeroespacial en la Universidad de Chile";
 const description =
@@ -44,7 +44,7 @@ const structuredData = [
     name: "Cohetería Beauchef",
     alternateName: "Coheteria Beauchef",
     url: canonical,
-    logo: new URL(`${baseUrl}coheteriabeauchef_borderless_logo.webp`, siteUrl).toString(),
+    logo: new URL(`${baseUrl}media/coheteriabeauchef_borderless_logo.webp`, siteUrl).toString(),
     description,
     email: "coheteriabeauchef@uchile.cl",
     address: {
@@ -93,7 +93,7 @@ const structuredData = [
   socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
   structuredData={structuredData}
 >
-  <link slot="head" rel="preload" as="image" href={`${baseUrl}main-image2.webp`} type="image/webp" fetchpriority="high" />
+  <link slot="head" rel="preload" as="image" href={`${baseUrl}media/main-image2.webp`} type="image/webp" fetchpriority="high" />
   <main class="flex flex-col bg-white">
     <AnnouncementBar />
     <HeroSection />
