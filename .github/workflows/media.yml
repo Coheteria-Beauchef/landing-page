@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "uploads/originals/**"
+      - "public/media/**"
       - "src/content/**"
   workflow_dispatch:
 

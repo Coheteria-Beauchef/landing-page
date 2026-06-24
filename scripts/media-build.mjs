@@ -2,8 +2,8 @@ import { spawn, spawnSync } from "node:child_process";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
-const inputDir = path.resolve("uploads/originals");
-const outputDir = path.resolve("public/media");
+const uploadInputDir = path.resolve("uploads/originals");
+const mediaDir = path.resolve("public/media");
 const contentDir = path.resolve("src/content");
 const allowedInput = /\.(png|jpe?g)$/i;
 const contentFile = /\.(md|ya?ml|toml)$/i;
@@ -91,7 +91,7 @@ async function removeEmptyDirs(dir) {
     }
   }
 
-  if (dir !== inputDir && (await fs.readdir(dir)).length === 0) {
+  if (dir !== uploadInputDir && (await fs.readdir(dir)).length === 0) {
     await fs.rmdir(dir);
   }
 }
@@ -114,19 +114,24 @@ async function rewriteContentReferences(rewrites) {
   }
 }
 
-const images = await findImages(inputDir);
+const uploadImages = await findImages(uploadInputDir);
+const mediaImages = await findImages(mediaDir);
+const images = [
+  ...uploadImages.map((source) => ({ root: uploadInputDir, source })),
+  ...mediaImages.map((source) => ({ root: mediaDir, source })),
+];
 
 if (images.length === 0) {
-  console.log("No PNG/JPEG source images found in uploads/originals.");
+  console.log("No PNG/JPEG source images found in public/media or uploads/originals.");
   process.exit(0);
 }
 
 const rewrites = new Map();
 const imageMagickCommand = findImageMagickCommand();
 
-for (const source of images) {
-  const relative = path.relative(inputDir, source);
-  const target = path.join(outputDir, relative).replace(/\.(png|jpe?g)$/i, ".webp");
+for (const { root, source } of images) {
+  const relative = path.relative(root, source);
+  const target = path.join(mediaDir, relative).replace(/\.(png|jpe?g)$/i, ".webp");
   const sourcePublicPath = `/media/${relative.replaceAll(path.sep, "/")}`;
   const targetPublicPath = sourcePublicPath.replace(/\.(png|jpe?g)$/i, ".webp");
 
@@ -139,4 +144,4 @@ for (const source of images) {
 }
 
 await rewriteContentReferences(rewrites);
-await removeEmptyDirs(inputDir);
+await removeEmptyDirs(uploadInputDir);

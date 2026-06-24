@@ -8,7 +8,7 @@ const disallowedSource = /\.(png|jpe?g)$/i;
 const contentFile = /\.(md|ya?ml|toml)$/i;
 const contentDir = path.resolve("src/content");
 const generatedMediaDir = path.resolve("public/media");
-const temporaryUploadDirs = ["uploads/originals", "src/assets/uploads/originals"];
+const temporaryUploadDirs = ["uploads/originals", "src/assets/uploads/originals", "public/media"];
 const maxGeneratedWebpBytes = 500 * 1024;
 
 async function exists(filePath) {

@@ -1,6 +1,8 @@
 media:
-  input: uploads/originals
+  input: public/media
   output: /media
+  rename: random
+  extensions: [jpg, jpeg, png, webp]
 
 content:
   - name: news

@@ -42,7 +42,7 @@ El archivo `.pages.yml` prepara estos archivos para editarlos desde Pages CMS si
 
 1. Una persona edita contenido desde Pages CMS o directamente en GitHub.
 2. El cambio queda como archivos Markdown/YAML dentro del repositorio.
-3. Si hay imagenes nuevas, Pages CMS las sube temporalmente como PNG/JPEG a `uploads/originals/` y escribe una ruta tipo `/media/foto.png` en el contenido.
+3. Si hay imagenes nuevas, Pages CMS las sube a `public/media/` y escribe una ruta tipo `/media/foto.png` en el contenido.
 4. Se ejecuta `pnpm media:build` para crear los WebP finales en `public/media/`, cambiar las referencias a `/media/foto.webp` y borrar esos PNG/JPEG originales.
 5. Se abre un PR hacia `main`. GitHub Actions corre validaciones y despliega staging en GitHub Pages cuando se mergea.
 6. Cuando staging esta aprobado, se hace PR de `main` a `prod`; el workflow de produccion construye y copia el sitio estatico a Cipres.
@@ -60,7 +60,7 @@ El repositorio sigue siendo la fuente de verdad. Pages CMS solo es una interfaz 
 ### Imágenes
 
 - **Usar WebP de verdad**, no solo cambiar la extensión del archivo. Ponerle `.webp` a un JPEG o PNG no lo convierte mágicamente.
-- Para convertir imágenes nuevas, deja PNG/JPEG temporales en `uploads/originals/` y ejecuta:
+- Para convertir imágenes nuevas, deja PNG/JPEG en `public/media/` y ejecuta:
   ```bash
   pnpm media:build
   ```
