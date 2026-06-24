@@ -1,4 +1,4 @@
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import { promises as fs } from "node:fs";
 import path from "node:path";
 
@@ -70,6 +70,18 @@ function run(command, args) {
   });
 }
 
+function findImageMagickCommand() {
+  for (const command of ["magick", "convert"]) {
+    const result = spawnSync(command, ["-version"], { stdio: "ignore" });
+
+    if (result.status === 0) {
+      return command;
+    }
+  }
+
+  throw new Error("ImageMagick is required. Install it so either `magick` or `convert` is available.");
+}
+
 async function removeEmptyDirs(dir) {
   if (!(await exists(dir))) return;
 
@@ -110,6 +122,7 @@ if (images.length === 0) {
 }
 
 const rewrites = new Map();
+const imageMagickCommand = findImageMagickCommand();
 
 for (const source of images) {
   const relative = path.relative(inputDir, source);
@@ -118,7 +131,7 @@ for (const source of images) {
   const targetPublicPath = sourcePublicPath.replace(/\.(png|jpe?g)$/i, ".webp");
 
   await fs.mkdir(path.dirname(target), { recursive: true });
-  await run("magick", [source, "-auto-orient", "-resize", "1920x1920>", "-quality", "85", target]);
+  await run(imageMagickCommand, [source, "-auto-orient", "-resize", "1920x1920>", "-quality", "85", target]);
   await fs.unlink(source);
   rewrites.set(sourcePublicPath, targetPublicPath);
 

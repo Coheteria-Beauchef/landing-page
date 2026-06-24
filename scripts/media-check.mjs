@@ -76,6 +76,7 @@ const tracked = await trackedFiles();
 for (const file of tracked) {
   if (!temporaryUploadDirs.some((dir) => file.startsWith(`${dir}/`))) continue;
   if (disallowedSource.test(file)) {
+    if (!(await exists(path.resolve(file)))) continue;
     errors.push(`${file} is a tracked temporary source upload. Run pnpm media:build and commit the generated WebP plus the source deletion.`);
   }
 }
