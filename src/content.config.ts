@@ -47,7 +47,7 @@ const instagram = defineCollection({
 });
 
 const sponsors = defineCollection({
-  loader: file("./src/content/site/sponsors.yml"),
+  loader: glob({ pattern: "**/*.yml", base: "./src/content/sponsors" }),
   schema: z.object({
     order: z.number().int().nonnegative(),
     src: publicPath,
@@ -57,7 +57,7 @@ const sponsors = defineCollection({
 });
 
 const team = defineCollection({
-  loader: file("./src/content/team/areas.yml"),
+  loader: glob({ pattern: "**/*.yml", base: "./src/content/team" }),
   schema: z.object({
     order: z.number().int().nonnegative(),
     lead: z.object({

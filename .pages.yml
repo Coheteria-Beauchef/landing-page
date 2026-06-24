@@ -43,9 +43,16 @@ content:
     label: Instagram
     type: collection
     path: src/content/instagram
-    filename: "{fields.slug}.md"
+    filename:
+      field: slug
+      slugify: true
+      readonly: true
+      label: Nombre interno
+    view:
+      fields: [imageSrc, imageAlt, postUrl]
+      primary: imageAlt
+      sort: [order, asc]
     fields:
-      - { name: slug, label: Slug, type: string, required: true }
       - { name: order, label: Orden, type: number, required: true }
       - { name: postUrl, label: URL del post, type: string }
       - { name: excerpt, label: Caption resumido, type: text, required: true }
@@ -56,21 +63,50 @@ content:
 
   - name: sponsors
     label: Sponsors
-    type: file
-    path: src/content/site/sponsors.yml
+    type: collection
+    path: src/content/sponsors
+    filename:
+      field: alt
+      slugify: true
+      readonly: true
+      label: Nombre interno
+    view:
+      fields: [src, alt]
+      primary: alt
+      sort: [order, asc]
     fields:
-      - name: sponsors
-        label: Sponsors
-        type: object
+      - { name: order, label: Orden, type: number, required: true }
+      - { name: src, label: Logo, type: image, required: true }
+      - { name: alt, label: Nombre, type: string, required: true }
+      - { name: heightClass, label: Clase de altura, type: string }
 
   - name: team
     label: Equipo
-    type: file
-    path: src/content/team/areas.yml
+    type: collection
+    path: src/content/team
+    filename:
+      field: lead.name
+      slugify: true
+      readonly: true
+      label: Nombre interno
+    view:
+      fields: [lead.name, lead.role]
+      primary: lead.name
+      sort: [order, asc]
     fields:
-      - name: areas
-        label: Áreas
+      - { name: order, label: Orden, type: number, required: true }
+      - name: lead
+        label: Encargado
         type: object
+        fields:
+          - { name: name, label: Nombre, type: string, required: true }
+          - { name: role, label: Rol, type: string, required: true }
+          - { name: imageSrc, label: Foto, type: image }
+          - { name: imageAlt, label: Texto alternativo, type: string }
+      - { name: members, label: Integrantes, type: string, list: true }
+      - { name: description, label: Descripción, type: text }
+      - { name: imageSrc, label: Imagen del equipo, type: image }
+      - { name: imageAlt, label: Texto alternativo de imagen del equipo, type: string }
 
   - name: settings
     label: Ajustes del sitio

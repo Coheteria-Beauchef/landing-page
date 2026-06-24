@@ -1,0 +1,12 @@
+order: 6
+lead:
+  name: Matías Videla
+  role: Operaciones y Logística
+  imageSrc: /team/matias-videla.webp
+  imageAlt: Foto de Matías Videla
+members:
+  - Fernanda Arias
+  - María Jesús Escudero
+  - Magdalena Araya
+  - Damián Miranda
+  - Benjamín Miller

@@ -1,0 +1,13 @@
+order: 3
+lead:
+  name: Nicolás Herrera
+  role: Fuselaje
+  imageSrc: /team/nicolas-herrera.webp
+  imageAlt: Foto de Nicolás Herrera
+members:
+  - Javier Garretón
+  - Fernanda Bizama
+  - Maika Vera
+  - Camilo Guzmán
+  - Rolando Cuellar
+  - Benjamín Miller

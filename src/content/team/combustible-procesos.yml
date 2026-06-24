@@ -1,0 +1,12 @@
+order: 7
+lead:
+  name: Piero Tardón
+  role: Combustible y Procesos
+  imageSrc: /team/piero-tardon.webp
+  imageAlt: Foto de Piero Tardón
+members:
+  - Agustín Martínez
+  - Felipe García
+  - Benjamín Ríos
+  - Allison Valdivia
+  - Rafael Rocha
