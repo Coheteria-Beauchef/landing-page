@@ -1,0 +1,84 @@
+media:
+  input: uploads/originals
+  output: /media
+
+content:
+  - name: news
+    label: Noticias
+    type: collection
+    path: src/content/news
+    filename: "{fields.slug}.md"
+    fields:
+      - { name: title, label: Título, type: string, required: true }
+      - { name: slug, label: Slug, type: string, required: true }
+      - { name: source, label: Medio, type: string, required: true }
+      - { name: url, label: URL, type: string, required: true }
+      - { name: date, label: Fecha visible, type: string, required: true }
+      - { name: excerpt, label: Bajada, type: text, required: true }
+      - { name: imageSrc, label: Imagen, type: image, required: true }
+      - { name: order, label: Orden, type: number, required: true }
+      - { name: draft, label: Borrador, type: boolean, default: false }
+      - { name: body, label: Contenido, type: rich-text }
+
+  - name: projects
+    label: Proyectos
+    type: collection
+    path: src/content/projects
+    filename: "{fields.slug}.md"
+    fields:
+      - { name: title, label: Nombre, type: string, required: true }
+      - { name: slug, label: Slug, type: string, required: true }
+      - { name: summary, label: Resumen, type: text, required: true }
+      - { name: logoSrc, label: Logo, type: image }
+      - { name: videoUrl, label: URL de video, type: string }
+      - { name: gallery, label: Galería, type: image, list: true }
+      - { name: model3dSrc, label: Modelo 3D, type: string }
+      - { name: order, label: Orden, type: number, required: true }
+      - { name: draft, label: Borrador, type: boolean, default: true }
+      - { name: body, label: Detalle, type: rich-text }
+
+  - name: instagram
+    label: Instagram
+    type: collection
+    path: src/content/instagram
+    filename: "{fields.slug}.md"
+    fields:
+      - { name: slug, label: Slug, type: string, required: true }
+      - { name: order, label: Orden, type: number, required: true }
+      - { name: postUrl, label: URL del post, type: string }
+      - { name: excerpt, label: Caption resumido, type: text, required: true }
+      - { name: likes, label: Likes, type: number, required: true }
+      - { name: comments, label: Comentarios, type: number, required: true }
+      - { name: imageSrc, label: Imagen subida por RRSS, type: image, required: true }
+      - { name: imageAlt, label: Texto alternativo, type: string, required: true }
+
+  - name: sponsors
+    label: Sponsors
+    type: file
+    path: src/content/site/sponsors.yml
+    fields:
+      - name: sponsors
+        label: Sponsors
+        type: object
+
+  - name: team
+    label: Equipo
+    type: file
+    path: src/content/team/areas.yml
+    fields:
+      - name: areas
+        label: Áreas
+        type: object
+
+  - name: settings
+    label: Ajustes del sitio
+    type: file
+    path: src/content/site/settings.yml
+    fields:
+      - name: announcement
+        label: Anuncio
+        type: object
+        fields:
+          - { name: enabled, label: Activo, type: boolean }
+          - { name: text, label: Texto, type: string }
+          - { name: href, label: URL, type: string }

@@ -7,6 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "media:build": "node scripts/media-build.mjs",
+    "media:check": "node scripts/media-check.mjs",
+    "instagram:update": "node scripts/instagram-update.mjs",
     "tsgo": "tsgo",
     "check-types": "astro check",
     "check-types:native": "tsgo --noEmit",
@@ -26,6 +29,11 @@
     "oxlint": "^1.41.0",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "overrides": {
+      "vite": "^7.3.1"
+    }
   },
   "packageManager": "pnpm@10.30.2"
 }

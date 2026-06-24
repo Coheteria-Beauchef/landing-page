@@ -1,0 +1,44 @@
+fcfm:
+  order: 1
+  src: /auspiciadores/fcfm_logo.webp
+  alt: FCFM
+mecanica:
+  order: 2
+  src: /auspiciadores/departamento_mecanica_logo.webp
+  alt: Mecánica
+electrica:
+  order: 3
+  src: /auspiciadores/die_fcfm.webp
+  alt: Eléctrica
+fablab:
+  order: 4
+  src: /auspiciadores/fablab_logo.webp
+  alt: FabLab
+maquintel:
+  order: 5
+  src: /auspiciadores/maquintel_logo.webp
+  alt: Maquintel
+  heightClass: h-[100px]
+alutipo:
+  order: 6
+  src: /auspiciadores/alutipo_logo.webp
+  alt: Alutipo
+micro:
+  order: 7
+  src: /auspiciadores/micro.webp
+  alt: Micro Automación
+ansys:
+  order: 8
+  src: /auspiciadores/logo_ansys.webp
+  alt: Ansys
+  heightClass: h-[120px]
+esss:
+  order: 9
+  src: /auspiciadores/logo_esss.webp
+  alt: ESSS
+  heightClass: h-[120px]
+fabricala:
+  order: 10
+  src: /auspiciadores/fabricala_logo.webp
+  alt: FABRICALA
+  heightClass: h-[70px]

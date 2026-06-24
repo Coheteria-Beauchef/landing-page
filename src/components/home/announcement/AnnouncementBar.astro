@@ -1,7 +1,7 @@
 ---
-import { homeAnnouncement } from "./announcement";
+import { getHomeAnnouncement } from "../../../data/content";
 
-const { enabled, text, href } = homeAnnouncement;
+const { enabled, text, href } = await getHomeAnnouncement();
 ---
 
 {enabled && (

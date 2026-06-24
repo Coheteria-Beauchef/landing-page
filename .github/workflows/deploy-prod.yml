@@ -32,6 +32,12 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Convert source uploads
+        run: pnpm media:build
+
+      - name: Check media policy
+        run: pnpm media:check
+
       - name: Build
         run: pnpm run build
 

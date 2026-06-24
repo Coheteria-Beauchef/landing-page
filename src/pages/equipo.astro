@@ -4,14 +4,16 @@ import Brand from "../components/home/shared/Brand.astro";
 import NavLinks from "../components/home/shared/NavLinks.astro";
 import TeamCard from "../components/home/shared/TeamCard.astro";
 import SiteFooter from "../components/home/footer/SiteFooter.astro";
-import { teamAreas, socialProfiles } from "../data/home";
+import { socialProfiles } from "../data/home";
+import { getTeamAreas } from "../data/content";
 import CtaSection from "../components/home/cta/CtaSection.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
+const teamAreas = await getTeamAreas(baseUrl);
 
 const navLinks = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },
-  { href: `${baseUrl}#proyectos`, label: "Proyectos" },
+  { href: `${baseUrl}proyectos`, label: "Proyectos" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: `${baseUrl}#sponsors`, label: "Sponsors" },
   { href: `${baseUrl}#prensa`, label: "Prensa" },

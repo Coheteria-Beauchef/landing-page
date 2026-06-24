@@ -24,6 +24,7 @@ export type InstagramPost = {
   excerpt: string;
   likes: number;
   comments: number;
+  postUrl?: string;
   imageSrc: string;
   imageAlt: string;
 };
@@ -218,7 +219,7 @@ export type SocialLink = {
 
 export const headerNavigationLinks: NavigationLink[] = [
   { href: "#nosotros", label: "Nosotros" },
-  { href: "#proyectos", label: "Posts" },
+  { href: `${baseUrl}proyectos`, label: "Proyectos" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: "#sponsors", label: "Sponsors" },
   { href: "#prensa", label: "Prensa" },
@@ -227,7 +228,7 @@ export const headerNavigationLinks: NavigationLink[] = [
 
 export const footerNavigationLinks: NavigationLink[] = [
   { href: "#nosotros", label: "Nosotros" },
-  { href: "#proyectos", label: "Proyectos" },
+  { href: `${baseUrl}proyectos`, label: "Proyectos" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: "#sponsors", label: "Sponsors" },
 ];

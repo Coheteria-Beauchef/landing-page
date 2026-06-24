@@ -1,6 +1,7 @@
 ---
-import { sponsorLogos } from "../../../data/home";
+import { getSponsorLogos } from "../../../data/content";
 
+const sponsorLogos = await getSponsorLogos(import.meta.env.BASE_URL);
 const marqueeLogos = [...sponsorLogos, ...sponsorLogos];
 ---
 

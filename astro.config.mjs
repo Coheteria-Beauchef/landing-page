@@ -10,5 +10,19 @@ export default defineConfig({
     optimizeDeps: {
       exclude: ["gsap", "gsap/ScrollTrigger", "gsap/MotionPathPlugin"],
     },
+    build: {
+      rollupOptions: {
+        onwarn(warning, warn) {
+          if (
+            warning.code === "UNUSED_EXTERNAL_IMPORT" &&
+            warning.message.includes("@astrojs/internal-helpers/remote")
+          ) {
+            return;
+          }
+
+          warn(warning);
+        },
+      },
+    },
   },
 });

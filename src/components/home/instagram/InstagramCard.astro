@@ -3,14 +3,22 @@ interface Props {
   excerpt: string;
   likes: number;
   comments: number;
+  postUrl?: string;
   imageSrc: string;
   imageAlt: string;
 }
 
-const { excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
+const { excerpt, likes, comments, postUrl, imageSrc, imageAlt } = Astro.props as Props;
+const Wrapper = postUrl ? "a" : "article";
 ---
 
-<article class="w-full bg-white border border-[#E5E7EB] rounded-sm overflow-hidden flex flex-col">
+<Wrapper
+  href={postUrl}
+  target={postUrl ? "_blank" : undefined}
+  rel={postUrl ? "noreferrer" : undefined}
+  class="group flex w-full flex-col overflow-hidden rounded-sm border border-[#E5E7EB] bg-white transition-shadow duration-300 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1025B9] focus-visible:ring-offset-2"
+  aria-label={postUrl ? `Abrir post original de Instagram: ${imageAlt}` : undefined}
+>
   <div class="p-5 flex flex-col gap-3 h-[160px]">
     <p class="text-[#48484A] font-normal text-sm leading-relaxed line-clamp-4 whitespace-pre-line">
       {excerpt}
@@ -24,7 +32,7 @@ const { excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
     <img
       src={imageSrc}
       alt={imageAlt}
-      class="absolute inset-0 h-full w-full scale-[1.08] object-cover object-center md:scale-100"
+      class="absolute inset-0 h-full w-full scale-[1.08] object-cover object-center transition-transform duration-500 group-hover:scale-[1.12] md:scale-100 md:group-hover:scale-105"
     />
   </div>
-</article>
+</Wrapper>

@@ -97,9 +97,10 @@ const serializedStructuredData = structuredData
         {
             serializedStructuredData && (
                 <script
+                    is:inline
                     type="application/ld+json"
                     set:html={serializedStructuredData}
-                />
+                ></script>
             )
         }
         <slot name="head" />

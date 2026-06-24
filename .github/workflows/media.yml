@@ -1,21 +1,18 @@
-name: Deploy to GitHub Pages
+name: Media Conversion
 
 on:
   push:
-    branches: [main]
+    paths:
+      - "uploads/originals/**"
+      - "src/content/**"
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  contents: write
 
 jobs:
-  build:
+  convert:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -34,8 +31,8 @@ jobs:
           node-version: 24
           cache: "pnpm"
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Install ImageMagick
+        run: sudo apt-get update && sudo apt-get install -y imagemagick
 
       - name: Install dependencies
         run: pnpm install
@@ -46,21 +43,8 @@ jobs:
       - name: Check media policy
         run: pnpm media:check
 
-      - name: Build
-        run: pnpm run build
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Commit generated media
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          path: ./dist
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          commit_message: "Optimize uploaded media"
+          file_pattern: "public/media uploads/originals src/assets/uploads/originals src/content"
