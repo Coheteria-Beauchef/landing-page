@@ -3,13 +3,15 @@ import Layout from "../layouts/Layout.astro";
 import Brand from "../components/home/shared/Brand.astro";
 import NavLinks from "../components/home/shared/NavLinks.astro";
 import TeamCard from "../components/home/shared/TeamCard.astro";
+import TeamDialog from "../components/home/shared/TeamDialog.astro";
 import SiteFooter from "../components/home/footer/SiteFooter.astro";
 import { socialProfiles } from "../data/home";
-import { getTeamAreas } from "../data/content";
+import { getTeamAreas, getTeamPageSettings } from "../data/content";
 import CtaSection from "../components/home/cta/CtaSection.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 const teamAreas = await getTeamAreas(baseUrl);
+const teamPage = await getTeamPageSettings(baseUrl);
 
 const navLinks = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },
@@ -22,11 +24,27 @@ const navLinks = [
 const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
 const canonical = new URL(`${baseUrl}equipo`, siteUrl).toString();
 const ogImage = new URL(`${baseUrl}media/main_image.webp`, siteUrl).toString();
+
+const captains = teamAreas.filter((entry) => entry.kind === "captain");
+const leaders = teamAreas.filter((entry) => entry.kind === "area");
+const workTeams = teamAreas.filter((entry) => entry.kind === "area" || entry.kind === "support");
+const professors = teamAreas.filter((entry) => entry.kind === "professor");
+const defaultTeamImageSrc = teamPage.defaultImageSrc;
+
+const teamTitle = (role: string | string[]) => Array.isArray(role) ? role.at(-1) ?? role[0] : role;
+const teamDialogId = (id: string | undefined, index: number) => `team-dialog-${id ?? index}`;
+const teamDetails = (area: (typeof workTeams)[number]) => area.detailsMarkdown?.trim() || [
+  `# ${teamTitle(area.lead.role)}`,
+  area.description ?? teamPage.fallbackDescription,
+  "",
+  `## ${teamPage.membersHeading}`,
+  ...(area.members.length > 0 ? area.members.map((member) => `- ${member}`) : [`- ${teamPage.fallbackMember}`]),
+].join("\n");
 ---
 
 <Layout
-  title="Equipo | Cohetería Beauchef"
-  description="Conoce al equipo de Cohetería Beauchef, estudiantes de la Universidad de Chile apasionados por la cohetería e ingeniería aeroespacial."
+  title={teamPage.seoTitle}
+  description={teamPage.seoDescription}
   canonical={canonical}
   ogImage={ogImage}
   socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
@@ -103,38 +121,154 @@ const ogImage = new URL(`${baseUrl}media/main_image.webp`, siteUrl).toString();
       });
     </script>
 
+
+    <script>
+      const closeAnimationMs = 300;
+
+      const setPageScrollLocked = (locked: boolean) => {
+        document.documentElement.classList.toggle("overflow-hidden", locked);
+        document.body.classList.toggle("overflow-hidden", locked);
+      };
+
+      const openTeamDialog = (dialog: HTMLElement) => {
+        if (dialog.classList.contains("is-open")) return;
+
+        dialog.classList.remove("is-closing");
+        dialog.classList.add("is-visible");
+        dialog.setAttribute("aria-hidden", "false");
+        setPageScrollLocked(true);
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            dialog.classList.add("is-open");
+            dialog.querySelector<HTMLButtonElement>("[data-team-dialog-close]:not(.team-dialog__backdrop)")?.focus();
+          });
+        });
+      };
+
+      const closeTeamDialog = (dialog: HTMLElement) => {
+        if (!dialog.classList.contains("is-open") || dialog.classList.contains("is-closing")) return;
+
+        dialog.classList.remove("is-open");
+        dialog.classList.add("is-closing");
+        dialog.setAttribute("aria-hidden", "true");
+
+        window.setTimeout(() => {
+          dialog.classList.remove("is-visible", "is-closing");
+          setPageScrollLocked(Boolean(document.querySelector("[data-team-dialog].is-open")));
+        }, closeAnimationMs);
+      };
+
+      document.querySelectorAll<HTMLButtonElement>("[data-team-dialog-trigger]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const dialogId = trigger.dataset.teamDialogTrigger;
+          if (!dialogId) return;
+
+          const dialog = document.getElementById(dialogId);
+          if (dialog) openTeamDialog(dialog);
+        });
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-team-dialog]").forEach((dialog) => {
+        dialog.querySelectorAll<HTMLButtonElement>("[data-team-dialog-close]").forEach((button) => {
+          button.addEventListener("click", () => closeTeamDialog(dialog));
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+
+        const dialog = document.querySelector<HTMLElement>("[data-team-dialog].is-open");
+        if (dialog) closeTeamDialog(dialog);
+      });
+    </script>
+
     <main class="flex-1 px-6 pt-20 pb-24 sm:px-8 lg:px-10">
       <div class="mx-auto max-w-[1440px]">
         <div class="mb-16 mt-12">
           <h1 class="text-4xl font-black leading-none tracking-[-0.04em] text-[#1C1C1E] sm:text-5xl">
-            Conoce al equipo
+            {teamPage.title}
           </h1>
         </div>
 
-        {(() => {
-          const [captain1, captain2, ...leads] = teamAreas;
-          return (
-            <div class="flex flex-col items-center gap-8">
-              <div class="flex flex-wrap justify-center gap-6">
-                  {[captain1, captain2].map((captain) => (
-                    <TeamCard {...captain.lead} members={captain.members} />
-                  ))}
+        <div class="flex flex-col items-center gap-16">
+          <section class="flex w-full flex-col items-center gap-10">
+            <div class="flex flex-col items-center gap-3 text-center">
+              <h3 class="text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
+                {teamPage.studentOrgTitle}
+              </h3>
+            </div>
+
+            <div class="flex w-full max-w-6xl flex-col items-center gap-10 py-2">
+              <div class="grid w-full max-w-[620px] grid-cols-1 justify-items-center gap-6 sm:grid-cols-2">
+                {captains.map((captain) => (
+                  <TeamCard {...captain.lead} />
+                ))}
               </div>
 
-              <div class="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
-                {leads.map(({ lead, members }) => (
-                  <div class="w-[320px] flex justify-center">
-                    <TeamCard {...lead} members={members} />
-                  </div>
+              <div class="grid w-full grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {leaders.map((leader) => (
+                  <TeamCard {...leader.lead} />
                 ))}
               </div>
             </div>
-          );
-        })()}
+          </section>
+
+          {professors.length > 0 && (
+            <section class="flex w-full flex-col items-center gap-8">
+              <div class="flex flex-col items-center gap-3 text-center">
+                <h3 class="text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
+                  {teamPage.professorsTitle}
+                </h3>
+              </div>
+
+              <div class="flex flex-wrap justify-center gap-6">
+                {professors.map((professor) => (
+                  <TeamCard
+                    {...professor.lead}
+                    imageSrc={professor.lead.imageSrc ?? defaultTeamImageSrc}
+                    imageAlt={professor.lead.imageAlt ?? teamPage.defaultImageAlt}
+                    members={professor.members}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+
+          <section class="flex w-full flex-col items-center gap-8">
+            <div class="flex flex-col items-center gap-3 text-center">
+              <h3 class="text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
+                {teamPage.workTeamsTitle}
+              </h3>
+            </div>
+
+            <div class="flex w-full max-w-6xl flex-wrap justify-center gap-6">
+              {workTeams.map((area, index) => (
+                <TeamCard
+                  name={teamTitle(area.lead.role)}
+                  imageSrc={area.coverImageSrc ?? defaultTeamImageSrc}
+                  imageAlt={area.coverImageAlt ?? teamPage.defaultImageAlt}
+                  members={area.members}
+                  dialogId={teamDialogId(area.id, index)}
+                />
+              ))}
+            </div>
+
+            {workTeams.map((area, index) => (
+              <TeamDialog
+                id={teamDialogId(area.id, index)}
+                title={teamTitle(area.lead.role)}
+                imageSrc={area.coverImageSrc ?? defaultTeamImageSrc}
+                imageAlt={area.coverImageAlt ?? teamPage.defaultImageAlt}
+                markdown={teamDetails(area)}
+              />
+            ))}
+          </section>
+        </div>
       </div>
     </main>
 
-    <CtaSection showTeamLink={false} />
+    {teamPage.showCta && <CtaSection showTeamLink={false} />}
 
     <SiteFooter />
   </div>

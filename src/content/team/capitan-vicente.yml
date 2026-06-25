@@ -1,7 +1,10 @@
+kind: captain
 order: 2
 lead:
   name: Vicente Jerez
-  role: Capitán
+  role:
+    - Capitán
+    - Telemetría
   imageSrc: /media/team/vicente-jerez.webp
   imageAlt: Foto de Vicente Jerez
 members: []

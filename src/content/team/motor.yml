@@ -1,10 +1,12 @@
+kind: area
 order: 5
 lead:
   name: Felipe Valdebenito
-  role: Motor
+  role:
+    - Motor
   imageSrc: /media/team/felipe-valdebenito.webp
   imageAlt: Foto de Felipe Valdebenito
-members:
+membersMarkdown: |
   - Vicente Silva
   - Valentina Sáez
   - Adriano Villarroel
@@ -14,3 +16,21 @@ members:
   - Magdalena Araya
   - Cristóbal Moreno
   - Agustín Martínez
+description: Diseño, pruebas y desarrollo del motor de cohete.
+detailsMarkdown: |
+  # Motor
+
+  Equipo encargado del diseño, pruebas y desarrollo del motor del cohete.
+
+  ## Integrantes
+  - Vicente Silva
+  - Valentina Sáez
+  - Adriano Villarroel
+  - Lorenzo Leñam
+  - Fernanda Arias
+  - Constanza Fredes
+  - Magdalena Araya
+  - Cristóbal Moreno
+  - Agustín Martínez
+coverImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+coverImageAlt: Logo de Cohetería Beauchef

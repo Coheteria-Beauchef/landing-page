@@ -1,13 +1,30 @@
+kind: area
 order: 3
 lead:
   name: Nicolás Herrera
-  role: Fuselaje
+  role:
+    - Fuselaje
   imageSrc: /media/team/nicolas-herrera.webp
   imageAlt: Foto de Nicolás Herrera
-members:
+membersMarkdown: |
   - Javier Garretón
   - Fernanda Bizama
   - Maika Vera
   - Camilo Guzmán
   - Rolando Cuellar
   - Benjamín Miller
+description: Encargados del fuselaje, estructura y montaje del vehículo.
+detailsMarkdown: |
+  # Fuselaje
+
+  Encargados del fuselaje, estructura y montaje del vehículo.
+
+  ## Integrantes
+  - Javier Garretón
+  - Fernanda Bizama
+  - Maika Vera
+  - Camilo Guzmán
+  - Rolando Cuellar
+  - Benjamín Miller
+coverImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+coverImageAlt: Logo de Cohetería Beauchef

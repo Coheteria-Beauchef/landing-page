@@ -1,0 +1,167 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  markdown?: string;
+}
+
+const { id, title, imageSrc, imageAlt, markdown = "" } = Astro.props as Props;
+
+const escapeHtml = (value: string) =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+const inlineMarkdown = (value: string) =>
+  escapeHtml(value)
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`(.+?)`/g, "<code>$1</code>");
+
+const markdownToHtml = (source: string) => {
+  const lines = source.split(/\r?\n/);
+  const html: string[] = [];
+  let inList = false;
+
+  const closeList = () => {
+    if (!inList) return;
+    html.push("</ul>");
+    inList = false;
+  };
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+
+    if (!line) {
+      closeList();
+      continue;
+    }
+
+    const heading = line.match(/^(#{1,3})\s+(.+)$/);
+    if (heading) {
+      closeList();
+      const level = heading[1].length;
+      const classes = level === 1
+        ? "text-3xl font-black leading-tight tracking-[-0.04em] text-[#1C1C1E]"
+        : "text-xl font-black leading-tight tracking-[-0.03em] text-[#1025B9]";
+      html.push(`<h${Math.min(level + 1, 4)} class="${classes}">${inlineMarkdown(heading[2])}</h${Math.min(level + 1, 4)}>`);
+      continue;
+    }
+
+    const bullet = line.match(/^[-*+]\s+(.+)$/);
+    if (bullet) {
+      if (!inList) {
+        html.push('<ul class="list-disc space-y-1.5 pl-6 text-base leading-relaxed text-[#48484A]">');
+        inList = true;
+      }
+      html.push(`<li>${inlineMarkdown(bullet[1])}</li>`);
+      continue;
+    }
+
+    closeList();
+    html.push(`<p class="text-base leading-relaxed text-[#48484A]">${inlineMarkdown(line)}</p>`);
+  }
+
+  closeList();
+  return html.join("\n");
+};
+
+const contentHtml = markdownToHtml(markdown.trim() || `# ${title}`);
+---
+
+<div
+  id={id}
+  data-team-dialog
+  class="team-dialog fixed inset-0 z-[100] items-end justify-center px-4 py-6 sm:items-center sm:px-6"
+  role="dialog"
+  aria-modal="true"
+  aria-label={title}
+  aria-hidden="true"
+>
+  <button type="button" data-team-dialog-close class="team-dialog__backdrop absolute inset-0 bg-black/60" aria-label="Cerrar" />
+
+  <article class="team-dialog__panel relative grid max-h-[88vh] w-[min(94vw,980px)] overflow-hidden rounded-2xl border border-[#E5E5EA] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.22)] md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)]">
+    <div class="flex min-h-[280px] items-center justify-center bg-[#F4F6FF] p-8 md:min-h-[560px]">
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={imageAlt ?? title}
+          class="max-h-[420px] w-full max-w-[360px] object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div class="flex h-48 w-48 items-center justify-center rounded-full bg-[#EEF2FF] text-5xl font-black text-[#1025B9]">
+          {title.slice(0, 2).toUpperCase()}
+        </div>
+      )}
+    </div>
+
+    <div class="flex max-h-[88vh] flex-col border-t border-[#E5E5EA] md:border-l md:border-t-0">
+      <div class="flex-1 space-y-5 overflow-y-auto p-8 md:p-10" set:html={contentHtml} />
+      <div class="flex justify-end border-t border-[#E5E5EA] bg-white px-8 py-5">
+        <button type="button" data-team-dialog-close class="rounded-full bg-[#1025B9] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0C1F99] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1025B9]/20">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </article>
+</div>
+
+<style>
+  .team-dialog {
+    display: none;
+  }
+
+  .team-dialog.is-visible {
+    display: flex;
+  }
+
+  .team-dialog__backdrop {
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  .team-dialog__panel {
+    opacity: 0;
+    transform: translateY(56px) scale(0.96);
+    transition:
+      opacity 400ms ease,
+      transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .team-dialog.is-open .team-dialog__backdrop {
+    opacity: 1;
+  }
+
+  .team-dialog.is-open .team-dialog__panel {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .team-dialog.is-closing .team-dialog__backdrop {
+    opacity: 0;
+  }
+
+  .team-dialog.is-closing .team-dialog__panel {
+    opacity: 0;
+    transform: translateY(56px) scale(0.96);
+    transition-duration: 300ms;
+    transition-timing-function: ease, cubic-bezier(0.64, 0, 0.78, 0);
+  }
+
+  .team-dialog.is-closing .team-dialog__backdrop {
+    transition-duration: 300ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .team-dialog__backdrop,
+    .team-dialog__panel {
+      transition-duration: 1ms;
+    }
+  }
+</style>

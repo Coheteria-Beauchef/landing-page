@@ -86,23 +86,25 @@ content:
       readonly: true
       label: Nombre interno
     view:
-      fields: [lead.name, lead.role]
+      fields: [kind, lead.name, lead.role]
       primary: lead.name
       sort: [order, asc]
     fields:
+      - { name: kind, label: Tipo, type: select, options: ["captain", "area", "support", "professor"], required: true }
       - { name: order, label: Orden, type: number, required: true }
       - name: lead
         label: Encargado
         type: object
         fields:
           - { name: name, label: Nombre, type: string, required: true }
-          - { name: role, label: Rol, type: string, required: true }
+          - { name: role, label: Roles, type: string, list: true, required: true }
           - { name: imageSrc, label: Foto, type: image }
           - { name: imageAlt, label: Texto alternativo, type: string }
-      - { name: members, label: Integrantes, type: string, list: true }
+      - { name: membersMarkdown, label: Integrantes en Markdown, type: text }
       - { name: description, label: Descripción, type: text }
-      - { name: imageSrc, label: Imagen del equipo, type: image }
-      - { name: imageAlt, label: Texto alternativo de imagen del equipo, type: string }
+      - { name: detailsMarkdown, label: Detalle del modal en Markdown, type: text }
+      - { name: coverImageSrc, label: Imagen placeholder del equipo, type: image }
+      - { name: coverImageAlt, label: Texto alternativo del placeholder, type: string }
 
   - name: settings
     label: Ajustes del sitio
@@ -116,3 +118,19 @@ content:
           - { name: enabled, label: Activo, type: boolean }
           - { name: text, label: Texto, type: string }
           - { name: href, label: URL, type: string }
+      - name: teamPage
+        label: Página de equipo
+        type: object
+        fields:
+          - { name: title, label: Título visible, type: string, required: true }
+          - { name: seoTitle, label: Título SEO, type: string, required: true }
+          - { name: seoDescription, label: Descripción SEO, type: text, required: true }
+          - { name: studentOrgTitle, label: Título organigrama estudiantil, type: string, required: true }
+          - { name: professorsTitle, label: Título profesores de apoyo, type: string, required: true }
+          - { name: workTeamsTitle, label: Título equipos de trabajo, type: string, required: true }
+          - { name: defaultImageSrc, label: Imagen por defecto, type: image, required: true }
+          - { name: defaultImageAlt, label: Texto alternativo imagen por defecto, type: string, required: true }
+          - { name: fallbackDescription, label: Descripción fallback del modal, type: text, required: true }
+          - { name: membersHeading, label: Título de integrantes, type: string, required: true }
+          - { name: fallbackMember, label: Integrante fallback, type: string, required: true }
+          - { name: showCta, label: Mostrar CTA inferior, type: boolean, default: true }

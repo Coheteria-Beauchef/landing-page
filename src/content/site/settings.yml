@@ -2,3 +2,17 @@ announcement:
   enabled: false
   text: Revisa las novedades del proyecto y la información importante aquí.
   href: https://linktr.ee/coheteriabeauchef
+
+teamPage:
+  title: Conoce al equipo
+  seoTitle: Equipo | Cohetería Beauchef
+  seoDescription: Conoce al equipo de Cohetería Beauchef, estudiantes de la Universidad de Chile apasionados por la cohetería e ingeniería aeroespacial.
+  studentOrgTitle: Organigrama estudiantil
+  professorsTitle: Profesores de apoyo
+  workTeamsTitle: Equipos de trabajo
+  defaultImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+  defaultImageAlt: Logo de Cohetería Beauchef
+  fallbackDescription: Detalle del equipo por completar.
+  membersHeading: Integrantes
+  fallbackMember: Integrantes por confirmar
+  showCta: true

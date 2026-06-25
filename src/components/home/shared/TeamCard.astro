@@ -1,38 +1,64 @@
 ---
 interface Props {
   name: string;
-  role: string;
+  role?: string | string[];
   imageSrc?: string;
   imageAlt?: string;
   members?: string[];
+  dialogId?: string;
 }
 
-const { name, role, imageSrc, imageAlt, members = [] } = Astro.props;
+const { name, role, imageSrc, imageAlt, members = [], dialogId } = Astro.props;
+const roles = (Array.isArray(role) ? role : role ? [role] : []).filter(Boolean);
+const initials = name
+  .split(/\s+/)
+  .filter(Boolean)
+  .slice(0, 2)
+  .map((part) => part[0]?.toUpperCase() ?? "")
+  .join("");
+const Root = dialogId ? "button" : "div";
+const rootAttrs = dialogId ? { type: "button" as const, "data-team-dialog-trigger": dialogId } : {};
+const cardClass = [
+  "flex w-64 flex-col items-center rounded-xl border border-[#E5E5EA] bg-white px-7 py-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#1025B9]/20 hover:shadow-[0_8px_32px_rgba(16,37,185,0.10)]",
+  dialogId ? "cursor-pointer focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1025B9]/20" : "",
+].filter(Boolean).join(" ");
 ---
 
-<div class="flex w-64 flex-col items-center rounded-xl border border-[#E5E5EA] bg-white px-7 py-8 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#1025B9]/20 hover:shadow-[0_8px_32px_rgba(16,37,185,0.10)]">
+<Root class={cardClass} {...rootAttrs}>
   <div class="relative mb-5 h-32 w-32 shrink-0">
     <div class="absolute inset-0 rounded-full bg-[#1025B9]/10 blur-xl" />
     <div class="relative h-full w-full overflow-hidden rounded-full ring-2 ring-[#1025B9] ring-offset-4 ring-offset-white">
-      <img
-        src={imageSrc}
-        alt={imageAlt}
-        class="h-full w-full object-cover"
-        loading="lazy"
-        decoding="async"
-      />
+      {imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={imageAlt ?? name}
+          class="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div class="flex h-full w-full items-center justify-center bg-[#EEF2FF] text-3xl font-black text-[#1025B9]">
+          {initials || "?"}
+        </div>
+      )}
     </div>
   </div>
-  <p class="text-lg font-bold leading-tight text-[#1C1C1E]">{name}</p>
-  <p class="mt-1.5 text-sm font-semibold uppercase tracking-[0.1em] text-[#1025B9] text-center">{role}</p>
+  <p class="text-center text-lg font-bold leading-tight text-[#1C1C1E]">{name}</p>
+  {roles.length > 0 && (
+    <div class="mt-1.5 flex flex-col items-center gap-1 text-center">
+      {roles.map((entry) => (
+        <p class="text-sm font-semibold uppercase tracking-[0.1em] text-[#1025B9]">{entry}</p>
+      ))}
+    </div>
+  )}
   {members.length > 0 && (
     <>
       <div class="my-4 h-px w-full bg-[#E5E5EA]" />
-      <ul class="w-full space-y-1.5">
+      <ul class="w-full space-y-1.5 text-left">
         {members.map((member) => (
           <li class="text-sm text-[#6B6B6B]">- {member}</li>
         ))}
       </ul>
     </>
   )}
-</div>
+</Root>

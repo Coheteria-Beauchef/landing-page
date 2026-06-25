@@ -1,12 +1,28 @@
-order: 7
+kind: area
+order: 6
 lead:
   name: Piero Tardón
-  role: Combustible y Procesos
+  role:
+    - Combustible y Procesos
   imageSrc: /media/team/piero-tardon.webp
   imageAlt: Foto de Piero Tardón
-members:
+membersMarkdown: |
   - Agustín Martínez
   - Felipe García
   - Benjamín Ríos
   - Allison Valdivia
   - Rafael Rocha
+description: Propulsión, combustibles y procesos de fabricación asociados.
+detailsMarkdown: |
+  # Combustible y Procesos
+
+  Equipo encargado de propulsión, combustibles y procesos de fabricación asociados.
+
+  ## Integrantes
+  - Agustín Martínez
+  - Felipe García
+  - Benjamín Ríos
+  - Allison Valdivia
+  - Rafael Rocha
+coverImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+coverImageAlt: Logo de Cohetería Beauchef

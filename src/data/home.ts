@@ -37,14 +37,22 @@ export type SponsorLogo = {
 
 export type TeamMember = {
   name: string;
-  role: string;
+  role: string | string[];
   imageSrc?: string;
   imageAlt?: string;
 };
 
 export type TeamArea = {
+  id?: string;
+  kind?: "captain" | "area" | "support" | "professor";
+  order?: number;
   lead: TeamMember;
   members: string[];
+  membersMarkdown?: string;
+  description?: string;
+  detailsMarkdown?: string;
+  coverImageSrc?: string;
+  coverImageAlt?: string;
 };
 
 export const teamAreas: TeamArea[] = [

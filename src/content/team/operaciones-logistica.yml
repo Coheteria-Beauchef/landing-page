@@ -1,12 +1,28 @@
-order: 6
+kind: support
+order: 7
 lead:
   name: Matías Videla
-  role: Operaciones y Logística
+  role:
+    - Operaciones y Logística
   imageSrc: /media/team/matias-videla.webp
   imageAlt: Foto de Matías Videla
-members:
+membersMarkdown: |
   - Fernanda Arias
   - María Jesús Escudero
   - Magdalena Araya
   - Damián Miranda
   - Benjamín Miller
+description: Coordinación general, logística y apoyo a las campañas.
+detailsMarkdown: |
+  # Operaciones y Logística
+
+  Equipo encargado de coordinación general, logística y apoyo a campañas y actividades del equipo.
+
+  ## Integrantes
+  - Fernanda Arias
+  - María Jesús Escudero
+  - Magdalena Araya
+  - Damián Miranda
+  - Benjamín Miller
+coverImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+coverImageAlt: Logo de Cohetería Beauchef

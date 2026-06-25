@@ -1,0 +1,10 @@
+kind: professor
+order: 1
+lead:
+  name: Profesor pendiente
+  role:
+    - Profesor asesor
+  imageSrc: /media/coheteriabeauchef_borderless_logo.webp
+  imageAlt: Logo de Cohetería Beauchef
+membersMarkdown: ""
+description: Apoyo academico y acompanamiento por confirmar.

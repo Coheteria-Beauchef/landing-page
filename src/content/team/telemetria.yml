@@ -1,10 +1,12 @@
+kind: support
 order: 8
 lead:
   name: Vicente Jerez
-  role: Telemetría
+  role:
+    - Telemetría
   imageSrc: /media/team/vicente-jerez.webp
   imageAlt: Foto de Vicente Jerez
-members:
+membersMarkdown: |
   - Rosangel Arispe
   - Eduardo Ibacache
   - Matías Videla
@@ -12,3 +14,19 @@ members:
   - Benjamín Salinas
   - Oscar Aravena
   - Felipe Colli Olea
+description: Telemetría, adquisición de datos y monitoreo del vuelo.
+detailsMarkdown: |
+  # Telemetría
+
+  Equipo encargado de adquisición de datos, monitoreo del vuelo y sistemas de telemetría.
+
+  ## Integrantes
+  - Rosangel Arispe
+  - Eduardo Ibacache
+  - Matías Videla
+  - Vicente Aguilar
+  - Benjamín Salinas
+  - Oscar Aravena
+  - Felipe Colli Olea
+coverImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+coverImageAlt: Logo de Cohetería Beauchef

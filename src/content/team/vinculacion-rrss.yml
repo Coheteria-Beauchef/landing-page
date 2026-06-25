@@ -1,10 +1,12 @@
+kind: area
 order: 4
 lead:
   name: María Jesús Escudero
-  role: Vinculación y RRSS
+  role:
+    - Vinculación y RRSS
   imageSrc: /media/team/maria-jesus-escudero.webp
   imageAlt: Foto de María Jesús Escudero
-members:
+membersMarkdown: |
   - Vicente Castillo
   - Matías Videla
   - Benjamín Miller
@@ -12,3 +14,19 @@ members:
   - Antonia Flández
   - Damián Miranda
   - Sofía Vargas Trujillo
+description: Comunicación, redes sociales y vínculo con la comunidad.
+detailsMarkdown: |
+  # Vinculación y RRSS
+
+  Equipo encargado de comunicación, difusión, redes sociales y vínculo con la comunidad.
+
+  ## Integrantes
+  - Vicente Castillo
+  - Matías Videla
+  - Benjamín Miller
+  - Magdalena Araya
+  - Antonia Flández
+  - Damián Miranda
+  - Sofía Vargas Trujillo
+coverImageSrc: /media/coheteriabeauchef_borderless_logo.webp
+coverImageAlt: Logo de Cohetería Beauchef

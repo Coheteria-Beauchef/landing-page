@@ -1,0 +1,10 @@
+kind: professor
+order: 2
+lead:
+  name: Profesor pendiente 2
+  role:
+    - Profesor asesor
+  imageSrc: /media/coheteriabeauchef_borderless_logo.webp
+  imageAlt: Logo de Cohetería Beauchef
+membersMarkdown: ""
+description: Segundo cupo de apoyo academico por confirmar.

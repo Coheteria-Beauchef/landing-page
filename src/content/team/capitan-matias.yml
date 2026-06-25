@@ -1,7 +1,10 @@
+kind: captain
 order: 1
 lead:
   name: Matías Videla
-  role: Capitán
+  role:
+    - Capitán
+    - Operaciones y Logística
   imageSrc: /media/team/matias-videla.webp
   imageAlt: Foto de Matías Videla
 members: []
