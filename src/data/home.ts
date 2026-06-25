@@ -285,6 +285,7 @@ export const sponsorLogos: SponsorLogo[] = [
   { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
   { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
   { src: `${baseUrl}auspiciadores/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
+  { src: `${baseUrl}auspiciadores/reite_logo.webp`, alt: "REITE" },
 ];
 
 export const socialLinks: SocialLink[] = [
