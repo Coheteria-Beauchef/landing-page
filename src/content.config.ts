@@ -2,7 +2,7 @@ import { defineCollection } from "astro:content";
 import { file, glob } from "astro/loaders";
 import { z } from "astro/zod";
 
-const publicPath = z.string().regex(/^\/?[\w./-]+\.(webp|mp4|webm|glb|gltf)$/);
+const publicPath = z.string().regex(/^\/?[\w./-]+\.(webp|mp4|webm|glb|gltf|svg)$/);
 const optionalPublicPath = z.union([publicPath, z.literal("")]).optional();
 
 const news = defineCollection({

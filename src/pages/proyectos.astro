@@ -14,8 +14,9 @@ const ogImage = new URL(`${baseUrl}media/main_image.webp`, siteUrl).toString();
 
 const navLinks = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },
-  { href: `${baseUrl}proyectos`, label: "Proyectos" },
+  { href: `${baseUrl}proyectos`, label: "Misiones" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
+  { href: `${baseUrl}#posts`, label: "Posts" },
   { href: `${baseUrl}#sponsors`, label: "Sponsors" },
   { href: `${baseUrl}#prensa`, label: "Prensa" },
   { href: `${baseUrl}#contacto`, label: "Contacto" },
@@ -23,8 +24,8 @@ const navLinks = [
 ---
 
 <Layout
-  title="Proyectos | Cohetería Beauchef"
-  description="Conoce los proyectos desarrollados por Cohetería Beauchef."
+  title="Misiones | Cohetería Beauchef"
+  description="Conoce las misiones y el desarrollo tecnológico de Cohetería Beauchef."
   canonical={canonical}
   ogImage={ogImage}
   socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
@@ -50,10 +51,10 @@ const navLinks = [
       <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-12">
         <header class="flex flex-col gap-4">
           <h1 class="text-4xl font-black leading-none text-[#1C1C1E] sm:text-5xl">
-            Proyectos
+            Misiones
           </h1>
           <p class="max-w-2xl text-lg leading-relaxed text-[#48484A]">
-            Desarrollo experimental, diseño y pruebas del equipo.
+            Misiones y desarrollo tecnológico experimental de nuestro equipo.
           </p>
         </header>
 

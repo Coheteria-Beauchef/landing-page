@@ -1,10 +1,10 @@
 kind: professor
 order: 1
 lead:
-  name: Profesor pendiente
+  name: Mónica Zamora
   role:
-    - Profesor asesor
-  imageSrc: /media/coheteriabeauchef_borderless_logo.webp
-  imageAlt: Logo de Cohetería Beauchef
+    - Profesora asesora
+  imageSrc: /media/team/monica.webp
+  imageAlt: Foto de Mónica Zamora
 membersMarkdown: ""
-description: Apoyo academico y acompanamiento por confirmar.
+description: Profesora asesora de Cohetería Beauchef.

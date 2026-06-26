@@ -1,10 +1,10 @@
 kind: professor
 order: 2
 lead:
-  name: Profesor pendiente 2
+  name: Rubén Fernández
   role:
     - Profesor asesor
-  imageSrc: /media/coheteriabeauchef_borderless_logo.webp
-  imageAlt: Logo de Cohetería Beauchef
+  imageSrc: /media/team/ruben.webp
+  imageAlt: Foto de Rubén Fernández
 membersMarkdown: ""
-description: Segundo cupo de apoyo academico por confirmar.
+description: Profesor asesor de Cohetería Beauchef.

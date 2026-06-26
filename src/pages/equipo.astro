@@ -15,8 +15,9 @@ const teamPage = await getTeamPageSettings(baseUrl);
 
 const navLinks = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },
-  { href: `${baseUrl}proyectos`, label: "Proyectos" },
+  { href: `${baseUrl}proyectos`, label: "Misiones" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
+  { href: `${baseUrl}#posts`, label: "Posts" },
   { href: `${baseUrl}#sponsors`, label: "Sponsors" },
   { href: `${baseUrl}#prensa`, label: "Prensa" },
   { href: `${baseUrl}#contacto`, label: "Contacto" },
@@ -192,6 +193,27 @@ const teamDetails = (area: (typeof workTeams)[number]) => area.detailsMarkdown?.
         </div>
 
         <div class="flex flex-col items-center gap-16">
+          {professors.length > 0 && (
+            <section class="flex w-full flex-col items-center gap-8">
+              <div class="flex flex-col items-center gap-3 text-center">
+                <h3 class="text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
+                  {teamPage.professorsTitle}
+                </h3>
+              </div>
+
+              <div class="flex flex-wrap justify-center gap-6">
+                {professors.map((professor) => (
+                  <TeamCard
+                    {...professor.lead}
+                    imageSrc={professor.lead.imageSrc ?? defaultTeamImageSrc}
+                    imageAlt={professor.lead.imageAlt ?? teamPage.defaultImageAlt}
+                    members={professor.members}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+
           <section class="flex w-full flex-col items-center gap-10">
             <div class="flex flex-col items-center gap-3 text-center">
               <h3 class="text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
@@ -213,27 +235,6 @@ const teamDetails = (area: (typeof workTeams)[number]) => area.detailsMarkdown?.
               </div>
             </div>
           </section>
-
-          {professors.length > 0 && (
-            <section class="flex w-full flex-col items-center gap-8">
-              <div class="flex flex-col items-center gap-3 text-center">
-                <h3 class="text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
-                  {teamPage.professorsTitle}
-                </h3>
-              </div>
-
-              <div class="flex flex-wrap justify-center gap-6">
-                {professors.map((professor) => (
-                  <TeamCard
-                    {...professor.lead}
-                    imageSrc={professor.lead.imageSrc ?? defaultTeamImageSrc}
-                    imageAlt={professor.lead.imageAlt ?? teamPage.defaultImageAlt}
-                    members={professor.members}
-                  />
-                ))}
-              </div>
-            </section>
-          )}
 
           <section class="flex w-full flex-col items-center gap-8">
             <div class="flex flex-col items-center gap-3 text-center">

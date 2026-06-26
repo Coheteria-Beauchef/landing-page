@@ -1,0 +1,189 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+
+const galleryItems = [
+  {
+    category: "trabajo",
+    title: "Prueba de Motor",
+    description: "Ensayo estático exitoso de nuestro motor de propergol sólido.",
+    imageSrc: `${baseUrl}media/press/noticia-2.webp`,
+    imageAlt: "Prueba de motor de cohete",
+  },
+  {
+    category: "trabajo",
+    title: "Taller y Diseño",
+    description: "Estudiantes trabajando en el diseño y manufactura de piezas.",
+    imageSrc: `${baseUrl}media/post_ig_7.webp`,
+    imageAlt: "Estudiantes diseñando en taller",
+  },
+  {
+    category: "trabajo",
+    title: "Integración de Sistemas",
+    description: "Pruebas de aviónica e integración en el fuselaje.",
+    imageSrc: `${baseUrl}media/press/noticia-1.webp`,
+    imageAlt: "Integración y pruebas de motor",
+  },
+  {
+    category: "equipo",
+    title: "Equipo Cohetería Beauchef",
+    description: "Integrantes del equipo posando con la bandera de la FCFM.",
+    imageSrc: `${baseUrl}media/main-image2.webp`,
+    imageAlt: "Equipo Cohetería Beauchef con bandera",
+  },
+  {
+    category: "equipo",
+    title: "Presentación General",
+    description: "Reunión de bienvenida y organización del equipo en el auditorio.",
+    imageSrc: `${baseUrl}media/press/noticia-4.webp`,
+    imageAlt: "Presentación del equipo en auditorio",
+  },
+  {
+    category: "eventos",
+    title: "Misión Minerva I",
+    description: "Detalles y preparación para el lanzamiento de Minerva I.",
+    imageSrc: `${baseUrl}media/post_ig_6.webp`,
+    imageAlt: "Misión Minerva I",
+  },
+  {
+    category: "eventos",
+    title: "Participación en LASC 2026",
+    description: "Aceptación oficial en el Latin American Space Challenge de Brasil.",
+    imageSrc: `${baseUrl}media/post_ig_5.webp`,
+    imageAlt: "LASC 2026",
+  },
+  {
+    category: "eventos",
+    title: "Lanzamiento y Campaña",
+    description: "Campaña de lanzamiento y pruebas en terreno.",
+    imageSrc: `${baseUrl}media/main_image.webp`,
+    imageAlt: "Lanzamiento de cohete experimental",
+  },
+];
+---
+
+<section
+  id="proyecto"
+  class="relative w-full overflow-hidden bg-gray-50 py-16 px-6 sm:py-20 sm:px-8 lg:px-16 lg:py-24 flex flex-col items-center gap-16 scroll-mt-24"
+>
+  <div class="relative z-10 w-full max-w-[1400px] flex flex-col items-center">
+    <div class="flex flex-col items-center gap-6">
+      <h2 class="text-center text-5xl font-black leading-[0.95] tracking-[-0.05em] text-[#1C1C1E] sm:text-7xl lg:text-8xl">
+        Nuestro Proyecto
+      </h2>
+      <p class="max-w-2xl text-center text-lg text-[#48484A]">
+        Explora las actividades, el trabajo en el taller y los eventos más importantes de nuestro equipo.
+      </p>
+    </div>
+
+    <!-- Filtros de la galería -->
+    <div class="mt-10 flex flex-wrap justify-center gap-3">
+      <button
+        class="gallery-filter-btn px-6 py-3 text-base font-bold rounded-full transition-all duration-300 bg-[#1025B9] text-white shadow-md"
+        data-filter="all"
+      >
+        Todos
+      </button>
+      <button
+        class="gallery-filter-btn px-6 py-3 text-base font-bold rounded-full transition-all duration-300 bg-white text-[#48484A] border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+        data-filter="trabajo"
+      >
+        Trabajo
+      </button>
+      <button
+        class="gallery-filter-btn px-6 py-3 text-base font-bold rounded-full transition-all duration-300 bg-white text-[#48484A] border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+        data-filter="equipo"
+      >
+        Equipo
+      </button>
+      <button
+        class="gallery-filter-btn px-6 py-3 text-base font-bold rounded-full transition-all duration-300 bg-white text-[#48484A] border border-gray-200 hover:border-gray-300 hover:bg-gray-50"
+        data-filter="eventos"
+      >
+        Eventos
+      </button>
+    </div>
+
+    <!-- Grilla de la galería -->
+    <div class="mt-16 grid w-full max-w-6xl grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:gap-10" id="gallery-grid">
+      {
+        galleryItems.map((item) => (
+          <div
+            class="gallery-item-card group relative overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            data-category={item.category}
+          >
+            <div class="aspect-video w-full overflow-hidden bg-gray-100">
+              <img
+                src={item.imageSrc}
+                alt={item.imageAlt}
+                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="p-6">
+              <span class="text-xs font-bold uppercase tracking-wider text-[#1025B9]">
+                {item.category === "trabajo" ? "Trabajo" : item.category === "equipo" ? "Equipo" : "Eventos"}
+              </span>
+              <h3 class="mt-2 text-xl font-bold text-[#1C1C1E] transition-colors group-hover:text-[#1025B9]">
+                {item.title}
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-[#8E8E93]">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script>
+  function initGallery() {
+    const filterButtons = document.querySelectorAll(".gallery-filter-btn");
+    const galleryItems = document.querySelectorAll(".gallery-item-card");
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        // Toggle button states
+        filterButtons.forEach((b) => {
+          b.classList.remove("bg-[#1025B9]", "text-white", "shadow-md");
+          b.classList.add("bg-white", "text-[#48484A]", "border", "border-gray-200");
+        });
+        btn.classList.add("bg-[#1025B9]", "text-white", "shadow-md");
+        btn.classList.remove("bg-white", "text-[#48484A]", "border", "border-gray-200");
+
+        // Filter items
+        const filterValue = btn.getAttribute("data-filter");
+
+        galleryItems.forEach((item) => {
+          const itemCategory = item.getAttribute("data-category");
+
+          if (filterValue === "all" || itemCategory === filterValue) {
+            // Show item
+            item.classList.remove("hidden");
+            // Simple fade-in effect via animation
+            item.animate(
+              [
+                { opacity: 0, transform: "scale(0.95)" },
+                { opacity: 1, transform: "scale(1)" }
+              ],
+              {
+                duration: 300,
+                easing: "ease-out",
+                fill: "forwards"
+              }
+            );
+          } else {
+            // Hide item
+            item.classList.add("hidden");
+          }
+        });
+      });
+    });
+  }
+
+  // Run on page load and on transition restores (Astro view transitions support if enabled)
+  initGallery();
+  document.addEventListener("astro:after-swap", initGallery);
+</script>

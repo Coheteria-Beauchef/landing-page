@@ -32,11 +32,12 @@ const baseUrl = import.meta.env.BASE_URL;
     style="top: var(--home-announcement-height, 0px);"
   >
     <div class="flex h-20 items-center justify-between px-6 md:px-10 lg:px-16">
-      <Brand
-        className="relative z-10"
-        logoClass="w-11 h-11 object-contain shrink-0"
-        textClass="home-brand-text text-white font-bold text-base sm:text-lg lg:text-xl tracking-[2px] transition-colors duration-300"
-      />
+      <a href={baseUrl} class="relative z-10">
+        <Brand
+          logoClass="w-11 h-11 object-contain shrink-0"
+          textClass="home-brand-text text-white font-bold text-base sm:text-lg lg:text-xl tracking-[2px] transition-colors duration-300"
+        />
+      </a>
       <NavLinks
         links={headerNavigationLinks}
         className="hidden md:flex items-center gap-6 lg:gap-10"
@@ -70,8 +71,8 @@ const baseUrl = import.meta.env.BASE_URL;
   </nav>
 
   <div
-    class="absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 px-6 pb-14 text-center md:px-10 lg:px-16 lg:pb-20"
-    style="padding-top: calc(6rem + var(--home-announcement-height, 0px));"
+    class="absolute inset-0 z-10 flex flex-col items-center justify-start gap-6 px-6 pb-14 text-center md:px-10 lg:px-16 lg:pb-20"
+    style="padding-top: calc(10rem + var(--home-announcement-height, 0px));"
   >
     <h1 class="animate-hero-in [animation-delay:140ms] max-w-5xl text-white font-bold text-5xl sm:text-7xl lg:text-[84px] leading-none tracking-[-2px] lg:tracking-[-3px] [animation-fill-mode:both]">
       Cohetería Beauchef
