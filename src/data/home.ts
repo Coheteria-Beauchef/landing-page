@@ -279,17 +279,19 @@ export const instagramPosts: InstagramPost[] = [
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: `${baseUrl}auspiciadores/fcfm_logo.webp`, alt: "FCFM" },
-  { src: `${baseUrl}auspiciadores/departamento_mecanica_logo.webp`, alt: "Mecánica" },
-  { src: `${baseUrl}auspiciadores/die_fcfm.webp`, alt: "Eléctrica" },
-  { src: `${baseUrl}auspiciadores/fablab_logo.webp`, alt: "FabLab" },
-  { src: `${baseUrl}auspiciadores/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
-  { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
-  { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
-  { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
-  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
-  { src: `${baseUrl}auspiciadores/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
-  { src: `${baseUrl}auspiciadores/reite_logo.webp`, alt: "REITE", heightClass: "h-[50px]" },
+  { src: `${baseUrl}sponsors/creality_logo.webp`, alt: "Creality" },
+  { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner" },
+  { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM" },
+  { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica" },
+  { src: `${baseUrl}sponsors/die_fcfm.webp`, alt: "Eléctrica" },
+  { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab" },
+  { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
+  { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo" },
+  { src: `${baseUrl}sponsors/micro.webp`, alt: "Micro Automación" },
+  { src: `${baseUrl}sponsors/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
+  { src: `${baseUrl}sponsors/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
+  { src: `${baseUrl}sponsors/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
+  { src: `${baseUrl}sponsors/reite_logo.webp`, alt: "REITE", heightClass: "h-[50px]" },
 ];
 
 export const socialLinks: SocialLink[] = [

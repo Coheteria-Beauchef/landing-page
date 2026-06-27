@@ -2,15 +2,19 @@
 import { footerNavigationLinks } from "../../../data/home";
 import Brand from "../shared/Brand.astro";
 import NavLinks from "../shared/NavLinks.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <footer id="contacto" class="w-full bg-[#0A0A0A] py-[100px] px-8 lg:px-[120px] flex flex-col gap-12 scroll-mt-24">
   <div class="w-full flex flex-col lg:flex-row justify-between gap-12 fade-in-up">
     <div class="w-full lg:w-[350px] flex flex-col gap-5">
-      <Brand
-        className="flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3"
-        logoClass="h-24 w-48 shrink-0 object-contain"
-      />
+      <a href={`${baseUrl}#top`} aria-label="Volver al inicio">
+        <Brand
+          className="flex-col items-start gap-2 sm:flex-row sm:items-center sm:gap-3"
+          logoClass="h-24 w-48 shrink-0 object-contain"
+        />
+      </a>
       <p class="text-white/60 font-normal text-base leading-relaxed">
         Impulsando el desarrollo de la ingeniería aeroespacial en Chile a través del talento
         estudiantil.

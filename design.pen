@@ -1141,7 +1141,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/fcfm_logo.png",
+                        "url": "./public/sponsors/fcfm_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1154,7 +1154,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                        "url": "./public/sponsors/departamento_mecanica_logo.webp",
                         "mode": "fit"
                       }
                     },
@@ -1167,7 +1167,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                        "url": "./public/sponsors/departamento_electrica_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1180,7 +1180,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/fablab_logo.png",
+                        "url": "./public/sponsors/fablab_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1193,7 +1193,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/maquintel_logo.png",
+                        "url": "./public/sponsors/maquintel_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1206,7 +1206,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/alutipo_logo.png",
+                        "url": "./public/sponsors/alutipo_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1219,7 +1219,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/fcfm_logo.png",
+                        "url": "./public/sponsors/fcfm_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1232,7 +1232,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                        "url": "./public/sponsors/departamento_mecanica_logo.webp",
                         "mode": "fit"
                       }
                     },
@@ -1245,7 +1245,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                        "url": "./public/sponsors/departamento_electrica_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1258,7 +1258,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/fablab_logo.png",
+                        "url": "./public/sponsors/fablab_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1271,7 +1271,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/maquintel_logo.png",
+                        "url": "./public/sponsors/maquintel_logo.png",
                         "mode": "fit"
                       }
                     },
@@ -1284,7 +1284,7 @@
                       "fill": {
                         "type": "image",
                         "enabled": true,
-                        "url": "./public/auspiciadores/alutipo_logo.png",
+                        "url": "./public/sponsors/alutipo_logo.png",
                         "mode": "fit"
                       }
                     }
@@ -2975,7 +2975,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/fcfm_logo.png",
+                            "url": "./public/sponsors/fcfm_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -2988,7 +2988,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                            "url": "./public/sponsors/departamento_mecanica_logo.webp",
                             "mode": "fit"
                           }
                         },
@@ -3001,7 +3001,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/fcfm_logo.png",
+                            "url": "./public/sponsors/fcfm_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3014,7 +3014,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/departamento_mecanica_logo.webp",
+                            "url": "./public/sponsors/departamento_mecanica_logo.webp",
                             "mode": "fit"
                           }
                         }
@@ -3106,7 +3106,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                            "url": "./public/sponsors/departamento_electrica_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3119,7 +3119,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/fablab_logo.png",
+                            "url": "./public/sponsors/fablab_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3132,7 +3132,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/departamento_electrica_logo.png",
+                            "url": "./public/sponsors/departamento_electrica_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3145,7 +3145,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/fablab_logo.png",
+                            "url": "./public/sponsors/fablab_logo.png",
                             "mode": "fit"
                           }
                         }
@@ -3237,7 +3237,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/maquintel_logo.png",
+                            "url": "./public/sponsors/maquintel_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3250,7 +3250,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/alutipo_logo.png",
+                            "url": "./public/sponsors/alutipo_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3263,7 +3263,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/maquintel_logo.png",
+                            "url": "./public/sponsors/maquintel_logo.png",
                             "mode": "fit"
                           }
                         },
@@ -3276,7 +3276,7 @@
                           "fill": {
                             "type": "image",
                             "enabled": true,
-                            "url": "./public/auspiciadores/alutipo_logo.png",
+                            "url": "./public/sponsors/alutipo_logo.png",
                             "mode": "fit"
                           }
                         }
