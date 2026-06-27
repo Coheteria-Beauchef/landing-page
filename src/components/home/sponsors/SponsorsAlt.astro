@@ -71,6 +71,7 @@ const universityRows = universityRowsBase;
                   src={sponsor.src}
                   alt={sponsor.alt}
                   loading="lazy"
+                  data-sponsor-pulse-trigger={sponsor.pulseLevel === 0 ? true : undefined}
                   style={`--pulse-level: ${sponsor.pulseLevel};`}
                   class:list={[
                     sponsor.sizeClass,
@@ -149,19 +150,27 @@ const universityRows = universityRowsBase;
 
 <script>
   const section = document.querySelector("[data-sponsors-alt]");
-  const pulseStage = section?.querySelector("[data-sponsor-pulse-stage]");
+  const pulseTrigger = section?.querySelector("[data-sponsor-pulse-trigger]");
 
-  if (section instanceof HTMLElement && pulseStage instanceof HTMLElement) {
+  if (section instanceof HTMLElement && pulseTrigger instanceof HTMLElement) {
+    let triggerIsVisible = false;
+
+    const updateAnimationState = () => {
+      section.classList.toggle(
+        "is-animating",
+        triggerIsVisible && document.visibilityState === "visible",
+      );
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry?.isIntersecting) return;
-
-        section.classList.add("is-animating");
-        observer.disconnect();
+        triggerIsVisible = entry?.isIntersecting ?? false;
+        updateAnimationState();
       },
-      { threshold: 0.2 },
+      { threshold: 0.6, rootMargin: "0px 0px -10% 0px" },
     );
 
-    observer.observe(pulseStage);
+    document.addEventListener("visibilitychange", updateAnimationState);
+    observer.observe(pulseTrigger);
   }
 </script>
