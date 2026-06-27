@@ -39,6 +39,7 @@ import SocialIcon from "../shared/SocialIcon.astro";
         instagramPosts.map((post, i) => (
           <div class="ig-card-wrap" style={`--card-index: ${i}`}>
             <InstagramCard
+              url={post.url}
               excerpt={post.excerpt}
               likes={post.likes}
               comments={post.comments}

@@ -23,6 +23,7 @@ export type StatItem = {
 export type InstagramPost = {
   excerpt: string;
   likes: number;
+  url: string;
   comments: number;
   imageSrc: string;
   imageAlt: string;
@@ -177,6 +178,15 @@ export type PressArticle = {
 
 export const pressArticles: PressArticle[] = [
   {
+    source: "instagram",
+    url: "https://uchile.cl/noticias/230075/u-de-chile-prueba-con-exito-su-primer-motor-de-cohete-estudiantil",
+    title: "Creality y TodoToner se suman como auspiciadores de Cohetería Beauchef!",
+    date: "27 de junio de 2026",
+    excerpt:
+      "El apoyo de ambas empresas aportará impresión 3D y filamentos reforzados con fibra de carbono para los lanzamientos de Minerva I.",
+    imageSrc: `${baseUrl}press/noticia-1.webp`,
+  },
+  {
     source: "ingenieria.uchile.cl",
     url: "https://ingenieria.uchile.cl/noticias/239680/fcfm-representara-a-chile-en-importante-desafio-internacional-de-coheteria",
     title: "FCFM representará a Chile en importante desafío internacional de cohetería",
@@ -184,15 +194,6 @@ export const pressArticles: PressArticle[] = [
     excerpt:
       "Las y los estudiantes de la FCFM serán parte del Latin American Space Challenge (LASC), una de las competencias de cohetes y satélites más grande del mundo.",
     imageSrc: `${baseUrl}press/noticia-4.webp`,
-  },
-  {
-    source: "uchile.cl",
-    url: "https://uchile.cl/noticias/230075/u-de-chile-prueba-con-exito-su-primer-motor-de-cohete-estudiantil",
-    title: "Estudiantes de la U. de Chile prueban con éxito su primer motor de cohete",
-    date: "9 de julio de 2025",
-    excerpt:
-      "El equipo realizó una prueba estática exitosa de su primer motor de propergol sólido, diseñado y construido íntegramente por sus integrantes.",
-    imageSrc: `${baseUrl}press/noticia-1.webp`,
   },
   {
     source: "ingenieria.uchile.cl",
@@ -250,27 +251,30 @@ export const homeStats: StatItem[] = [
 export const instagramPosts: InstagramPost[] = [
   {
     excerpt:
-      "🌌 ¡PREPÁRATE LASC 2026!\nOficialmente fuimos aceptados para participar en el Latin American Space Challenge 2026 – 7ma Edición 🚀",
-    likes: 329,
-    comments: 31,
-    imageSrc: `${baseUrl}post_ig_5.webp`,
-    imageAlt: "Instagram Post 5",
+      "🚀 ¡Bienvenidos @crealitylatam y @todotoner.cl!\nEstamos muy felices de anunciar el apoyo de Creality LATAM, por medio de TodoToner.cl, como auspiciadores oficiales!",
+    likes: 93,
+    comments: 9,
+    url: "https://www.instagram.com/p/DaDwphdxsdr/",
+    imageSrc: `${baseUrl}/instagram/post_ig_1.webp`,
+    imageAlt: "Instagram Post 1",
   },
-  {
+    {
     excerpt:
-      "🚀¿Por qué Minerva I?\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
-    likes: 582,
+      "🚀¿Por qué Minerva I?\n\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
+    likes: 613,
     comments: 15,
-    imageSrc: `${baseUrl}post_ig_6.webp`,
-    imageAlt: "Instagram Post 6",
+    url: "https://www.instagram.com/p/DXvI0nQxgzM/",
+    imageSrc: `${baseUrl}/instagram/post_ig_2.webp`,
+    imageAlt: "Instagram Post 2",
   },
   {
     excerpt:
-      "¡Prueba exitosa! 🚀\nHoy les mostramos un detrás de escenas del trabajo que hacen las chicas en el área de diseño de motor. 🔩",
-    likes: 519,
-    comments: 55,
-    imageSrc: `${baseUrl}post_ig_7.webp`,
-    imageAlt: "Instagram Post 7",
+      "🚀 ¡Bienvenidos @reite.ai!\n\nEstamos muy felices de anunciar el apoyo de Reite como auspiciadores oficiales!",
+    likes: 83,
+    comments: 11,
+    url: "https://www.instagram.com/p/DZ_R5WxNsH8/",
+    imageSrc: `${baseUrl}/instagram/post_ig_3.webp`,
+    imageAlt: "Instagram Post 3",
   },
 ];
 
