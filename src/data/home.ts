@@ -32,6 +32,7 @@ export type InstagramPost = {
 export type SponsorLogo = {
   src: string;
   alt: string;
+  url: string;
   heightClass?: string;
 };
 
@@ -279,19 +280,19 @@ export const instagramPosts: InstagramPost[] = [
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: `${baseUrl}sponsors/creality_logo.webp`, alt: "Creality" },
-  { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner" },
-  { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM" },
-  { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica" },
-  { src: `${baseUrl}sponsors/die_fcfm.webp`, alt: "Eléctrica" },
-  { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab" },
-  { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
-  { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo" },
-  { src: `${baseUrl}sponsors/micro.webp`, alt: "Micro Automación" },
-  { src: `${baseUrl}sponsors/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
-  { src: `${baseUrl}sponsors/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
-  { src: `${baseUrl}sponsors/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
-  { src: `${baseUrl}sponsors/reite_logo.webp`, alt: "REITE", heightClass: "h-[50px]" },
+  { src: `${baseUrl}sponsors/creality_logo.webp`, alt: "Creality", url: "https://www.creality.com/es" },
+  { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner", url: "https://www.todotoner.cl/" },
+  { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM", url: "https://ingenieria.uchile.cl/" },
+  { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica", url: "https://dimec.uchile.cl/" },
+  { src: `${baseUrl}sponsors/die_fcfm.webp`, alt: "Eléctrica", url: "https://www.die.cl/" },
+  { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab", url: "https://www.instagram.com/fablabudechile/" },
+  { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", url: "https://www.maquintel.com/", heightClass: "h-[100px]" },
+  { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo", url: "https://alutipo.cl/" },
+  { src: `${baseUrl}sponsors/micro.webp`, alt: "Micro Automación", url: "https://cl.microautomacion.com/es/inicio/" },
+  { src: `${baseUrl}sponsors/logo_ansys.webp`, alt: "Ansys", url: "https://www.ansys.com/", heightClass: "h-[120px]" },
+  { src: `${baseUrl}sponsors/logo_esss.webp`, alt: "ESSS", url: "https://www.esss.com/es/", heightClass: "h-[120px]" },
+  { src: `${baseUrl}sponsors/fabricala_logo.webp`, alt: "FABRICALA", url: "https://www.fabricala.pro/", heightClass: "h-[70px]" },
+  { src: `${baseUrl}sponsors/reite_logo.webp`, alt: "REITE", url: "https://reite.cl/", heightClass: "h-[50px]" },
 ];
 
 export const socialLinks: SocialLink[] = [

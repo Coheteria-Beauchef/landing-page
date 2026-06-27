@@ -5,7 +5,7 @@ const sponsorByName = new Map(sponsorLogos.map((logo) => [logo.alt, logo]));
 const logo = (alt: string, sizeClass: string) => ({ ...sponsorByName.get(alt)!, sizeClass });
 const pulseConfig = {
   scale: 1.1,
-  cycle: "5s",
+  cycle: "20s",
   levelDelay: "0.2s",
 };
 
@@ -60,16 +60,24 @@ const universityRows = universityRowsBase;
         {companyRows.map((row) => (
           <div class="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 lg:gap-x-16">
             {row.map((sponsor) => (
-              <img
-                src={sponsor.src}
-                alt={sponsor.alt}
-                loading="lazy"
-                style={`--pulse-level: ${sponsor.pulseLevel};`}
-                class:list={[
-                  sponsor.sizeClass,
-                  "sponsor-pulse-logo max-w-full object-contain",
-                ]}
-              />
+              <a
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visitar sitio de ${sponsor.alt}`}
+                class="inline-flex transition-transform duration-300 hover:scale-110 focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1025B9]"
+              >
+                <img
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  loading="lazy"
+                  style={`--pulse-level: ${sponsor.pulseLevel};`}
+                  class:list={[
+                    sponsor.sizeClass,
+                    "sponsor-pulse-logo max-w-full object-contain",
+                  ]}
+                />
+              </a>
             ))}
           </div>
         ))}
@@ -84,15 +92,23 @@ const universityRows = universityRowsBase;
         {universityRows.map((row) => (
           <div class="flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-16 lg:gap-x-20">
             {row.map((sponsor) => (
-              <img
-                src={sponsor.src}
-                alt={sponsor.alt}
-                loading="lazy"
-                class:list={[
-                  sponsor.sizeClass,
-                  "max-w-full object-contain",
-                ]}
-              />
+              <a
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visitar sitio de ${sponsor.alt}`}
+                class="inline-flex transition-transform duration-300 hover:scale-110 focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1025B9]"
+              >
+                <img
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  loading="lazy"
+                  class:list={[
+                    sponsor.sizeClass,
+                    "max-w-full object-contain",
+                  ]}
+                />
+              </a>
             ))}
           </div>
         ))}
@@ -114,12 +130,12 @@ const universityRows = universityRowsBase;
 
   @keyframes sponsor-logo-pulse {
     0%,
-    14%,
+    3.5%,
     100% {
       transform: scale(1);
     }
 
-    7% {
+    1.75% {
       transform: scale(var(--sponsor-pulse-scale));
     }
   }
