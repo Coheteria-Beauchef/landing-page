@@ -281,7 +281,7 @@ export const sponsorLogos: SponsorLogo[] = [
   { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner", url: "https://www.todotoner.cl/" },
   { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM", url: "https://ingenieria.uchile.cl/" },
   { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica", url: "https://dimec.uchile.cl/" },
-  { src: `${baseUrl}sponsors/die_fcfm.webp`, alt: "Eléctrica", url: "https://www.die.cl/" },
+  { src: `${baseUrl}sponsors/die_fcfm.svg`, alt: "Eléctrica", url: "https://www.die.cl/" },
   { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab", url: "https://www.instagram.com/fablabudechile/" },
   { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", url: "https://www.maquintel.com/", heightClass: "h-[100px]" },
   { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo", url: "https://alutipo.cl/" },
