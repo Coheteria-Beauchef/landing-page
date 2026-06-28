@@ -23,6 +23,7 @@ export type StatItem = {
 export type InstagramPost = {
   excerpt: string;
   likes: number;
+  url: string;
   comments: number;
   imageSrc: string;
   imageAlt: string;
@@ -31,6 +32,7 @@ export type InstagramPost = {
 export type SponsorLogo = {
   src: string;
   alt: string;
+  url: string;
   heightClass?: string;
 };
 
@@ -177,6 +179,15 @@ export type PressArticle = {
 
 export const pressArticles: PressArticle[] = [
   {
+    source: "instagram",
+    url: "https://www.instagram.com/p/DaDwphdxsdr/",
+    title: "Creality y TodoToner se suman como auspiciadores de Cohetería Beauchef!",
+    date: "27 de junio de 2026",
+    excerpt:
+      "El apoyo de ambas empresas aportará impresión 3D y filamentos reforzados con fibra de carbono para los lanzamientos de Minerva I.",
+    imageSrc: `${baseUrl}press/noticia-1.webp`,
+  },
+  {
     source: "ingenieria.uchile.cl",
     url: "https://ingenieria.uchile.cl/noticias/239680/fcfm-representara-a-chile-en-importante-desafio-internacional-de-coheteria",
     title: "FCFM representará a Chile en importante desafío internacional de cohetería",
@@ -184,15 +195,6 @@ export const pressArticles: PressArticle[] = [
     excerpt:
       "Las y los estudiantes de la FCFM serán parte del Latin American Space Challenge (LASC), una de las competencias de cohetes y satélites más grande del mundo.",
     imageSrc: `${baseUrl}press/noticia-4.webp`,
-  },
-  {
-    source: "uchile.cl",
-    url: "https://uchile.cl/noticias/230075/u-de-chile-prueba-con-exito-su-primer-motor-de-cohete-estudiantil",
-    title: "Estudiantes de la U. de Chile prueban con éxito su primer motor de cohete",
-    date: "9 de julio de 2025",
-    excerpt:
-      "El equipo realizó una prueba estática exitosa de su primer motor de propergol sólido, diseñado y construido íntegramente por sus integrantes.",
-    imageSrc: `${baseUrl}press/noticia-1.webp`,
   },
   {
     source: "ingenieria.uchile.cl",
@@ -225,12 +227,9 @@ export const headerNavigationLinks: NavigationLink[] = [
   { href: "#contacto", label: "Contacto" },
 ];
 
-export const footerNavigationLinks: NavigationLink[] = [
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: `${baseUrl}equipo`, label: "Equipo" },
-  { href: "#sponsors", label: "Sponsors" },
-];
+export const footerNavigationLinks: NavigationLink[] = headerNavigationLinks.filter(
+  (link) => link.href !== "#prensa" && link.href !== "#contacto",
+);
 
 export const homeStats: StatItem[] = [
   { value: "2611N", label: "Empuje máximo alcanzado" },
@@ -250,42 +249,47 @@ export const homeStats: StatItem[] = [
 export const instagramPosts: InstagramPost[] = [
   {
     excerpt:
-      "🌌 ¡PREPÁRATE LASC 2026!\nOficialmente fuimos aceptados para participar en el Latin American Space Challenge 2026 – 7ma Edición 🚀",
-    likes: 329,
-    comments: 31,
-    imageSrc: `${baseUrl}post_ig_5.webp`,
-    imageAlt: "Instagram Post 5",
+      "🚀 ¡Bienvenidos @crealitylatam y @todotoner.cl!\nEstamos muy felices de anunciar el apoyo de Creality LATAM, por medio de TodoToner.cl, como auspiciadores oficiales!",
+    likes: 93,
+    comments: 9,
+    url: "https://www.instagram.com/p/DaDwphdxsdr/",
+    imageSrc: `${baseUrl}/instagram/post_ig_1.webp`,
+    imageAlt: "Instagram Post 1",
   },
-  {
+    {
     excerpt:
-      "🚀¿Por qué Minerva I?\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
-    likes: 582,
+      "🚀¿Por qué Minerva I?\n\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
+    likes: 613,
     comments: 15,
-    imageSrc: `${baseUrl}post_ig_6.webp`,
-    imageAlt: "Instagram Post 6",
+    url: "https://www.instagram.com/p/DXvI0nQxgzM/",
+    imageSrc: `${baseUrl}/instagram/post_ig_2.webp`,
+    imageAlt: "Instagram Post 2",
   },
   {
     excerpt:
-      "¡Prueba exitosa! 🚀\nHoy les mostramos un detrás de escenas del trabajo que hacen las chicas en el área de diseño de motor. 🔩",
-    likes: 519,
-    comments: 55,
-    imageSrc: `${baseUrl}post_ig_7.webp`,
-    imageAlt: "Instagram Post 7",
+      "🚀 ¡Bienvenidos @reite.ai!\n\nEstamos muy felices de anunciar el apoyo de Reite como auspiciadores oficiales!",
+    likes: 83,
+    comments: 11,
+    url: "https://www.instagram.com/p/DZ_R5WxNsH8/",
+    imageSrc: `${baseUrl}/instagram/post_ig_3.webp`,
+    imageAlt: "Instagram Post 3",
   },
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: `${baseUrl}auspiciadores/fcfm_logo.webp`, alt: "FCFM" },
-  { src: `${baseUrl}auspiciadores/departamento_mecanica_logo.webp`, alt: "Mecánica" },
-  { src: `${baseUrl}auspiciadores/die_fcfm.webp`, alt: "Eléctrica" },
-  { src: `${baseUrl}auspiciadores/fablab_logo.webp`, alt: "FabLab" },
-  { src: `${baseUrl}auspiciadores/maquintel_logo.webp`, alt: "Maquintel", heightClass: "h-[100px]" },
-  { src: `${baseUrl}auspiciadores/alutipo_logo.webp`, alt: "Alutipo" },
-  { src: `${baseUrl}auspiciadores/micro.webp`, alt: "Micro Automación" },
-  { src: `${baseUrl}auspiciadores/logo_ansys.webp`, alt: "Ansys", heightClass: "h-[120px]" },
-  { src: `${baseUrl}auspiciadores/logo_esss.webp`, alt: "ESSS", heightClass: "h-[120px]" },
-  { src: `${baseUrl}auspiciadores/fabricala_logo.webp`, alt: "FABRICALA", heightClass: "h-[70px]" },
-  { src: `${baseUrl}auspiciadores/reite_logo.webp`, alt: "REITE", heightClass: "h-[50px]" },
+  { src: `${baseUrl}sponsors/creality_logo.webp`, alt: "Creality", url: "https://www.creality.com/es" },
+  { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner", url: "https://www.todotoner.cl/" },
+  { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM", url: "https://ingenieria.uchile.cl/" },
+  { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica", url: "https://dimec.uchile.cl/" },
+  { src: `${baseUrl}sponsors/die_fcfm.webp`, alt: "Eléctrica", url: "https://www.die.cl/" },
+  { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab", url: "https://www.instagram.com/fablabudechile/" },
+  { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", url: "https://www.maquintel.com/", heightClass: "h-[100px]" },
+  { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo", url: "https://alutipo.cl/" },
+  { src: `${baseUrl}sponsors/micro.webp`, alt: "Micro Automación", url: "https://cl.microautomacion.com/es/inicio/" },
+  { src: `${baseUrl}sponsors/logo_ansys.webp`, alt: "Ansys", url: "https://www.ansys.com/", heightClass: "h-[120px]" },
+  { src: `${baseUrl}sponsors/logo_esss.webp`, alt: "ESSS", url: "https://www.esss.com/es/", heightClass: "h-[120px]" },
+  { src: `${baseUrl}sponsors/fabricala_logo.webp`, alt: "FABRICALA", url: "https://www.fabricala.pro/", heightClass: "h-[70px]" },
+  { src: `${baseUrl}sponsors/reite_logo.webp`, alt: "REITE", url: "https://reite.cl/", heightClass: "h-[50px]" },
 ];
 
 export const socialLinks: SocialLink[] = [

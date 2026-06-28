@@ -1,5 +1,6 @@
 ---
 interface Props {
+  url: string;
   excerpt: string;
   likes: number;
   comments: number;
@@ -7,10 +8,15 @@ interface Props {
   imageAlt: string;
 }
 
-const { excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
+const { url, excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
 ---
 
-<article class="w-full bg-white border border-[#E5E7EB] rounded-sm overflow-hidden flex flex-col">
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="flex w-full flex-col overflow-hidden rounded-sm border border-[#E5E7EB] bg-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1025B9]"
+>
   <div class="p-5 flex flex-col gap-3 h-[160px]">
     <p class="text-[#48484A] font-normal text-sm leading-relaxed line-clamp-4 whitespace-pre-line">
       {excerpt}
@@ -27,4 +33,4 @@ const { excerpt, likes, comments, imageSrc, imageAlt } = Astro.props as Props;
       class="absolute inset-0 h-full w-full scale-[1.08] object-cover object-center md:scale-100"
     />
   </div>
-</article>
+</a>

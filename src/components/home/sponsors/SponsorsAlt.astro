@@ -1,0 +1,176 @@
+---
+import { sponsorLogos } from "../../../data/home";
+
+const sponsorByName = new Map(sponsorLogos.map((logo) => [logo.alt, logo]));
+const logo = (alt: string, sizeClass: string) => ({ ...sponsorByName.get(alt)!, sizeClass });
+const pulseConfig = {
+  scale: 1.1,
+  cycle: "20s",
+  levelDelay: "0.2s",
+};
+
+const companyRowsBase = [
+  [logo("Creality", "h-23 sm:h-28 lg:h-32")],
+  [logo("TodoToner", "h-10 sm:h-12 lg:h-14")],
+  [logo("FABRICALA", "h-12 sm:h-14 lg:h-16"), logo("REITE", "h-10 sm:h-12 lg:h-15")],
+  [
+    logo("Alutipo", "h-10 sm:h-12 lg:h-14"),
+    logo("Ansys", "h-14 sm:h-16 lg:h-20"),
+    logo("ESSS", "h-13 sm:h-16 lg:h-18"),
+  ],
+  [logo("Micro Automación", "h-12 sm:h-14 lg:h-16"), logo("Maquintel", "h-7 sm:h-9 lg:h-10")],
+];
+
+const universityRowsBase = [
+  [logo("FCFM", "h-16 sm:h-20 lg:h-24")],
+  [
+    logo("Mecánica", "h-14 sm:h-16 lg:h-20"),
+    logo("FabLab", "h-12 sm:h-14 lg:h-16"),
+    logo("Eléctrica", "h-10 sm:h-12 lg:h-14"),
+  ],
+];
+
+const companyRows = companyRowsBase.map((row, pulseLevel) =>
+  row.map((sponsor) => ({ ...sponsor, pulseLevel })),
+);
+const universityRows = universityRowsBase;
+---
+
+<section
+  id="sponsors"
+  data-sponsors-alt
+  style={`--sponsor-pulse-scale: ${pulseConfig.scale}; --sponsor-pulse-cycle: ${pulseConfig.cycle}; --sponsor-level-delay: ${pulseConfig.levelDelay};`}
+  class="sponsors-alt relative flex w-full scroll-mt-24 flex-col items-center overflow-hidden bg-white px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-24"
+>
+  <div class="pointer-events-none absolute -left-32 -top-32 size-96 rounded-full border border-[#1025B9]/5" aria-hidden="true"></div>
+
+  <div class="relative z-10 flex w-full max-w-7xl flex-col items-center">
+    <h2 class="text-5xl font-black leading-none tracking-tighter text-[#1C1C1E] sm:text-6xl lg:text-8xl">
+      Sponsors
+    </h2>
+    <p class="mt-6 max-w-lg text-center text-lg text-[#48484A] sm:text-xl">
+      Agradecemos a quienes han cre&iacute;do en nuestro proyecto.
+    </p>
+
+    <div class="mt-16 w-full lg:mt-20">
+      <h3 class="text-center text-sm font-semibold uppercase tracking-widest text-[#8E8E93]">
+        Empresas
+      </h3>
+      <div data-sponsor-pulse-stage class="mx-auto mt-10 flex w-full max-w-5xl flex-col items-center gap-8 sm:gap-10">
+        {companyRows.map((row) => (
+          <div class="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 lg:gap-x-16">
+            {row.map((sponsor) => (
+              <a
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visitar sitio de ${sponsor.alt}`}
+                class="inline-flex transition-transform duration-300 hover:scale-110 focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1025B9]"
+              >
+                <img
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  loading="lazy"
+                  data-sponsor-pulse-trigger={sponsor.pulseLevel === 0 ? true : undefined}
+                  style={`--pulse-level: ${sponsor.pulseLevel};`}
+                  class:list={[
+                    sponsor.sizeClass,
+                    "sponsor-pulse-logo max-w-full object-contain",
+                  ]}
+                />
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
+
+      <div class="my-16 h-px w-full bg-[#1C1C1E]/15" aria-hidden="true"></div>
+
+      <h3 class="text-center text-sm font-semibold uppercase tracking-widest text-[#8E8E93]">
+        Universidad de Chile
+      </h3>
+      <div class="mx-auto mt-10 flex w-full max-w-4xl flex-col items-center gap-8 sm:gap-10">
+        {universityRows.map((row) => (
+          <div class="flex w-full flex-wrap items-center justify-center gap-x-10 gap-y-6 sm:gap-x-16 lg:gap-x-20">
+            {row.map((sponsor) => (
+              <a
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visitar sitio de ${sponsor.alt}`}
+                class="inline-flex transition-transform duration-300 hover:scale-110 focus-visible:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1025B9]"
+              >
+                <img
+                  src={sponsor.src}
+                  alt={sponsor.alt}
+                  loading="lazy"
+                  class:list={[
+                    sponsor.sizeClass,
+                    "max-w-full object-contain",
+                  ]}
+                />
+              </a>
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .sponsor-pulse-logo {
+    transform: scale(1);
+    transform-origin: center;
+  }
+
+  .sponsors-alt.is-animating .sponsor-pulse-logo {
+    animation: sponsor-logo-pulse var(--sponsor-pulse-cycle) cubic-bezier(0.45, 0, 0.2, 1) infinite both;
+    animation-delay: calc(var(--pulse-level) * var(--sponsor-level-delay));
+  }
+
+  @keyframes sponsor-logo-pulse {
+    0%,
+    3.5%,
+    100% {
+      transform: scale(1);
+    }
+
+    1.75% {
+      transform: scale(var(--sponsor-pulse-scale));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sponsors-alt.is-animating .sponsor-pulse-logo {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  const section = document.querySelector("[data-sponsors-alt]");
+  const pulseTrigger = section?.querySelector("[data-sponsor-pulse-trigger]");
+
+  if (section instanceof HTMLElement && pulseTrigger instanceof HTMLElement) {
+    let triggerIsVisible = false;
+
+    const updateAnimationState = () => {
+      section.classList.toggle(
+        "is-animating",
+        triggerIsVisible && document.visibilityState === "visible",
+      );
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        triggerIsVisible = entry?.isIntersecting ?? false;
+        updateAnimationState();
+      },
+      { threshold: 0.6, rootMargin: "0px 0px -10% 0px" },
+    );
+
+    document.addEventListener("visibilitychange", updateAnimationState);
+    observer.observe(pulseTrigger);
+  }
+</script>
