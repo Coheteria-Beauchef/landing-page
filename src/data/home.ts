@@ -180,7 +180,7 @@ export type PressArticle = {
 export const pressArticles: PressArticle[] = [
   {
     source: "instagram",
-    url: "https://uchile.cl/noticias/230075/u-de-chile-prueba-con-exito-su-primer-motor-de-cohete-estudiantil",
+    url: "https://www.instagram.com/p/DaDwphdxsdr/",
     title: "Creality y TodoToner se suman como auspiciadores de Cohetería Beauchef!",
     date: "27 de junio de 2026",
     excerpt:
@@ -227,12 +227,9 @@ export const headerNavigationLinks: NavigationLink[] = [
   { href: "#contacto", label: "Contacto" },
 ];
 
-export const footerNavigationLinks: NavigationLink[] = [
-  { href: "#nosotros", label: "Nosotros" },
-  { href: "#proyectos", label: "Proyectos" },
-  { href: `${baseUrl}equipo`, label: "Equipo" },
-  { href: "#sponsors", label: "Sponsors" },
-];
+export const footerNavigationLinks: NavigationLink[] = headerNavigationLinks.filter(
+  (link) => link.href !== "#prensa" && link.href !== "#contacto",
+);
 
 export const homeStats: StatItem[] = [
   { value: "2611N", label: "Empuje máximo alcanzado" },
