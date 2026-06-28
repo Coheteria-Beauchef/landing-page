@@ -253,16 +253,16 @@ export const instagramPosts: InstagramPost[] = [
     likes: 93,
     comments: 9,
     url: "https://www.instagram.com/p/DaDwphdxsdr/",
-    imageSrc: `${baseUrl}/instagram/post_ig_1.webp`,
+    imageSrc: `${baseUrl}instagram/post_ig_1.webp`,
     imageAlt: "Instagram Post 1",
   },
-    {
+  {
     excerpt:
       "🚀¿Por qué Minerva I?\n\n¡Te contamos cuál es el nombre de nuestra primera misión de lanzamiento en Brasil!🚀",
     likes: 613,
     comments: 15,
     url: "https://www.instagram.com/p/DXvI0nQxgzM/",
-    imageSrc: `${baseUrl}/instagram/post_ig_2.webp`,
+    imageSrc: `${baseUrl}instagram/post_ig_2.webp`,
     imageAlt: "Instagram Post 2",
   },
   {
@@ -271,7 +271,7 @@ export const instagramPosts: InstagramPost[] = [
     likes: 83,
     comments: 11,
     url: "https://www.instagram.com/p/DZ_R5WxNsH8/",
-    imageSrc: `${baseUrl}/instagram/post_ig_3.webp`,
+    imageSrc: `${baseUrl}instagram/post_ig_3.webp`,
     imageAlt: "Instagram Post 3",
   },
 ];
