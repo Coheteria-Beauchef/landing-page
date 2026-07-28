@@ -25,11 +25,11 @@ Landing estatica simple con Astro, Tailwind CSS y animaciones GSAP.
 
 ## Cambios Rápidos
 
-En `src/components/data/home.ts`, donde aparece instagramPosts, puedes agregar, editar o eliminar posts. Solo asegúrate de mantener el formato correcto, dejar una imagen en public/ y actualizar.
+En `src/data/home.ts`, donde aparece `instagramPosts`, puedes agregar, editar o eliminar posts. Solo asegúrate de mantener el formato correcto, dejar una imagen en `public/` y actualizar.
 
 Para colocar un anuncio en la parte superior de la página, edita el objeto `homeAnnouncement` en el mismo archivo. Puedes activar o desactivar el anuncio, cambiar el texto y el enlace. Útil para compartir eventos próximos.
 
-Para cambiar los posts de instagram, edita el array `instagramPosts` en `src/components/data/home.ts`. Asegúrate de mantener el formato correcto y de que las imágenes estén en la carpeta `public/`.
+Para cambiar los posts de Instagram, edita el array `instagramPosts` en `src/data/home.ts`. Asegúrate de mantener el formato correcto y de que las imágenes estén en la carpeta `public/`.
 
 ### Imágenes
 
