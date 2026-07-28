@@ -227,9 +227,12 @@ export const headerNavigationLinks: NavigationLink[] = [
   { href: "#contacto", label: "Contacto" },
 ];
 
-export const footerNavigationLinks: NavigationLink[] = headerNavigationLinks.filter(
-  (link) => link.href !== "#prensa" && link.href !== "#contacto",
-);
+export const footerNavigationLinks: NavigationLink[] = [
+  { href: `${baseUrl}#nosotros`, label: "Nosotros" },
+  { href: `${baseUrl}#proyectos`, label: "Posts" },
+  { href: `${baseUrl}equipo`, label: "Equipo" },
+  { href: `${baseUrl}#sponsors`, label: "Sponsors" },
+];
 
 export const homeStats: StatItem[] = [
   { value: "2611N", label: "Empuje máximo alcanzado" },
