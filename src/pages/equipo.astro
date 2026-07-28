@@ -3,15 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Brand from "../components/home/shared/Brand.astro";
 import NavLinks from "../components/home/shared/NavLinks.astro";
 import TeamCard from "../components/home/shared/TeamCard.astro";
+import TeamDialog from "../components/home/shared/TeamDialog.astro";
 import SiteFooter from "../components/home/footer/SiteFooter.astro";
-import { teamAreas, socialProfiles } from "../data/home";
+import { teamAreas, teamDefaultImageSrc, socialProfiles } from "../data/home";
 import CtaSection from "../components/home/cta/CtaSection.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 
 const navLinks = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },
-  { href: `${baseUrl}#proyectos`, label: "Proyectos" },
+  { href: `${baseUrl}#proyectos`, label: "Posts" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: `${baseUrl}#sponsors`, label: "Sponsors" },
   { href: `${baseUrl}#prensa`, label: "Prensa" },
@@ -20,6 +21,17 @@ const navLinks = [
 const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
 const canonical = new URL(`${baseUrl}equipo`, siteUrl).toString();
 const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
+
+const captains = teamAreas.filter((entry) => entry.kind === "captain");
+const leaders = teamAreas.filter((entry) => entry.kind === "area");
+const workTeams = teamAreas.filter(
+  (entry) => entry.kind === "area" || entry.kind === "support",
+);
+const professors = teamAreas.filter((entry) => entry.kind === "professor");
+
+const teamTitle = (role: string | string[]) =>
+  Array.isArray(role) ? (role.at(-1) ?? role[0]) : role;
+const teamDialogId = (id: string) => `team-dialog-${id}`;
 ---
 
 <Layout
@@ -30,12 +42,14 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
   socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
 >
   <div class="flex min-h-screen flex-col bg-white">
-    <nav class="sticky top-0 z-30" style="background: linear-gradient(180deg, rgba(16,37,185,0.94), rgba(16,37,185,0.9208)); box-shadow: 0 18px 48px rgba(16,37,185,0.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);" data-equipo-nav>
+    <nav
+      class="sticky top-0 z-30"
+      style="background: linear-gradient(180deg, rgba(16,37,185,0.94), rgba(16,37,185,0.9208)); box-shadow: 0 18px 48px rgba(16,37,185,0.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);"
+      data-equipo-nav
+    >
       <div class="flex h-20 items-center justify-between px-6 md:px-10 lg:px-16">
         <a href={`${baseUrl}#top`} aria-label="Volver al inicio" class="p-1">
-          <Brand
-            logoClass="h-[5.5125rem] w-[11.025rem] object-contain shrink-0"
-          />
+          <Brand logoClass="h-[5.5125rem] w-[11.025rem] object-contain shrink-0" />
         </a>
         <NavLinks
           links={navLinks}
@@ -48,9 +62,18 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
           aria-label="Abrir menú"
           aria-expanded="false"
         >
-          <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center" data-bar-1></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300" data-bar-2></span>
-          <span class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center" data-bar-3></span>
+          <span
+            class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
+            data-bar-1
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300"
+            data-bar-2
+          ></span>
+          <span
+            class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
+            data-bar-3
+          ></span>
         </button>
       </div>
 
@@ -60,11 +83,16 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
         data-mobile-menu
       >
         <div class="flex flex-col px-6 pb-4">
-          {navLinks.map((link) => (
-            <a href={link.href} class="py-3 text-white/90 hover:text-white font-semibold text-base border-b border-white/10 last:border-0 transition-colors">
-              {link.label}
-            </a>
-          ))}
+          {
+            navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="py-3 text-white/90 hover:text-white font-semibold text-base border-b border-white/10 last:border-0 transition-colors"
+              >
+                {link.label}
+              </a>
+            ))
+          }
         </div>
       </div>
     </nav>
@@ -88,8 +116,8 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
         if (bar3) bar3.style.transform = open ? "translateY(-6.5px) rotate(-45deg)" : "";
       });
 
-      menu?.querySelectorAll("a").forEach((a) => {
-        a.addEventListener("click", () => {
+      menu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
           open = false;
           btn?.setAttribute("aria-expanded", "false");
           if (menu) menu.style.maxHeight = "0";
@@ -100,39 +128,195 @@ const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
       });
     </script>
 
+    <script>
+      const closeAnimationMs = 300;
+      const focusableSelector = [
+        "a[href]",
+        "button:not([disabled])",
+        "input:not([disabled])",
+        "select:not([disabled])",
+        "textarea:not([disabled])",
+        '[tabindex]:not([tabindex="-1"])',
+      ].join(",");
+      let activeTrigger: HTMLElement | null = null;
+
+      const setPageScrollLocked = (locked: boolean) => {
+        document.documentElement.classList.toggle("overflow-hidden", locked);
+        document.body.classList.toggle("overflow-hidden", locked);
+      };
+
+      const openTeamDialog = (dialog: HTMLElement, trigger: HTMLElement) => {
+        if (dialog.classList.contains("is-open")) return;
+
+        activeTrigger = trigger;
+        dialog.classList.remove("is-closing");
+        dialog.classList.add("is-visible");
+        dialog.setAttribute("aria-hidden", "false");
+        setPageScrollLocked(true);
+
+        window.requestAnimationFrame(() => {
+          window.requestAnimationFrame(() => {
+            dialog.classList.add("is-open");
+            dialog
+              .querySelector<HTMLButtonElement>(
+                "[data-team-dialog-close]:not(.team-dialog__backdrop)",
+              )
+              ?.focus();
+          });
+        });
+      };
+
+      const closeTeamDialog = (dialog: HTMLElement) => {
+        if (!dialog.classList.contains("is-open") || dialog.classList.contains("is-closing")) {
+          return;
+        }
+
+        dialog.classList.remove("is-open");
+        dialog.classList.add("is-closing");
+        dialog.setAttribute("aria-hidden", "true");
+
+        window.setTimeout(() => {
+          dialog.classList.remove("is-visible", "is-closing");
+          setPageScrollLocked(Boolean(document.querySelector("[data-team-dialog].is-open")));
+          activeTrigger?.focus();
+          activeTrigger = null;
+        }, closeAnimationMs);
+      };
+
+      document.querySelectorAll<HTMLAnchorElement>("[data-team-dialog-trigger]").forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+          event.preventDefault();
+          const dialogId = trigger.dataset.teamDialogTrigger;
+          if (!dialogId) return;
+
+          const dialog = document.getElementById(dialogId);
+          if (dialog) openTeamDialog(dialog, trigger);
+        });
+      });
+
+      document.querySelectorAll<HTMLElement>("[data-team-dialog]").forEach((dialog) => {
+        dialog.querySelectorAll<HTMLButtonElement>("[data-team-dialog-close]").forEach((button) => {
+          button.addEventListener("click", () => closeTeamDialog(dialog));
+        });
+      });
+
+      document.addEventListener("keydown", (event) => {
+        const dialog = document.querySelector<HTMLElement>("[data-team-dialog].is-open");
+        if (!dialog) return;
+
+        if (event.key === "Escape") {
+          event.preventDefault();
+          closeTeamDialog(dialog);
+          return;
+        }
+
+        if (event.key !== "Tab") return;
+
+        const focusable = Array.from(dialog.querySelectorAll<HTMLElement>(focusableSelector)).filter(
+          (element) => !element.hasAttribute("disabled"),
+        );
+        const first = focusable[0];
+        const last = focusable.at(-1);
+        if (!first || !last) return;
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+    </script>
+
     <main class="flex-1 px-6 pt-20 pb-24 sm:px-8 lg:px-10">
       <div class="mx-auto max-w-[1440px]">
         <div class="mb-16 mt-12">
-          <h1 class="text-4xl font-black leading-none tracking-[-0.04em] text-[#1C1C1E] sm:text-5xl">
+          <h1
+            class="text-4xl font-black leading-none tracking-[-0.04em] text-[#1C1C1E] sm:text-5xl"
+          >
             Conoce al equipo
           </h1>
         </div>
 
-        {(() => {
-          const [captain1, captain2, ...leads] = teamAreas;
-          return (
-            <div class="flex flex-col items-center gap-8">
-              <div class="flex flex-wrap justify-center gap-6">
-                  {[captain1, captain2].map((captain) => (
-                    <TeamCard {...captain.lead} members={captain.members} />
+        <div class="flex flex-col items-center gap-16">
+          {
+            professors.length > 0 && (
+              <section class="flex w-full flex-col items-center gap-8">
+                <h2 class="text-center text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl">
+                  Profesores de apoyo
+                </h2>
+
+                <div class="flex flex-wrap justify-center gap-6">
+                  {professors.map((professor) => (
+                    <TeamCard {...professor.lead} />
                   ))}
+                </div>
+              </section>
+            )
+          }
+
+          <section class="flex w-full flex-col items-center gap-10">
+            <h2
+              class="text-center text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl"
+            >
+              Directiva
+            </h2>
+
+            <div class="flex w-full max-w-6xl flex-col items-center gap-10 py-2">
+              <div
+                class="grid w-full max-w-[620px] grid-cols-1 justify-items-center gap-6 sm:grid-cols-2"
+              >
+                {captains.map((captain) => <TeamCard {...captain.lead} />)}
               </div>
 
-              <div class="flex flex-wrap justify-center gap-6 w-full max-w-6xl">
-                {leads.map(({ lead, members }) => (
-                  <div class="w-[320px] flex justify-center">
-                    <TeamCard {...lead} members={members} />
-                  </div>
-                ))}
+              <div
+                class="grid w-full grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4"
+              >
+                {leaders.map((leader) => <TeamCard {...leader.lead} />)}
               </div>
             </div>
-          );
-        })()}
+          </section>
+
+          <section class="flex w-full flex-col items-center gap-8">
+            <h2
+              class="text-center text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl"
+            >
+              Equipos de trabajo
+            </h2>
+
+            <div class="flex w-full max-w-6xl flex-wrap justify-center gap-6">
+              {
+                workTeams.map((area) => (
+                  <TeamCard
+                    name={teamTitle(area.lead.role)}
+                    imageSrc={area.coverImageSrc ?? teamDefaultImageSrc}
+                    imageAlt={area.coverImageAlt ?? "Logo de Cohetería Beauchef"}
+                    members={area.members}
+                    dialogId={teamDialogId(area.id)}
+                  />
+                ))
+              }
+            </div>
+
+            {
+              workTeams.map((area) => (
+                <TeamDialog
+                  id={teamDialogId(area.id)}
+                  title={teamTitle(area.lead.role)}
+                  imageSrc={area.coverImageSrc ?? teamDefaultImageSrc}
+                  imageAlt={area.coverImageAlt ?? "Logo de Cohetería Beauchef"}
+                  description={area.description ?? "Detalle del equipo por completar."}
+                  members={area.members}
+                />
+              ))
+            }
+          </section>
+        </div>
       </div>
     </main>
 
     <CtaSection showTeamLink={false} />
-
     <SiteFooter />
   </div>
 </Layout>

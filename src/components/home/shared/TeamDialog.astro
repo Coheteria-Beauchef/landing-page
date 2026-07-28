@@ -1,0 +1,147 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  description: string;
+  members?: string[];
+}
+
+const { id, title, imageSrc, imageAlt, description, members = [] } = Astro.props;
+const titleId = `${id}-title`;
+const descriptionId = `${id}-description`;
+---
+
+<div
+  id={id}
+  data-team-dialog
+  class="team-dialog fixed inset-0 z-[100] items-end justify-center px-4 py-6 sm:items-center sm:px-6"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby={titleId}
+  aria-describedby={descriptionId}
+  aria-hidden="true"
+  tabindex="-1"
+>
+  <button
+    type="button"
+    data-team-dialog-close
+    class="team-dialog__backdrop absolute inset-0 bg-black/60"
+    aria-label="Cerrar"
+  ></button>
+
+  <article
+    class="team-dialog__panel relative grid max-h-[calc(100dvh-3rem)] w-[min(94vw,980px)] overflow-y-auto rounded-2xl border border-[#E5E5EA] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.22)] md:max-h-[88vh] md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.2fr)] md:overflow-hidden"
+  >
+    <div
+      class="flex min-h-[180px] items-center justify-center bg-[#F4F6FF] p-6 sm:min-h-[240px] md:min-h-[560px] md:p-8"
+    >
+      {
+        imageSrc ? (
+          <img
+            src={imageSrc}
+            alt={imageAlt ?? title}
+            class="max-h-[200px] w-full max-w-[360px] object-contain sm:max-h-[260px] md:max-h-[420px]"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : (
+          <div class="flex h-48 w-48 items-center justify-center rounded-full bg-[#EEF2FF] text-5xl font-black text-[#1025B9]">
+            {title.slice(0, 2).toUpperCase()}
+          </div>
+        )
+      }
+    </div>
+
+    <div class="flex flex-col border-t border-[#E5E5EA] md:max-h-[88vh] md:border-l md:border-t-0">
+      <div class="flex-1 space-y-5 overflow-y-auto p-8 md:p-10">
+        <h2
+          id={titleId}
+          class="text-3xl font-black leading-tight tracking-[-0.04em] text-[#1C1C1E]"
+        >
+          {title}
+        </h2>
+        <p id={descriptionId} class="text-base leading-relaxed text-[#48484A]">
+          {description}
+        </p>
+
+        {
+          members.length > 0 && (
+            <div class="space-y-4">
+              <h3 class="text-xl font-black leading-tight tracking-[-0.03em] text-[#1025B9]">
+                Integrantes
+              </h3>
+              <ul class="list-disc space-y-1.5 pl-6 text-base leading-relaxed text-[#48484A]">
+                {members.map((member) => (
+                  <li>{member}</li>
+                ))}
+              </ul>
+            </div>
+          )
+        }
+      </div>
+
+      <div class="flex justify-end border-t border-[#E5E5EA] bg-white px-8 py-5">
+        <button
+          type="button"
+          data-team-dialog-close
+          class="cursor-pointer rounded-full bg-[#1025B9] px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-[#0C1F99] focus:outline-none focus-visible:ring-4 focus-visible:ring-[#1025B9]/20"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </article>
+</div>
+
+<style>
+  .team-dialog {
+    display: none;
+  }
+
+  .team-dialog.is-visible {
+    display: flex;
+  }
+
+  .team-dialog__backdrop {
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  .team-dialog__panel {
+    opacity: 0;
+    transform: translateY(56px) scale(0.96);
+    transition:
+      opacity 400ms ease,
+      transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .team-dialog.is-open .team-dialog__backdrop {
+    opacity: 1;
+  }
+
+  .team-dialog.is-open .team-dialog__panel {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .team-dialog.is-closing .team-dialog__backdrop {
+    opacity: 0;
+    transition-duration: 300ms;
+  }
+
+  .team-dialog.is-closing .team-dialog__panel {
+    opacity: 0;
+    transform: translateY(56px) scale(0.96);
+    transition-duration: 300ms;
+    transition-timing-function: ease, cubic-bezier(0.64, 0, 0.78, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .team-dialog__backdrop,
+    .team-dialog__panel {
+      transition-duration: 1ms;
+    }
+  }
+</style>

@@ -38,36 +38,74 @@ export type SponsorLogo = {
 
 export type TeamMember = {
   name: string;
-  role: string;
+  role: string | string[];
   imageSrc?: string;
   imageAlt?: string;
+  href?: string;
 };
 
 export type TeamArea = {
+  id: string;
+  kind: "captain" | "area" | "support" | "professor";
   lead: TeamMember;
   members: string[];
+  description?: string;
+  coverImageSrc?: string;
+  coverImageAlt?: string;
 };
+
+export const teamDefaultImageSrc = `${baseUrl}logos/coheteriabeauchef_borderless_logo.webp`;
 
 export const teamAreas: TeamArea[] = [
   {
+    id: "capitan-matias",
+    kind: "captain",
     lead: {
       name: "Matías Videla",
-      role: "Capitán",
+      role: ["Capitán", "Operaciones y Logística"],
       imageSrc: `${baseUrl}team/matias-videla.webp`,
       imageAlt: "Foto de Matías Videla",
     },
     members: [],
   },
   {
+    id: "capitan-vicente",
+    kind: "captain",
     lead: {
       name: "Vicente Jerez",
-      role: "Capitán",
+      role: ["Capitán", "Telemetría"],
       imageSrc: `${baseUrl}team/vicente-jerez.webp`,
       imageAlt: "Foto de Vicente Jerez",
     },
     members: [],
   },
   {
+    id: "profesora-monica-zamora",
+    kind: "professor",
+    lead: {
+      name: "Mónica Zamora",
+      role: "Profesora asesora",
+      imageSrc: `${baseUrl}team/monica.webp`,
+      imageAlt: "Foto de Mónica Zamora",
+    },
+    members: [],
+    description: "Profesora asesora de Cohetería Beauchef.",
+  },
+  {
+    id: "profesor-ruben-fernandez",
+    kind: "professor",
+    lead: {
+      name: "Rubén Fernández",
+      role: "Profesor asesor",
+      imageSrc: `${baseUrl}team/ruben.webp`,
+      imageAlt: "Foto de Rubén Fernández",
+    },
+    members: [],
+    description: "Profesor asesor de Cohetería Beauchef.",
+  },
+  {
+    id: "fuselaje",
+    kind: "area",
     lead: {
       name: "Nicolás Herrera",
       role: "Fuselaje",
@@ -82,8 +120,13 @@ export const teamAreas: TeamArea[] = [
       "Rolando Cuellar",
       "Benjamín Miller",
     ],
+    description: "Equipo encargado del fuselaje, la estructura y el montaje del vehículo.",
+    coverImageSrc: teamDefaultImageSrc,
+    coverImageAlt: "Logo de Cohetería Beauchef",
   },
   {
+    id: "vinculacion-rrss",
+    kind: "area",
     lead: {
       name: "María Jesús Escudero",
       role: "Vinculación y RRSS",
@@ -99,8 +142,14 @@ export const teamAreas: TeamArea[] = [
       "Damián Miranda",
       "Sofía Vargas Trujillo",
     ],
+    description:
+      "Equipo encargado de comunicación, difusión, redes sociales y vinculación con la comunidad.",
+    coverImageSrc: teamDefaultImageSrc,
+    coverImageAlt: "Logo de Cohetería Beauchef",
   },
   {
+    id: "motor",
+    kind: "area",
     lead: {
       name: "Felipe Valdebenito",
       role: "Motor",
@@ -115,11 +164,16 @@ export const teamAreas: TeamArea[] = [
       "Fernanda Arias",
       "Constanza Fredes",
       "Magdalena Araya",
-      'Cristóbal Moreno',
-      'Agustín Martínez',
+      "Cristóbal Moreno",
+      "Agustín Martínez",
     ],
+    description: "Equipo encargado del diseño, las pruebas y el desarrollo del motor del cohete.",
+    coverImageSrc: teamDefaultImageSrc,
+    coverImageAlt: "Logo de Cohetería Beauchef",
   },
   {
+    id: "operaciones-logistica",
+    kind: "support",
     lead: {
       name: "Matías Videla",
       role: "Operaciones y Logística",
@@ -127,14 +181,20 @@ export const teamAreas: TeamArea[] = [
       imageAlt: "Foto de Matías Videla",
     },
     members: [
-      'Fernanda Arias',
-      'María Jesús Escudero',
-      'Magdalena Araya',
-      'Damián Miranda',
-      'Benjamín Miller',
+      "Fernanda Arias",
+      "María Jesús Escudero",
+      "Magdalena Araya",
+      "Damián Miranda",
+      "Benjamín Miller",
     ],
+    description:
+      "Equipo encargado de la coordinación general, la logística y el apoyo a campañas y actividades.",
+    coverImageSrc: teamDefaultImageSrc,
+    coverImageAlt: "Logo de Cohetería Beauchef",
   },
   {
+    id: "combustible-procesos",
+    kind: "area",
     lead: {
       name: "Piero Tardón",
       role: "Combustible y Procesos",
@@ -148,8 +208,14 @@ export const teamAreas: TeamArea[] = [
       "Allison Valdivia",
       "Rafael Rocha",
     ],
+    description:
+      "Equipo encargado de la propulsión, los combustibles y los procesos de fabricación asociados.",
+    coverImageSrc: teamDefaultImageSrc,
+    coverImageAlt: "Logo de Cohetería Beauchef",
   },
   {
+    id: "telemetria",
+    kind: "support",
     lead: {
       name: "Vicente Jerez",
       role: "Telemetría",
@@ -165,6 +231,10 @@ export const teamAreas: TeamArea[] = [
       "Oscar Aravena",
       "Felipe Colli Olea",
     ],
+    description:
+      "Equipo encargado de la adquisición de datos, el monitoreo de vuelo y los sistemas de telemetría.",
+    coverImageSrc: teamDefaultImageSrc,
+    coverImageAlt: "Logo de Cohetería Beauchef",
   },
 ];
 
@@ -280,19 +350,64 @@ export const instagramPosts: InstagramPost[] = [
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: `${baseUrl}sponsors/creality_logo.webp`, alt: "Creality", url: "https://www.creality.com/es" },
-  { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner", url: "https://www.todotoner.cl/" },
+  {
+    src: `${baseUrl}sponsors/creality_logo.webp`,
+    alt: "Creality",
+    url: "https://www.creality.com/es",
+  },
+  {
+    src: `${baseUrl}sponsors/todotoner_logo.webp`,
+    alt: "TodoToner",
+    url: "https://www.todotoner.cl/",
+  },
   { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM", url: "https://ingenieria.uchile.cl/" },
-  { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica", url: "https://dimec.uchile.cl/" },
+  {
+    src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`,
+    alt: "Mecánica",
+    url: "https://dimec.uchile.cl/",
+  },
   { src: `${baseUrl}sponsors/die_fcfm.svg`, alt: "Eléctrica", url: "https://www.die.cl/" },
-  { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab", url: "https://www.instagram.com/fablabudechile/" },
-  { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", url: "https://www.maquintel.com/", heightClass: "h-[100px]" },
+  {
+    src: `${baseUrl}sponsors/fablab_logo.webp`,
+    alt: "FabLab",
+    url: "https://www.instagram.com/fablabudechile/",
+  },
+  {
+    src: `${baseUrl}sponsors/maquintel_logo.webp`,
+    alt: "Maquintel",
+    url: "https://www.maquintel.com/",
+    heightClass: "h-[100px]",
+  },
   { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo", url: "https://alutipo.cl/" },
-  { src: `${baseUrl}sponsors/micro.webp`, alt: "Micro Automación", url: "https://cl.microautomacion.com/es/inicio/" },
-  { src: `${baseUrl}sponsors/logo_ansys.webp`, alt: "Ansys", url: "https://www.ansys.com/", heightClass: "h-[120px]" },
-  { src: `${baseUrl}sponsors/logo_esss.webp`, alt: "ESSS", url: "https://www.esss.com/es/", heightClass: "h-[120px]" },
-  { src: `${baseUrl}sponsors/fabricala_logo.webp`, alt: "FABRICALA", url: "https://www.fabricala.pro/", heightClass: "h-[70px]" },
-  { src: `${baseUrl}sponsors/reite_logo.webp`, alt: "REITE", url: "https://reite.cl/", heightClass: "h-[50px]" },
+  {
+    src: `${baseUrl}sponsors/micro.webp`,
+    alt: "Micro Automación",
+    url: "https://cl.microautomacion.com/es/inicio/",
+  },
+  {
+    src: `${baseUrl}sponsors/logo_ansys.webp`,
+    alt: "Ansys",
+    url: "https://www.ansys.com/",
+    heightClass: "h-[120px]",
+  },
+  {
+    src: `${baseUrl}sponsors/logo_esss.webp`,
+    alt: "ESSS",
+    url: "https://www.esss.com/es/",
+    heightClass: "h-[120px]",
+  },
+  {
+    src: `${baseUrl}sponsors/fabricala_logo.webp`,
+    alt: "FABRICALA",
+    url: "https://www.fabricala.pro/",
+    heightClass: "h-[70px]",
+  },
+  {
+    src: `${baseUrl}sponsors/reite_logo.webp`,
+    alt: "REITE",
+    url: "https://reite.cl/",
+    heightClass: "h-[50px]",
+  },
 ];
 
 export const socialLinks: SocialLink[] = [
