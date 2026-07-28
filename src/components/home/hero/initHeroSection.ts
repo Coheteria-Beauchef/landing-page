@@ -1,4 +1,5 @@
 import { gsap, ensureHomeGsapPlugins, prefersReducedMotion } from "../shared/gsap";
+import { initMobileMenu } from "../shared/initMobileMenu";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const SECTION_SELECTOR = "[data-home-hero]";
@@ -44,38 +45,6 @@ function initHeroScroll(section: HTMLElement) {
   });
 }
 
-function initHamburger(section: HTMLElement) {
-  const nav = section.querySelector("[data-home-nav]");
-  const btn = nav?.querySelector("[data-hamburger]");
-  const menu = nav?.querySelector("[data-mobile-menu]") as HTMLElement | null;
-  const bar1 = btn?.querySelector("[data-bar-1]") as HTMLElement | null;
-  const bar2 = btn?.querySelector("[data-bar-2]") as HTMLElement | null;
-  const bar3 = btn?.querySelector("[data-bar-3]") as HTMLElement | null;
-  if (!btn || !menu || !bar1 || !bar2 || !bar3) return;
-
-  let open = false;
-
-  btn.addEventListener("click", () => {
-    open = !open;
-    btn.setAttribute("aria-expanded", String(open));
-    menu.style.maxHeight = open ? `${menu.scrollHeight}px` : "0";
-    bar1.style.transform = open ? "translateY(6.5px) rotate(45deg)" : "";
-    bar2.style.opacity = open ? "0" : "1";
-    bar3.style.transform = open ? "translateY(-6.5px) rotate(-45deg)" : "";
-  });
-
-  menu.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      open = false;
-      btn.setAttribute("aria-expanded", "false");
-      menu.style.maxHeight = "0";
-      bar1.style.transform = "";
-      bar2.style.opacity = "1";
-      bar3.style.transform = "";
-    });
-  });
-}
-
 export function initHeroSection() {
   const run = () => {
     const section = document.querySelector(SECTION_SELECTOR);
@@ -83,7 +52,7 @@ export function initHeroSection() {
 
     section.dataset.homeHeroInitialized = "true";
     initHeroScroll(section);
-    initHamburger(section);
+    initMobileMenu(section.querySelector("[data-home-nav]"));
   };
 
   if (document.readyState === "loading") {

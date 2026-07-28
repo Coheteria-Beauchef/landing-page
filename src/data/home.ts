@@ -290,6 +290,7 @@ export type SocialLink = {
 
 export const headerNavigationLinks: NavigationLink[] = [
   { href: "#nosotros", label: "Nosotros" },
+  { href: `${baseUrl}proyectos`, label: "Proyectos" },
   { href: "#proyectos", label: "Posts" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: "#sponsors", label: "Sponsors" },
@@ -297,8 +298,19 @@ export const headerNavigationLinks: NavigationLink[] = [
   { href: "#contacto", label: "Contacto" },
 ];
 
+export const pageNavigationLinks: NavigationLink[] = [
+  { href: `${baseUrl}#nosotros`, label: "Nosotros" },
+  { href: `${baseUrl}proyectos`, label: "Proyectos" },
+  { href: `${baseUrl}#proyectos`, label: "Posts" },
+  { href: `${baseUrl}equipo`, label: "Equipo" },
+  { href: `${baseUrl}#sponsors`, label: "Sponsors" },
+  { href: `${baseUrl}#prensa`, label: "Prensa" },
+  { href: `${baseUrl}#contacto`, label: "Contacto" },
+];
+
 export const footerNavigationLinks: NavigationLink[] = [
   { href: `${baseUrl}#nosotros`, label: "Nosotros" },
+  { href: `${baseUrl}proyectos`, label: "Proyectos" },
   { href: `${baseUrl}#proyectos`, label: "Posts" },
   { href: `${baseUrl}equipo`, label: "Equipo" },
   { href: `${baseUrl}#sponsors`, label: "Sponsors" },

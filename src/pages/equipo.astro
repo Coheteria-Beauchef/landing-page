@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Brand from "../components/home/shared/Brand.astro";
-import NavLinks from "../components/home/shared/NavLinks.astro";
+import PageHeader from "../components/home/shared/PageHeader.astro";
 import TeamCard from "../components/home/shared/TeamCard.astro";
 import TeamDialog from "../components/home/shared/TeamDialog.astro";
 import SiteFooter from "../components/home/footer/SiteFooter.astro";
@@ -10,14 +9,6 @@ import CtaSection from "../components/home/cta/CtaSection.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 
-const navLinks = [
-  { href: `${baseUrl}#nosotros`, label: "Nosotros" },
-  { href: `${baseUrl}#proyectos`, label: "Posts" },
-  { href: `${baseUrl}equipo`, label: "Equipo" },
-  { href: `${baseUrl}#sponsors`, label: "Sponsors" },
-  { href: `${baseUrl}#prensa`, label: "Prensa" },
-  { href: `${baseUrl}#contacto`, label: "Contacto" },
-];
 const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
 const canonical = new URL(`${baseUrl}equipo`, siteUrl).toString();
 const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
@@ -42,91 +33,7 @@ const teamDialogId = (id: string) => `team-dialog-${id}`;
   socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
 >
   <div class="flex min-h-screen flex-col bg-white">
-    <nav
-      class="sticky top-0 z-30"
-      style="background: linear-gradient(180deg, rgba(16,37,185,0.94), rgba(16,37,185,0.9208)); box-shadow: 0 18px 48px rgba(16,37,185,0.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);"
-      data-equipo-nav
-    >
-      <div class="flex h-20 items-center justify-between px-6 md:px-10 lg:px-16">
-        <a href={`${baseUrl}#top`} aria-label="Volver al inicio" class="p-1">
-          <Brand logoClass="h-[5.5125rem] w-[11.025rem] object-contain shrink-0" />
-        </a>
-        <NavLinks
-          links={navLinks}
-          className="hidden md:flex items-center gap-6 lg:gap-10"
-          linkClass="text-white/80 hover:text-white font-semibold text-base transition-colors duration-200"
-        />
-        <button
-          class="flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[5px]"
-          data-hamburger
-          aria-label="Abrir menú"
-          aria-expanded="false"
-        >
-          <span
-            class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
-            data-bar-1
-          ></span>
-          <span
-            class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300"
-            data-bar-2
-          ></span>
-          <span
-            class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
-            data-bar-3
-          ></span>
-        </button>
-      </div>
-
-      <div
-        class="md:hidden overflow-hidden"
-        style="max-height: 0; transition: max-height 0.3s ease;"
-        data-mobile-menu
-      >
-        <div class="flex flex-col px-6 pb-4">
-          {
-            navLinks.map((link) => (
-              <a
-                href={link.href}
-                class="py-3 text-white/90 hover:text-white font-semibold text-base border-b border-white/10 last:border-0 transition-colors"
-              >
-                {link.label}
-              </a>
-            ))
-          }
-        </div>
-      </div>
-    </nav>
-
-    <script>
-      const nav = document.querySelector("[data-equipo-nav]");
-      const btn = nav?.querySelector("[data-hamburger]");
-      const menu = nav?.querySelector("[data-mobile-menu]") as HTMLElement | null;
-      const bar1 = btn?.querySelector("[data-bar-1]") as HTMLElement | null;
-      const bar2 = btn?.querySelector("[data-bar-2]") as HTMLElement | null;
-      const bar3 = btn?.querySelector("[data-bar-3]") as HTMLElement | null;
-
-      let open = false;
-
-      btn?.addEventListener("click", () => {
-        open = !open;
-        btn.setAttribute("aria-expanded", String(open));
-        if (menu) menu.style.maxHeight = open ? `${menu.scrollHeight}px` : "0";
-        if (bar1) bar1.style.transform = open ? "translateY(6.5px) rotate(45deg)" : "";
-        if (bar2) bar2.style.opacity = open ? "0" : "1";
-        if (bar3) bar3.style.transform = open ? "translateY(-6.5px) rotate(-45deg)" : "";
-      });
-
-      menu?.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          open = false;
-          btn?.setAttribute("aria-expanded", "false");
-          if (menu) menu.style.maxHeight = "0";
-          if (bar1) bar1.style.transform = "";
-          if (bar2) bar2.style.opacity = "1";
-          if (bar3) bar3.style.transform = "";
-        });
-      });
-    </script>
+    <PageHeader />
 
     <script>
       const closeAnimationMs = 300;

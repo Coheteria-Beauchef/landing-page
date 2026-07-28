@@ -1,0 +1,249 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHeader from "../components/home/shared/PageHeader.astro";
+import SiteFooter from "../components/home/footer/SiteFooter.astro";
+import { socialProfiles } from "../data/home";
+
+const baseUrl = import.meta.env.BASE_URL;
+const siteUrl = Astro.site ?? new URL("https://coheteria-beauchef.github.io");
+const canonical = new URL(`${baseUrl}proyectos`, siteUrl).toString();
+const ogImage = new URL(`${baseUrl}main_image.webp`, siteUrl).toString();
+
+const placeholderImage =
+  "https://i.pinimg.com/736x/e3/ef/b8/e3efb8b4e4200dd531b7444c8e5135c4.jpg";
+const placeholderVideo = "https://www.youtube.com/embed/KC6cPq-NmuU";
+const galleryPlaceholders = ["Trabajo", "Equipo", "Eventos"];
+---
+
+<Layout
+  title="Proyectos | Cohetería Beauchef"
+  description="Conoce los proyectos de cohetería experimental desarrollados por Cohetería Beauchef."
+  canonical={canonical}
+  ogImage={ogImage}
+  socialLinks={Object.values(socialProfiles).map((href) => ({ href }))}
+>
+  <div class="flex min-h-screen flex-col bg-white">
+    <PageHeader />
+
+    <main class="flex-1 bg-white">
+      <section class="relative overflow-hidden px-5 py-12 sm:px-8 sm:py-16 lg:px-16 lg:py-20">
+        <div
+          class="pointer-events-none absolute -right-24 top-10 size-80 rounded-full border border-[#1025B9]/10"
+          aria-hidden="true"
+        ></div>
+
+        <div class="relative mx-auto flex w-full max-w-[1400px] flex-col gap-8 sm:gap-10">
+          <header class="flex flex-col items-center gap-3 text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#1025B9]">
+              Contenido de ejemplo
+            </p>
+            <h1
+              class="text-4xl font-black leading-[0.95] tracking-[-0.05em] text-[#1C1C1E] sm:text-5xl lg:text-6xl"
+            >
+              Misiones
+            </h1>
+          </header>
+
+          <article class="mission-layout">
+            <figure class="mission-visual space-y-3">
+              <div
+                class="mission-image-frame overflow-hidden rounded-3xl bg-[#EEF2FF]"
+                style="height: 65vh; height: 65svh; min-height: 65vh; min-height: 65svh;"
+              >
+                <img
+                  src={placeholderImage}
+                  alt="Imagen provisoria para una misión"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <figcaption class="text-sm text-[#6B6B6B]">
+                Imagen provisoria de la misión.
+              </figcaption>
+            </figure>
+
+            <div class="mission-copy space-y-4">
+              <p class="text-sm font-bold uppercase tracking-[0.16em] text-[#1025B9]">
+                Misión de ejemplo
+              </p>
+              <h2 class="text-2xl font-black tracking-[-0.04em] text-[#1C1C1E] sm:text-3xl">
+                Nombre de la misión
+              </h2>
+              <p class="text-base leading-relaxed text-[#48484A] sm:text-lg">
+                Este espacio contendrá una introducción a la misión, sus objetivos y el contexto
+                general del proyecto. El texto y la imagen son provisorios.
+              </p>
+              <p class="text-sm leading-relaxed text-[#6B6B6B] sm:text-base">
+                Aquí se podrá agregar información adicional, hitos importantes o un resumen de los
+                resultados cuando el contenido definitivo esté disponible.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section
+        class="border-y border-[#E5E5EA] bg-[#F7F8FF] px-5 py-12 sm:px-8 sm:py-16 lg:px-16 lg:py-20"
+      >
+        <div class="mx-auto flex w-full max-w-[1400px] flex-col gap-8 sm:gap-10">
+          <header class="flex flex-col items-center gap-3 text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-[#1025B9]">
+              Galería provisoria
+            </p>
+            <h2
+              class="text-3xl font-black leading-none tracking-[-0.05em] text-[#1C1C1E] sm:text-4xl lg:text-5xl"
+            >
+              Nuestro Proyecto
+            </h2>
+          </header>
+
+          <div class="project-layout">
+            <figure class="project-video space-y-3">
+              <div
+                class="video-frame overflow-hidden rounded-2xl border border-[#1025B9]/10 bg-[#0A0A0A] shadow-sm"
+              >
+                <iframe
+                  src={placeholderVideo}
+                  title="Video provisorio del proyecto"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <figcaption class="text-sm text-[#6B6B6B]">
+                Video provisorio para mostrar la ubicación del contenido audiovisual.
+              </figcaption>
+            </figure>
+
+            <aside aria-label="Galería provisoria" class="project-gallery">
+              {
+                galleryPlaceholders.map((label) => (
+                  <figure class="gallery-card group relative overflow-hidden rounded-xl bg-[#1025B9]">
+                    <img
+                      src={placeholderImage}
+                      alt={`Imagen provisoria de ${label.toLowerCase()}`}
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      referrerpolicy="no-referrer"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <figcaption class="absolute inset-x-0 bottom-0 p-2 text-sm font-black text-white sm:p-3 sm:text-lg lg:text-xl">
+                      {label}
+                    </figcaption>
+                  </figure>
+                ))
+              }
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</Layout>
+
+<style>
+  .mission-layout {
+    width: 100%;
+    max-width: min(92vw, 1400px);
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: clamp(20rem, 38vw, 36rem) minmax(0, 1fr);
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1.75rem, 4vw, 4rem);
+  }
+
+  .mission-visual {
+    width: clamp(20rem, 38vw, 36rem);
+    justify-self: center;
+  }
+
+  .mission-image-frame {
+    width: 100%;
+  }
+
+  .mission-copy {
+    text-align: left;
+  }
+
+  .project-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(13rem, 20vw, 18rem);
+    align-items: stretch;
+    gap: clamp(1rem, 2.25vw, 2rem);
+  }
+
+  .project-video {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .video-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .video-frame iframe {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .project-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .gallery-card {
+    min-height: 0;
+  }
+
+  @media (width < 64rem) {
+    .project-layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .project-video {
+      max-width: 100%;
+    }
+
+    .project-gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: none;
+      gap: 0.5rem;
+    }
+
+    .gallery-card {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  @media (width < 48rem) {
+    .mission-layout {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.75rem;
+    }
+
+    .mission-visual {
+      width: 100%;
+    }
+
+    .mission-copy {
+      text-align: center;
+    }
+  }
+</style>

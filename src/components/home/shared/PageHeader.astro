@@ -1,0 +1,75 @@
+---
+import { pageNavigationLinks } from "../../../data/home";
+import Brand from "./Brand.astro";
+import NavLinks from "./NavLinks.astro";
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<nav
+  class="sticky top-0 z-30"
+  style="background: linear-gradient(180deg, rgba(16,37,185,0.94), rgba(16,37,185,0.9208)); box-shadow: 0 18px 48px rgba(16,37,185,0.28); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);"
+  data-page-nav
+>
+  <div class="flex h-20 items-center justify-between px-6 md:px-10 lg:px-16">
+    <a href={`${baseUrl}#top`} aria-label="Volver al inicio" class="p-1">
+      <Brand logoClass="h-[5.5125rem] w-[11.025rem] object-contain shrink-0" />
+    </a>
+
+    <NavLinks
+      links={pageNavigationLinks}
+      className="hidden lg:flex items-center gap-5 xl:gap-8"
+      linkClass="text-white/80 hover:text-white font-semibold text-base transition-colors duration-200"
+    />
+
+    <button
+      type="button"
+      class="flex lg:hidden flex-col justify-center items-center w-10 h-10 gap-[5px]"
+      data-hamburger
+      aria-controls="page-mobile-menu"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <span
+        class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
+        data-bar-1
+      ></span>
+      <span
+        class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300"
+        data-bar-2
+      ></span>
+      <span
+        class="block w-6 h-0.5 bg-white rounded-full transition-all duration-300 origin-center"
+        data-bar-3
+      ></span>
+    </button>
+  </div>
+
+  <div
+    id="page-mobile-menu"
+    class="lg:hidden overflow-hidden"
+    style="max-height: 0; transition: max-height 0.3s ease;"
+    data-mobile-menu
+    aria-hidden="true"
+    inert
+  >
+    <div class="flex flex-col px-6 pb-4">
+      {
+        pageNavigationLinks.map((link) => (
+          <a
+            href={link.href}
+            class="py-3 text-white/90 hover:text-white font-semibold text-base border-b border-white/10 last:border-0 transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { initMobileMenu } from "./initMobileMenu";
+
+  initMobileMenu(document.querySelector("[data-page-nav]"));
+</script>

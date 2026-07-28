@@ -38,12 +38,14 @@ const baseUrl = import.meta.env.BASE_URL;
       </a>
       <NavLinks
         links={headerNavigationLinks}
-        className="hidden md:flex items-center gap-6 lg:gap-10"
+        className="hidden lg:flex items-center gap-5 xl:gap-8"
         linkClass="home-nav-link text-white font-semibold text-base transition-colors duration-300"
       />
       <button
-        class="relative z-10 flex md:hidden flex-col justify-center items-center w-10 h-10 gap-[5px]"
+        type="button"
+        class="relative z-10 flex lg:hidden flex-col justify-center items-center w-10 h-10 gap-[5px]"
         data-hamburger
+        aria-controls="home-mobile-menu"
         aria-label="Abrir menú"
         aria-expanded="false"
       >
@@ -54,9 +56,12 @@ const baseUrl = import.meta.env.BASE_URL;
     </div>
 
     <div
-      class="mobile-menu md:hidden overflow-hidden"
+      id="home-mobile-menu"
+      class="mobile-menu lg:hidden overflow-hidden"
       style="max-height: 0; transition: max-height 0.3s ease;"
       data-mobile-menu
+      aria-hidden="true"
+      inert
     >
       <div class="flex flex-col px-6 pb-4">
         {headerNavigationLinks.map((link) => (
