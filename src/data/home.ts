@@ -379,6 +379,7 @@ export const sponsorLogos: SponsorLogo[] = [
     url: "https://dimec.uchile.cl/",
   },
   { src: `${baseUrl}sponsors/die_fcfm.svg`, alt: "Eléctrica", url: "https://www.die.cl/" },
+  { src: `${baseUrl}sponsors/dfi.svg`, alt: "Física", url: "https://dfi.uchile.cl/" },
   {
     src: `${baseUrl}sponsors/fablab_logo.webp`,
     alt: "FabLab",
@@ -413,6 +414,16 @@ export const sponsorLogos: SponsorLogo[] = [
     alt: "FABRICALA",
     url: "https://www.fabricala.pro/",
     heightClass: "h-[70px]",
+  },
+  {
+    src: `${baseUrl}sponsors/imestre.svg`,
+    alt: "IMESTRE",
+    url: "https://www.imestre.cl/",
+  },
+  {
+    src: `${baseUrl}sponsors/solmek.svg`,
+    alt: "Solmek Chile",
+    url: "https://www.instagram.com/solmekchile/",
   },
   {
     src: `${baseUrl}sponsors/reite_logo.webp`,
