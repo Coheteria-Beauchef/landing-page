@@ -12,7 +12,12 @@ const pulseConfig = {
 const companyRowsBase = [
   [logo("Creality", "h-23 sm:h-28 lg:h-32")],
   [logo("TodoToner", "h-10 sm:h-12 lg:h-14")],
-  [logo("FABRICALA", "h-12 sm:h-14 lg:h-16"), logo("REITE", "h-10 sm:h-12 lg:h-15")],
+  [
+    logo("FABRICALA", "h-12 sm:h-14 lg:h-16"),
+    logo("REITE", "h-7 sm:h-[2.1rem] lg:h-[2.625rem]"),
+    logo("IMESTRE", "h-10 sm:h-12 lg:h-14"),
+    logo("Solmek Chile", "h-[4.35rem] sm:h-[5.075rem] lg:h-[5.8rem]"),
+  ],
   [
     logo("Alutipo", "h-10 sm:h-12 lg:h-14"),
     logo("Ansys", "h-14 sm:h-16 lg:h-20"),
@@ -27,6 +32,7 @@ const universityRowsBase = [
     logo("Mecánica", "h-14 sm:h-16 lg:h-20"),
     logo("FabLab", "h-12 sm:h-14 lg:h-16"),
     logo("Eléctrica", "h-8 sm:h-10 lg:h-12"),
+    logo("Física", "h-[3.6rem] sm:h-[4.2rem] lg:h-[4.8rem]"),
   ],
 ];
 
@@ -56,7 +62,7 @@ const universityRows = universityRowsBase;
       <h3 class="text-center text-sm font-semibold uppercase tracking-widest text-[#8E8E93]">
         Empresas
       </h3>
-      <div data-sponsor-pulse-stage class="mx-auto mt-10 flex w-full max-w-5xl flex-col items-center gap-8 sm:gap-10">
+      <div data-sponsor-pulse-stage class="mx-auto mt-10 flex w-full max-w-7xl flex-col items-center gap-8 sm:gap-10">
         {companyRows.map((row) => (
           <div class="flex w-full flex-wrap items-center justify-center gap-x-8 gap-y-6 sm:gap-x-12 lg:gap-x-16">
             {row.map((sponsor) => (

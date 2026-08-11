@@ -277,19 +277,75 @@ export const instagramPosts: InstagramPost[] = [
 ];
 
 export const sponsorLogos: SponsorLogo[] = [
-  { src: `${baseUrl}sponsors/creality_logo.webp`, alt: "Creality", url: "https://www.creality.com/es" },
-  { src: `${baseUrl}sponsors/todotoner_logo.webp`, alt: "TodoToner", url: "https://www.todotoner.cl/" },
+  {
+    src: `${baseUrl}sponsors/creality_logo.webp`,
+    alt: "Creality",
+    url: "https://www.creality.com/es",
+  },
+  {
+    src: `${baseUrl}sponsors/todotoner_logo.webp`,
+    alt: "TodoToner",
+    url: "https://www.todotoner.cl/",
+  },
   { src: `${baseUrl}sponsors/fcfm_logo.webp`, alt: "FCFM", url: "https://ingenieria.uchile.cl/" },
-  { src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`, alt: "Mecánica", url: "https://dimec.uchile.cl/" },
+  {
+    src: `${baseUrl}sponsors/departamento_mecanica_logo.webp`,
+    alt: "Mecánica",
+    url: "https://dimec.uchile.cl/",
+  },
   { src: `${baseUrl}sponsors/die_fcfm.svg`, alt: "Eléctrica", url: "https://www.die.cl/" },
-  { src: `${baseUrl}sponsors/fablab_logo.webp`, alt: "FabLab", url: "https://www.instagram.com/fablabudechile/" },
-  { src: `${baseUrl}sponsors/maquintel_logo.webp`, alt: "Maquintel", url: "https://www.maquintel.com/", heightClass: "h-[100px]" },
+  { src: `${baseUrl}sponsors/dfi.svg`, alt: "Física", url: "https://dfi.uchile.cl/" },
+  {
+    src: `${baseUrl}sponsors/fablab_logo.webp`,
+    alt: "FabLab",
+    url: "https://www.instagram.com/fablabudechile/",
+  },
+  {
+    src: `${baseUrl}sponsors/maquintel_logo.webp`,
+    alt: "Maquintel",
+    url: "https://www.maquintel.com/",
+    heightClass: "h-[100px]",
+  },
   { src: `${baseUrl}sponsors/alutipo_logo.webp`, alt: "Alutipo", url: "https://alutipo.cl/" },
-  { src: `${baseUrl}sponsors/micro.webp`, alt: "Micro Automación", url: "https://cl.microautomacion.com/es/inicio/" },
-  { src: `${baseUrl}sponsors/logo_ansys.webp`, alt: "Ansys", url: "https://www.ansys.com/", heightClass: "h-[120px]" },
-  { src: `${baseUrl}sponsors/logo_esss.webp`, alt: "ESSS", url: "https://www.esss.com/es/", heightClass: "h-[120px]" },
-  { src: `${baseUrl}sponsors/fabricala_logo.webp`, alt: "FABRICALA", url: "https://www.fabricala.pro/", heightClass: "h-[70px]" },
-  { src: `${baseUrl}sponsors/reite_logo.webp`, alt: "REITE", url: "https://reite.cl/", heightClass: "h-[50px]" },
+  {
+    src: `${baseUrl}sponsors/micro.webp`,
+    alt: "Micro Automación",
+    url: "https://cl.microautomacion.com/es/inicio/",
+  },
+  {
+    src: `${baseUrl}sponsors/logo_ansys.webp`,
+    alt: "Ansys",
+    url: "https://www.ansys.com/",
+    heightClass: "h-[120px]",
+  },
+  {
+    src: `${baseUrl}sponsors/logo_esss.webp`,
+    alt: "ESSS",
+    url: "https://www.esss.com/es/",
+    heightClass: "h-[120px]",
+  },
+  {
+    src: `${baseUrl}sponsors/fabricala_logo.webp`,
+    alt: "FABRICALA",
+    url: "https://www.fabricala.pro/",
+    heightClass: "h-[70px]",
+  },
+  {
+    src: `${baseUrl}sponsors/imestre.svg`,
+    alt: "IMESTRE",
+    url: "https://www.imestre.cl/",
+  },
+  {
+    src: `${baseUrl}sponsors/solmek.svg`,
+    alt: "Solmek Chile",
+    url: "https://www.instagram.com/solmekchile/",
+  },
+  {
+    src: `${baseUrl}sponsors/reite_logo.webp`,
+    alt: "REITE",
+    url: "https://reite.cl/",
+    heightClass: "h-[50px]",
+  },
 ];
 
 export const socialLinks: SocialLink[] = [
