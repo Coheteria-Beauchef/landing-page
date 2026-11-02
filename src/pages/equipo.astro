@@ -163,23 +163,21 @@ const teamDialogId = (id: string) => `team-dialog-${id}`;
             )
           }
 
-          <section class="flex w-full flex-col items-center gap-10">
+          <section class="flex w-full flex-col items-center gap-8">
             <h2
               class="text-center text-2xl font-black leading-tight tracking-[-0.03em] text-[#1025B9] underline decoration-[#1025B9]/30 decoration-2 underline-offset-8 sm:text-3xl"
             >
               Directiva
             </h2>
 
-            <div class="flex w-full max-w-6xl flex-col items-center gap-10 py-2">
+            <div class="flex w-full max-w-6xl flex-col items-center gap-10">
               <div
                 class="grid w-full max-w-[620px] grid-cols-1 justify-items-center gap-6 sm:grid-cols-2"
               >
                 {captains.map((captain) => <TeamCard {...captain.lead} />)}
               </div>
 
-              <div
-                class="grid w-full grid-cols-1 justify-items-center gap-6 sm:grid-cols-2 lg:grid-cols-4"
-              >
+              <div class="flex w-full flex-wrap justify-center gap-6">
                 {leaders.map((leader) => <TeamCard {...leader.lead} />)}
               </div>
             </div>
